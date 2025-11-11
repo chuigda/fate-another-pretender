@@ -63,7 +63,7 @@ export interface UniqueSkill extends IDescriptionBase {
 }
 
 export interface NoblePhantasm {
-    name: string,
+    label: string,
     description: string,
 
     rank: Rank,
@@ -101,7 +101,7 @@ export const DefaultServantInstance: ServantInstance = {
     uniquePersonalSkills: [],
     noblePhantasms: [
         {
-            name: '终极对城大光炮',
+            label: '终极对城大光炮',
             description: 'Saber 没有光炮那还叫 Saber 吗 —— Chuigda·Whitegive',
             rank: Rank_A,
             modifier: Modifier_None,

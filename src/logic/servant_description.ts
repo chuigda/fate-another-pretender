@@ -1,3 +1,4 @@
+import type { RankModifier } from '../component/RankModifier.vue'
 import type {
     ClassSkillName,
     Modifier,
@@ -51,12 +52,21 @@ export const RankDescription: [string, string, string, string, string, string] =
 
 export const ModifierDescription: [string, string, string, string, string] = ['-', '', '+', '++', '+++']
 
-export function rankDescription(rank: Rank): string {
+export function describeRank(rank: Rank): string {
     return RankDescription[rank + 1]!!
 }
 
-export function modifierDescription(modifier: Modifier): string {
+export function describeModifier(modifier: Modifier): string {
     return ModifierDescription[modifier + 1]!!
+}
+
+export interface IRankModifier {
+    rank: Rank,
+    modifier: Modifier
+}
+
+export function describeRankModifier(rm: RankModifier): string {
+    return `${describeRank(rm.rank)}${describeModifier(rm.modifier)}`
 }
 
 export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
@@ -239,7 +249,7 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
         description: `得到对魔术抗性的能力。`,
         ranks: [
             // A 级
-            `A 级和 A 级以下的魔术全部无效化，即使是大魔术也不例外。能短暂地抵抗一划令咒。`,
+            `A 级以下的魔术全部无效化，即使是大魔术也不例外。能短暂地抵抗一划令咒。`,
             // B 级
             `咏唱在三节以下的魔术全部无效化，即使是大魔术和仪礼咒法也难以造成伤害。`,
             // C 级

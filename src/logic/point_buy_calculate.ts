@@ -4,8 +4,7 @@ import {
     ServantClassDescription,
     ServantUpkeepDescription,
     StandardPersonalSkillDescription,
-    modifierDescription,
-    rankDescription
+    describeRankModifier
 } from './servant_description'
 import type {
     ClassSkillName,
@@ -214,7 +213,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
             }
 
             totalCost += cost
-            details.push(`- ${np.name} ${describeRankModifier(np)}: ${cost}`)
+            details.push(`- ${np.label} ${describeRankModifier(np)}: ${cost}`)
         }
     }
 
@@ -230,10 +229,6 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 interface RankModifier {
     rank: Rank,
     modifier: Modifier
-}
-
-function describeRankModifier(rm: RankModifier) {
-    return `${rankDescription(rm.rank)}${modifierDescription(rm.modifier)}`
 }
 
 function calculateExRankCost(exRankCount: number, servantClass: ServantClass): [number, number] {

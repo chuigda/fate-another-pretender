@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { Rank_EX, type Rank } from '../logic/servant'
-import { rankDescription, type IParameterDescription } from '../logic/servant_description'
+import { describeRank, type IParameterDescription } from '../logic/servant_description'
 
 const { descriptionSet, rank, showBase } = defineProps<{
     descriptionSet: IParameterDescription,
@@ -22,7 +22,7 @@ const descriptionForThisRank = computed(() => {
 <template>
     <div class="tooltip">
         <div v-if="showBase">{{ descriptionSet.description }}</div>
-        <span v-if="showBase">{{ rankDescription(rank)  }} 级: </span>
+        <span v-if="showBase">{{ describeRank(rank)  }} 级: </span>
         {{ descriptionForThisRank }}
     </div>
 </template>

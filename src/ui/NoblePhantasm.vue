@@ -50,7 +50,7 @@ const removeNoblePhantasm = async (index: number) => {
 
 const addNoblePhantasm = () => {
     servantInstance.noblePhantasms.push({
-        name: '',
+        label: '',
         rank: Rank_C,
         modifier: Modifier_None,
         type: 'anti-unit',
@@ -64,7 +64,7 @@ const addNoblePhantasm = () => {
     <h3>宝具</h3>
     <div class="panel">
         <div v-for="(np, index) in servantInstance.noblePhantasms" class="sub-panel">
-            <input v-model="np.name" placeholder="宝具名称" />
+            <input v-model="np.label" placeholder="宝具名称" />
             <Row>
                 <RankModifier :value="np" />
                 <ToggleButtonGroup :values="['anti-unit', 'anti-army', 'anti-fortress', 'anti-world']"
