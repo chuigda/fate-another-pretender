@@ -217,7 +217,7 @@ const copyMarkdown = () => {
 
 <template>
     <div class="content">
-        <div class="content-med">
+        <div class="content-print">
             <div class="content-inner">
                 <h3>基本信息</h3>
                 <div class="grid">
