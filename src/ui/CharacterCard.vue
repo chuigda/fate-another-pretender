@@ -164,6 +164,52 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
     return ret
 })
 
+const npLevelDisplay = computed(() => {
+    if (npDisplay.value.length === 0) {
+        return '-'
+    } else {
+        return describeRankModifier(npDisplay.value[0]!!)
+    }
+})
+
+const copyMarkdown = () => {
+    let md = `## 基础信息\n`
+
+    md += `- 真名: ${servantInstance.name || '无名英灵'}\n`
+    md += `- 阵营: ${alignmentDescription.value}\n`
+    md += `- 职阶: ${classDescription.value}\n`
+    md += `- 维系成本: ${ServantUpkeepDescription[servantInstance.upkeep].label}\n`
+    md += `- 面板: 筋力${describeRankModifier(servantInstance.parameters.strength)} ` +
+          `耐久${describeRankModifier(servantInstance.parameters.endurance)} ` +
+          `敏捷${describeRankModifier(servantInstance.parameters.agility)} ` +
+          `魔力${describeRankModifier(servantInstance.parameters.magicalEnergy)} ` +
+          `幸运${describeRankModifier(servantInstance.parameters.luck)} ` +
+          `宝具${npLevelDisplay.value}\n`
+    md += `\n`
+    md += `${servantInstance.description || '暂无背景故事。'}\n`
+    md += `\n`
+
+    md += `## 职阶技能\n`
+    for (const classSkill of classSkillDisplay.value) {
+        md += `- ${classSkill.label}(${describeRankModifier(classSkill)}): ${classSkill.description}  \n`
+    }
+    md += `\n`
+
+    md += `## 保有技能\n`
+    for (const personalSkill of personalSkillDisplay.value) {
+        md += `- ${personalSkill.label}(${describeRankModifier(personalSkill)}): ${personalSkill.description}  \n`
+    }
+    md += `\n`
+
+    md += `## 宝具\n`
+    for (const np of npDisplay.value) {
+        md += `- ${np.label}(${np.type}，${describeRankModifier(np)}): ${np.description}  \n`
+    }
+    md += `\n`
+
+    navigator.clipboard.writeText(md)
+}
+
 </script>
 
 <template>
@@ -189,7 +235,7 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
                 <div><b>幸运:</b> {{ describeRankModifier(servantInstance.parameters.luck) }}</div>
                 <div>
                     <b>宝具:</b>
-                    {{ npDisplay.length === 0 ? '-' : describeRankModifier(npDisplay[0]!!) }}
+                    {{ npLevelDisplay }}
                 </div>
             </div>
             <hr />
@@ -214,6 +260,8 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
                 <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
                 {{ np.description }}
             </div>
+
+            <button class="copy-button" @click="copyMarkdown">📋︎</button>
         </div>
     </div>
 </template>
@@ -224,6 +272,8 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
 }
 
 .content-inner {
+    position: relative;
+
     border: 1px solid var(--border-color);
     padding: 1em;
     width: 600px;
@@ -247,6 +297,14 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 0.25em;
+}
+
+.copy-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+
+    z-index: 1;
 }
 
 .alter-color {
