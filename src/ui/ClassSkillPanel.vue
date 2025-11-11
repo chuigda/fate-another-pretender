@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { inject, ref } from 'vue'
+import { computed, inject, ref } from 'vue'
+import { Modifier_None, Rank_B, ServantClassData, } from '../logic/servant'
 import type { ServantClassSkill, ServantInstance } from '../logic/servant_instance'
 import { ClassSkillDescription } from '../logic/servant_description'
 
@@ -9,9 +10,8 @@ import ToggleButton from '../component/ToggleButton.vue'
 import RankTooltip from './RankTooltip.vue'
 
 import type { AskForConfirmation } from './App.vue'
-import type { ClassSkillName } from '../logic/servant'
+import type { ClassSkillName, IServantClassData } from '../logic/servant'
 import { AskForConfirmationKey } from './App.vue'
-import { Modifier_None, Rank_A, } from '../logic/servant'
 import Dialog from '../component/Dialog.vue'
 
 const { servantInstance, showDetails } = defineProps<{ servantInstance: ServantInstance, showDetails: boolean }>()
@@ -37,7 +37,7 @@ const toggleCustomDisplay = async (classSkill: ServantClassSkill) => {
     if (classSkill.customDisplay === undefined) {
         classSkill.customDisplay = {
             label: '',
-            rank: Rank_A,
+            rank: Rank_B,
             modifier: Modifier_None
         }
     } else {
@@ -54,15 +54,34 @@ const toggleCustomDisplay = async (classSkill: ServantClassSkill) => {
 
 const showAddClassSkillDialog = ref(false)
 const selectedClassSkill = ref<ClassSkillName>('magic-resistance')
+const selectedClassSkillAlreadyExists = computed(
+    () => servantInstance.classSkills[selectedClassSkill.value] !== undefined
+)
+const selectedClassSkillIsStandard = computed(
+    () => ServantClassData[servantInstance.class].classSkills.includes(selectedClassSkill.value)
+)
+const selectedClassSkillIsSecondStandard = computed(
+    () => servantInstance.secondClass !== undefined &&
+        ServantClassData[servantInstance.secondClass].classSkills.includes(selectedClassSkill.value)
+)
+
 const addClassSkill = () => {
     showAddClassSkillDialog.value = true
 }
 
+const doAddClassSkill = () => {
+    servantInstance.classSkills[selectedClassSkill.value] = {
+        rank: Rank_B,
+        modifier: Modifier_None
+    }
+    showAddClassSkillDialog.value = false
+}
+
 const addUniqueClassSkill = () => {
     servantInstance.uniqueClassSkills.push({
-        rank: Rank_A,
+        rank: Rank_B,
         modifier: Modifier_None,
-        customCost: 0,
+        customCost: -50,
         label: '',
         description: ''
     })
@@ -90,6 +109,49 @@ const deleteUniqueClassSkill = async (index: number) => {
         servantInstance.uniqueClassSkills.splice(index, 1)
     }
 }
+
+const applyClassBase = async () => {
+    await askAndApplyClassData(
+        '应用职阶基准',
+        '确定要将属性值设置为当前职阶的基准值吗？这将覆盖当前的属性值。',
+        ServantClassData[servantInstance.class]
+    )
+}
+
+const applySecondClassBase = async () => {
+    if (servantInstance.secondClass === undefined) {
+        return
+    }
+
+    await askAndApplyClassData(
+        '应用第二职阶基准',
+        '确定要将属性值设置为第二职阶的基准值吗？这将覆盖当前的属性值。',
+        ServantClassData[servantInstance.secondClass]
+    )
+}
+
+const askAndApplyClassData = async (
+    title: string,
+    message: string,
+    classData: IServantClassData
+) => {
+    const confirmed = await askForConfirmation(
+        title,
+        message
+    )
+
+    if (!confirmed) {
+        return
+    }
+
+    servantInstance.classSkills = {}
+    for (const classSkillName of classData.classSkills) {
+        servantInstance.classSkills[classSkillName] = {
+            rank: Rank_B,
+            modifier: Modifier_None
+        }
+    }
+}
 </script>
 
 <template>
@@ -112,7 +174,7 @@ const deleteUniqueClassSkill = async (index: number) => {
             </Row>
             <div class="sub-panel" v-if="classSkill!!.customDisplay">
                 <b>自定义显示</b>
-                <div v-if="showDetails" class="tooltip">
+                <div v-show="showDetails" class="tooltip">
                     启用自定义显示时，点数计算使用实际上的职阶技能和等级，但最终角色卡上展示为自定义的技能名称和等级。
                 </div>
                 <Row>
@@ -132,7 +194,13 @@ const deleteUniqueClassSkill = async (index: number) => {
         <div v-for="(uniqueClassSkill, index) in servantInstance.uniqueClassSkills" class="sub-panel">
             <Row>
                 <input v-model="uniqueClassSkill.label" placeholder="技能名称" />
-                <input type="number" v-model.number="uniqueClassSkill.customCost" class="short" min="0" />
+                <input type="number"
+                       v-model.number="uniqueClassSkill.customCost"
+                       class="short"
+                       min="-9999"
+                       max="9999"
+                       placeholder="技能开销"
+                />
                 <RankModifier :value="uniqueClassSkill" />
                 <button class="right" @click="deleteUniqueClassSkill(index)">删除</button>
             </Row>
@@ -142,27 +210,45 @@ const deleteUniqueClassSkill = async (index: number) => {
         <Row>
             <button @click="addClassSkill">添加标准技能</button>
             <button @click="addUniqueClassSkill">添加自定技能</button>
-            <button>应用职阶基准</button>
-            <button :disabled="servantInstance.secondClass === undefined">应用第二职阶</button>
+            <button @click="applyClassBase">应用职阶基准</button>
+            <button :disabled="servantInstance.secondClass === undefined"
+                    @click="applySecondClassBase">
+                应用第二职阶
+            </button>
         </Row>
     </div>
 
-    <Dialog v-if="showAddClassSkillDialog">
+    <Dialog v-show="showAddClassSkillDialog">
         <h2>添加标准职阶技能</h2>
         <hr />
-        <select>
+        <select v-model="selectedClassSkill">
             <option v-for="(classSkillDesc, classSkillName) in ClassSkillDescription"
                     :key="classSkillName"
                     :value="classSkillName">
                 {{ classSkillDesc.label }}
             </option>
         </select>
-        <div class="dialog-bottom">
-            <Row style="flex-flow: row nowrap;">
-                <button>添加</button>
-                <button class="right" @click="showAddClassSkillDialog = false">取消</button>
-            </Row>
+        <div class="tooltip hint" :class="{ 'red-tooltip': selectedClassSkillAlreadyExists }">
+            <div v-if="selectedClassSkillAlreadyExists">
+                该职阶技能已存在
+            </div>
+            <div v-else>
+                <div>{{ ClassSkillDescription[selectedClassSkill].description }}</div>
+                <b v-if="selectedClassSkillIsStandard">
+                    这是当前职阶的标配技能。
+                </b>
+                <b v-else-if="selectedClassSkillIsSecondStandard">
+                    这是第二职阶的标配技能。
+                </b>
+            </div>
         </div>
+        <Row>
+            <button :disabled="selectedClassSkillAlreadyExists"
+                    @click="doAddClassSkill">
+                添加
+            </button>
+            <button class="right" @click="showAddClassSkillDialog = false">取消</button>
+        </Row>
     </Dialog>
 </template>
 
@@ -171,10 +257,9 @@ const deleteUniqueClassSkill = async (index: number) => {
     margin-left: auto;
 }
 
-.dialog-bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 1em;
+.hint {
+    width: calc(20 * var(--base-font-size));
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
 </style>

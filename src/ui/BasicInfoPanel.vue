@@ -37,7 +37,7 @@ const {
             <b>职阶</b>
             <div>
                 <ClassSelect v-model="servantInstance.class" />
-                <MultilineText v-if="showDetails" class="tooltip"
+                <MultilineText v-show="showDetails" class="tooltip"
                     :value="ServantClassDescription[servantInstance.class].description" />
             </div>
 
@@ -62,7 +62,7 @@ const {
                                        v-model="servantInstance.upkeep"
                     />
                 </Row>
-                <div v-if="showDetails" class="tooltip">
+                <div v-show="showDetails" class="tooltip">
                     {{ ServantUpkeepDescription[servantInstance.upkeep].description }}
                 </div>
             </div>

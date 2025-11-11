@@ -1,3 +1,8 @@
+:root {
+    --base-font-size: 16px;
+    font-size: var(--base-font-size);
+}
+
 body {
     background-color: var(--navbar-background-color);
     color: var(--body-text-color);
@@ -102,6 +107,10 @@ button:active:not(:disabled) {
 .tooltip {
     color: var(--snippet-text-color);
     font-size: 0.9em;
+}
+
+.red-tooltip {
+    color: #cd0000
 }
 
 .content {

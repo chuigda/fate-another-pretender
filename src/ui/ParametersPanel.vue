@@ -82,7 +82,7 @@ const applySecondClassBase = async () => {
                 <b class="button-title">{{ ParameterDescription[parameterName].label }}</b>
                 <div>
                     <RankModifier :value="servantInstance.parameters[parameterName]" />
-                    <RankTooltip v-if="showDetails"
+                    <RankTooltip v-show="showDetails"
                                  :description-set="ParameterDescription[parameterName]"
                                  :rank="servantInstance.parameters[parameterName].rank"
                                  :show-base="true"
