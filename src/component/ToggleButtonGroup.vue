@@ -49,7 +49,7 @@ const onValueSelectOrDeselect = (value: T) => {
     </div>
 </template>
 
-<style>
+<style scoped>
 .toggle-button-group {
     border: 1px solid var(--border-color);
     column-fill: balance;

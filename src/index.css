@@ -23,16 +23,18 @@ hr {
     border-top: 1px solid var(--border-color);
 }
 
-input, select {
-    width: 20em;
+input, select, button {
     box-sizing: border-box;
-
     font-family: var(--body-font-family);
     font-size: 1em;
     border: 1px solid var(--border-color);
     border-radius: 0;
     background-color: var(--section-background-color);
     color: var(--body-text-color);
+}
+
+input, select {
+    width: 20em;
 }
 
 textarea {
@@ -52,6 +54,27 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 2px var(--selected-background-color);
 }
 
+button {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+button:disabled {
+    color: var(--snippet-text-color);
+}
+
+button:hover:not(:disabled) {
+    color: var(--link-color);
+    cursor: pointer;
+}
+
+button:active:not(:disabled) {
+    background-color: var(--selected-background-color);
+    color: var(--selected-text-color);
+}
+
 .tooltip {
     color: var(--snippet-text-color);
     font-size: 0.9em;
@@ -68,18 +91,19 @@ input:focus, select:focus, textarea:focus {
     row-gap: 0.5em;
 }
 
+.panel {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
 .form-grid {
     display: grid;
     grid-template-columns: auto 1fr;
     row-gap: 0.5em;
     column-gap: 1em;
-
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-}
-
-.form-grid > b {
-    text-align: right;
 }
 
 .form-grid > div {
