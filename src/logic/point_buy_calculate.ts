@@ -11,10 +11,10 @@ import type {
     StandardPersonalSkillName,
     ServantParameterName,
     Rank,
-    Modifier,
     ServantUpkeep,
     ServantClass
 } from './servant'
+import type { ServantInstance } from './servant_instance'
 import {
     ServantClassData,
     Modifier_Minus,
@@ -24,7 +24,6 @@ import {
     Rank_C,
     Modifier_None
 } from './servant'
-import type { ServantInstance } from './servant_instance'
 import {
     AberrantParameterCost,
     AdditionalNoblePhantasmExtraCost,
