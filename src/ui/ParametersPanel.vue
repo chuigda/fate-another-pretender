@@ -79,7 +79,7 @@ const applySecondClassBase = async () => {
     <div class="panel">
         <div class="form-grid">
             <template v-for="parameterName in ServantParameterNames">
-                <b class="button-title">{{ ParameterDescription[parameterName].label }}</b>
+                <b>{{ ParameterDescription[parameterName].label }}</b>
                 <div>
                     <RankModifier :value="servantInstance.parameters[parameterName]" />
                     <RankTooltip v-show="showDetails"
@@ -99,9 +99,3 @@ const applySecondClassBase = async () => {
         </Row>
     </div>
 </template>
-
-<style scoped>
-.button-title {
-    margin-top: 0.25em;
-}
-</style>
