@@ -180,6 +180,20 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
 
             <hr />
 
+            <h3>面板</h3>
+            <div class="grid3">
+                <div><b>筋力:</b> {{ describeRankModifier(servantInstance.parameters.strength) }}</div>
+                <div><b>耐久:</b> {{ describeRankModifier(servantInstance.parameters.endurance) }}</div>
+                <div><b>敏捷:</b> {{ describeRankModifier(servantInstance.parameters.agility) }}</div>
+                <div><b>魔力:</b> {{ describeRankModifier(servantInstance.parameters.magicalEnergy) }}</div>
+                <div><b>幸运:</b> {{ describeRankModifier(servantInstance.parameters.luck) }}</div>
+                <div>
+                    <b>宝具:</b>
+                    {{ npDisplay.length === 0 ? '-' : describeRankModifier(npDisplay[0]!!) }}
+                </div>
+            </div>
+            <hr />
+
             <h3>职阶技能</h3>
             <div v-for="classSkill in classSkillDisplay">
                 <b>{{ classSkill.label }}({{ describeRankModifier(classSkill) }}): </b>
@@ -220,13 +234,19 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
 }
 
 .grid {
+    width: 400px;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 0.25em;
 }
 
-.grid > * {
-    text-align: left;
+.grid3 {
+    width: 400px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 0.25em;
 }
 
 .alter-color {
