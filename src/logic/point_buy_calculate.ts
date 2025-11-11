@@ -124,7 +124,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 
     for (const uniqueClassSkill of servant.uniqueClassSkills) {
         totalCost += uniqueClassSkill.customCost
-        details.push(`- ${uniqueClassSkill.name} ${describeRankModifier(uniqueClassSkill)}: ${uniqueClassSkill.customCost}`)
+        details.push(`- ${uniqueClassSkill.label} ${describeRankModifier(uniqueClassSkill)}: ${uniqueClassSkill.customCost}`)
 
         if (uniqueClassSkill.rank === Rank_EX) {
             exRankCount += 1
@@ -170,7 +170,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 
     for (const uniquePersonalSkill of servant.uniquePersonalSkills) {
         totalCost += uniquePersonalSkill.customCost
-        details.push(`- ${uniquePersonalSkill.name} ${describeRankModifier(uniquePersonalSkill)}: ${uniquePersonalSkill.customCost}`)
+        details.push(`- ${uniquePersonalSkill.label} ${describeRankModifier(uniquePersonalSkill)}: ${uniquePersonalSkill.customCost}`)
 
         if (uniquePersonalSkill.rank === Rank_EX) {
             exRankCount += 1

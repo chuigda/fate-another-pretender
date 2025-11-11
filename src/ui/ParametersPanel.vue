@@ -4,7 +4,7 @@ import type { ServantInstance } from '../logic/servant_instance'
 import { Modifier_None, ServantClassData, ServantParameterNames } from '../logic/servant'
 import { ParameterDescription } from '../logic/servant_description'
 
-import ParameterRankTooltip from './ParameterRankTooltip.vue'
+import RankTooltip from './RankTooltip.vue'
 import RankModifier from '../component/RankModifier.vue'
 import Row from '../component/Row.vue'
 import { inject } from 'vue'
@@ -82,9 +82,10 @@ const applySecondClassBase = async () => {
                 <b class="button-title">{{ ParameterDescription[parameterName].label }}</b>
                 <div>
                     <RankModifier :value="servantInstance.parameters[parameterName]" />
-                    <ParameterRankTooltip v-if="showDetails"
-                                        :description-set="ParameterDescription[parameterName]"
-                                        :rank="servantInstance.parameters[parameterName].rank"
+                    <RankTooltip v-if="showDetails"
+                                 :description-set="ParameterDescription[parameterName]"
+                                 :rank="servantInstance.parameters[parameterName].rank"
+                                 :show-base="true"
                     />
                 </div>
             </template>

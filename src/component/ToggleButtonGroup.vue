@@ -42,6 +42,7 @@ const onValueSelectOrDeselect = (value: T) => {
 <template>
     <div class="toggle-button-group" :style="{ columnCount: values.length }">
         <div v-for="(value, index) in values"
+             class="button"
              :class="{ selected: value === model }"
              @click="onValueSelectOrDeselect(value)">
             {{ labels[index] }}
@@ -51,24 +52,11 @@ const onValueSelectOrDeselect = (value: T) => {
 
 <style scoped>
 .toggle-button-group {
-    border: 1px solid var(--border-color);
     column-fill: balance;
     column-gap: 0;
 }
 
-.toggle-button-group > div {
-    flex: 1;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-    border-left: 1px solid var(--border-color);
-    text-align: center;
-    cursor: pointer;
-    background-color: var(--section-background-color);
-}
-
-.toggle-button-group > div:first-child {
+.toggle-button-group > div:not(:first-child) {
     border-left: none;
 }
 

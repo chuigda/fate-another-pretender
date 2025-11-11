@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ServantInstance } from '../logic/servant_instance'
-import { ServantClassDescription } from '../logic/servant_description'
+import { ServantClassDescription, ServantUpkeepDescription } from '../logic/servant_description'
 
 import ClassSelect from '../component/ClassSelect.vue'
 import MultilineText from '../component/MultilineText.vue'
@@ -46,8 +46,24 @@ const {
                 <ClassSelect v-model="servantInstance.secondClass" :optional="true" />
                 <div v-if="showDetails && servantInstance.secondClass !== undefined">
                     <MultilineText class="tooltip"
-                        :value="ServantClassDescription[servantInstance.secondClass]?.description || '无第二职阶'" />
-                    <div class="tooltip"><b>注意:</b> 需要保有技能<b>双重召唤</b>才能让第二职阶真正意义上产生作用。</div>
+                                   :value="ServantClassDescription[servantInstance.secondClass].description" />
+                    <div class="tooltip">
+                        <b>注意:</b>
+                        至少需要<b> C 级</b>的<b>双重召唤</b>才能让第二职阶真正意义上产生作用，且两个职阶必须都是四骑兵职阶 (Four Cavalry Classes，即 Rider / Caster / Asssassin / Berserker)。
+                    </div>
+                </div>
+            </div>
+
+            <b>维系成本</b>
+            <div>
+                <Row>
+                    <ToggleButtonGroup :values="['free', 'low', 'medium', 'high', 'lethal']"
+                                       :display="['无', '低', '中', '高', '致命']"
+                                       v-model="servantInstance.upkeep"
+                    />
+                </Row>
+                <div v-if="showDetails" class="tooltip">
+                    {{ ServantUpkeepDescription[servantInstance.upkeep].description }}
                 </div>
             </div>
 

@@ -16,6 +16,7 @@ import {
     Rank_C,
     Rank_D
 } from './servant'
+import type { IDescriptionBase } from './servant_description'
 
 export interface ServantInstance {
     name: string,
@@ -42,7 +43,7 @@ export interface ServantParameter {
 export interface ServantClassSkill {
     rank: Rank,
     modifier: Modifier,
-    description: string,
+    description?: string,
 
     customDisplay?: CustomDisplay
 }
@@ -50,15 +51,12 @@ export interface ServantClassSkill {
 export interface ServantStandardPersonalSkill {
     rank: Rank,
     modifier: Modifier,
-    description: string,
+    description?: string,
 
     customDisplay?: CustomDisplay
 }
 
-export interface UniqueSkill {
-    name: string,
-    description: string,
-
+export interface UniqueSkill extends IDescriptionBase {
     rank: Rank,
     modifier: Modifier,
     customCost: number
@@ -77,8 +75,9 @@ export interface NoblePhantasm {
 }
 
 export interface CustomDisplay {
-    displayLabel: string
-    displayRank: string
+    label: string
+    rank: Rank,
+    modifier: Modifier
 }
 
 export const DefaultServantInstance: ServantInstance = {
@@ -96,8 +95,8 @@ export const DefaultServantInstance: ServantInstance = {
         luck: { rank: Rank_D, modifier: Modifier_None }
     },
     classSkills: {
-        'magic-resistance': { rank: Rank_A, modifier: Modifier_None, description: '' },
-        'riding': { rank: Rank_B, modifier: Modifier_None, description: '' }
+        'magic-resistance': { rank: Rank_A, modifier: Modifier_None },
+        'riding': { rank: Rank_B, modifier: Modifier_None }
     },
     uniqueClassSkills: [],
     standardPersonalSkills: {},
