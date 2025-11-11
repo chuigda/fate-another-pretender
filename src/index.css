@@ -54,4 +54,5 @@ input:focus, select:focus, textarea:focus {
 
 .tooltip {
     color: var(--snippet-text-color);
+    font-size: 0.9em;
 }

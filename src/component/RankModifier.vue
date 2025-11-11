@@ -22,7 +22,7 @@ export interface RankModifier {
     modifier: Modifier
 }
 
-const { label, value } = defineProps<{ label: string, value: RankModifier }>()
+const { value } = defineProps<{ value: RankModifier }>()
 const ranks = [Rank_EX, Rank_A, Rank_B, Rank_C, Rank_D, Rank_E]
 const modifiers = [Modifier_Minus, Modifier_Plus, Modifier_Plus2, Modifier_Plus3]
 
@@ -38,7 +38,6 @@ watch(() => value.rank, newRank => {
 
 <template>
     <Row>
-        <b>{{ label }}</b>
         <ToggleButtonGroup :values="ranks"
                            :display="rankLabels"
                            v-model="value.rank"
