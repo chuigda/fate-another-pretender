@@ -60,6 +60,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
             classSignatureSkills.add(skill)
         }
     }
+    console.info(classSignatureSkills)
 
     let exRankCount = 0
 
@@ -137,9 +138,10 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 
     for (const classSkillName of classSignatureSkills) {
         const classSkillCostData = ClassSkillCost[classSkillName]
-        if (classSkillCostData.rebateIfGaveupBy[servant.class] &&
+        if ((classSkillCostData.rebateIfGaveupBy[servant.class] ||
+            (servant.secondClass && classSkillCostData.rebateIfGaveupBy[servant.secondClass])) &&
             servant.classSkills[classSkillName] === undefined) {
-            const rebate = classSkillCostData.rebateIfGaveupBy[servant.class]!!
+            const rebate = classSkillCostData.rebateIfGaveupBy[servant.class] ?? classSkillCostData.rebateIfGaveupBy[servant.secondClass!!]!!
             totalCost += rebate
             const classSkillDescription = ClassSkillDescription[classSkillName]
             details.push(`- 放弃职阶技能 ${classSkillDescription.label}: ${rebate}`)
