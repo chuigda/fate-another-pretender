@@ -15,12 +15,15 @@ export const ServantClasses = [
 
 export type ServantClass = typeof ServantClasses[number]
 
-export type ServantParameterName =
-      'strength'
-    | 'endurance'
-    | 'agility'
-    | 'magicalEnergy'
-    | 'luck'
+export const ServantParameterNames = [
+    'strength',
+    'endurance',
+    'agility',
+    'magicalEnergy',
+    'luck'
+] as const
+
+export type ServantParameterName = typeof ServantParameterNames[number]
 
 export const ClassSkills = [
     'magic-resistance',

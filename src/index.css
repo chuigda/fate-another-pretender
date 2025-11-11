@@ -56,3 +56,34 @@ input:focus, select:focus, textarea:focus {
     color: var(--snippet-text-color);
     font-size: 0.9em;
 }
+
+.content {
+    padding: 1em;
+    padding-bottom: 4em;
+    width: 800px;
+    background-color: var(--body-background-color);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 0.5em;
+    column-gap: 1em;
+
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.form-grid > b {
+    text-align: right;
+}
+
+.form-grid > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25em;
+}
