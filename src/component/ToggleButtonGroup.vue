@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts" generic="T extends any">
 import { computed } from 'vue'
 
 type DisplayObject = { [key: string]: any }
@@ -6,11 +6,13 @@ type DisplayObject = { [key: string]: any }
 const {
     values,
     display,
-    labelField: labelField0
+    labelField: labelField0,
+    defaultValue
 } = defineProps<{
     values: T[],
     display: Record<string, string | DisplayObject> | (string | DisplayObject)[],
-    labelField?: string
+    labelField?: string,
+    defaultValue?: T
 }>()
 
 const labelField = labelField0 ?? 'label'
@@ -27,13 +29,21 @@ const labels = computed(() => {
 })
 
 const model = defineModel<T>()
+
+const onValueSelectOrDeselect = (value: T) => {
+    if (model.value === value && defaultValue !== undefined) {
+        model.value = defaultValue
+    } else {
+        model.value = value
+    }
+}
 </script>
 
 <template>
     <div class="toggle-button-group" :style="{ columnCount: values.length }">
         <div v-for="(value, index) in values"
              :class="{ selected: value === model }"
-             @click="model = value">
+             @click="onValueSelectOrDeselect(value)">
             {{ labels[index] }}
         </div>
     </div>
@@ -55,6 +65,11 @@ const model = defineModel<T>()
     border-left: 1px solid var(--border-color);
     text-align: center;
     cursor: pointer;
+    background-color: var(--section-background-color);
+}
+
+.toggle-button-group > div:first-child {
+    border-left: none;
 }
 
 .toggle-button-group > div.selected {

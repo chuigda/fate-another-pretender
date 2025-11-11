@@ -1,6 +1,8 @@
 import type {
     ClassSkillName,
+    Modifier,
     NoblePhantasmType,
+    Rank,
     ServantClass,
     ServantParameterName,
     ServantUpkeep,
@@ -49,18 +51,26 @@ export const RankDescription: [string, string, string, string, string, string] =
 
 export const ModifierDescription: [string, string, string, string, string] = ['-', '', '+', '++', '+++']
 
+export function rankDescription(rank: Rank): string {
+    return RankDescription[rank + 1]!!
+}
+
+export function modifierDescription(modifier: Modifier): string {
+    return ModifierDescription[modifier + 1]!!
+}
+
 export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     // 三骑士
     saber: {
         label: '剑之骑士 (Saber)',
         description:
-        `Saber 被认为是各方面最均衡的职阶，各项属性都遥遥领先，这也是该职阶的主要要求之一，另一个要求则是因剑而闻名\n` +
+        `Saber 被认为是各方面最均衡的职阶，各项属性都遥遥领先，这也是该职阶的主要要求之一，另一个要求则是因剑而闻名。\n` +
         `通常来说，Saber 被认为是整体实力最强的职阶。几乎可以肯定的是，Saber 能一直战斗到圣杯战争的最后阶段。然而，他们的弱点在于过于直接，除了正面攻击对手之外，几乎无法运用任何其他战术。`
     },
     lancer: {
         label: '枪之骑士 (Lancer)',
         description:
-        `Lancer 不如其他三骑士职阶那么华丽，甚至可能不如其他职阶，但他们非常可靠，擅长本职工作。\n` +
+        `Lancer 的面板没有其他骑士职阶那么华丽，甚至还不如其他非骑士职阶，但他们在本职工作上非常可靠。\n` +
         `成为 Lancer 意味着拥有令人难以置信的敏捷和速度，且善于利用速度优势和打了就跑的战术。\n` +
         `与所有其他职阶不同，他们唯一的职阶技能是对魔力，而这甚至不是他们独有的。`
     },
@@ -139,7 +149,7 @@ export interface IParameterDescription extends IDescriptionBase {
 export const ParameterDescription: Record<ServantParameterName, IParameterDescription> = {
     strength: {
         label: '筋力',
-        description: ``,
+        description: `肉体力量的强度。`,
         ranks: [
             // A 级
             `足以匹敌最强神话怪物的强大力量。即使是普通攻击，其威力也足以媲美某些低阶宝具。`,
@@ -155,7 +165,7 @@ export const ParameterDescription: Record<ServantParameterName, IParameterDescri
     },
     endurance: {
         label: '耐久',
-        description: ``,
+        description: `承受伤害的能力。`,
         ranks: [
             // A 级
             `只有最强宝具的直击才有可能撼动。`,
@@ -171,7 +181,7 @@ export const ParameterDescription: Record<ServantParameterName, IParameterDescri
     },
     agility: {
         label: '敏捷',
-        description: ``,
+        description: `敏捷性和反应速度。`,
         ranks: [
             // A 级
             `能够以音速移动，动作对所有非从者来说看上去都像是瞬移。`,
@@ -187,7 +197,7 @@ export const ParameterDescription: Record<ServantParameterName, IParameterDescri
     },
     magicalEnergy: {
         label: '魔力',
-        description: ``,
+        description: `能够操纵多少魔力。`,
         ranks: [
             // A 级
             `能够使用源自神代的魔术；即使是现代最高级的大魔术也无法与之相比。`,
@@ -203,7 +213,7 @@ export const ParameterDescription: Record<ServantParameterName, IParameterDescri
     },
     luck: {
         label: '幸运',
-        description: ``,
+        description: `运气的好坏。`,
         ranks: [
             // A 级
             `拥有抵抗命运的力量，能躲避即死攻击之类的能力。`,

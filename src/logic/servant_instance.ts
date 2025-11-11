@@ -9,6 +9,13 @@ import type {
     ServantUpkeep,
     StandardPersonalSkillName
 } from './servant'
+import {
+    Modifier_None,
+    Rank_A,
+    Rank_B,
+    Rank_C,
+    Rank_D
+} from './servant'
 
 export interface ServantInstance {
     name: string,
@@ -72,4 +79,37 @@ export interface NoblePhantasm {
 export interface CustomDisplay {
     displayLabel: string
     displayRank: string
+}
+
+export const DefaultServantInstance: ServantInstance = {
+    name: '无名英灵',
+    alignment: ['neutral', 'neutral'],
+    description: '',
+    class: 'saber',
+    secondClass: undefined,
+    upkeep: 'medium',
+    parameters: {
+        strength: { rank: Rank_A, modifier: Modifier_None },
+        endurance: { rank: Rank_B, modifier: Modifier_None },
+        agility: { rank: Rank_B, modifier: Modifier_None },
+        magicalEnergy: { rank: Rank_C, modifier: Modifier_None },
+        luck: { rank: Rank_D, modifier: Modifier_None }
+    },
+    classSkills: {
+        'magic-resistance': { rank: Rank_A, modifier: Modifier_None, description: '' },
+        'riding': { rank: Rank_B, modifier: Modifier_None, description: '' }
+    },
+    uniqueClassSkills: [],
+    standardPersonalSkills: {},
+    uniquePersonalSkills: [],
+    noblePhantasms: [
+        {
+            name: '终极对城大光炮',
+            description: 'Saber 没有光炮那还叫 Saber 吗 —— Chuigda·Whitegive',
+            rank: Rank_A,
+            modifier: Modifier_None,
+            type: 'anti-fortress',
+            customType: ''
+        }
+    ]
 }

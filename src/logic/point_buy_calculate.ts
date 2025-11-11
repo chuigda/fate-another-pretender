@@ -6,7 +6,7 @@ import {
     ServantClassDescription,
     ServantUpkeepDescription,
     StandardPersonalSkillDescription
-} from './description/servant_description_zh_CN'
+} from './servant_description'
 import {
     ClassSkillName,
     StandardPersonalSkillName,
@@ -21,8 +21,7 @@ import {
     Rank_C,
     Modifier_None,
     ServantUpkeep,
-    ServantClass,
-    Rank_E
+    ServantClass
 } from './servant'
 import { ServantInstance } from './servant_instance'
 import {
@@ -216,14 +215,6 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
     }
 
     return [totalCost, details]
-}
-
-function rankDescription(rank: Rank): string {
-    return RankDescription[rank + 1]
-}
-
-function modifierDescription(modifier: Modifier): string {
-    return ModifierDescription[modifier + 1]
 }
 
 interface RankModifier {

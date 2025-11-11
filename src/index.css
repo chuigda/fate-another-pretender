@@ -1,5 +1,5 @@
 body {
-    background-color: var(--body-background-color);
+    background-color: var(--navbar-background-color);
     color: var(--body-text-color);
     font-family: var(--body-font-family);
     margin: 0;
@@ -10,4 +10,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+input, select {
+    width: 20em;
+    box-sizing: border-box;
+
+    font-family: var(--body-font-family);
+    font-size: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    background-color: var(--section-background-color);
+    color: var(--body-text-color);
+}
+
+textarea {
+    font-family: var(--code-font-family);
+    font-size: 1em;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    background-color: var(--section-background-color);
+    color: var(--body-text-color);
+    resize: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--selected-background-color);
+    box-shadow: 0 0 0 2px var(--selected-background-color);
+}
+
+.tooltip {
+    color: var(--snippet-text-color);
 }

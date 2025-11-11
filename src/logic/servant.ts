@@ -6,11 +6,14 @@ export type ServantClassKind =
     | 'aberrant' // 非常规 (Shielder, Ruler, Avenger)
     | 'beast'    // 兽 (Beast)
 
-export type ServantClass =
-      'saber' | 'lancer' | 'archer'                 // 三骑士
-    | 'rider' | 'caster' | 'assassin' | 'berserker' // 四骑兵
-    | 'shielder' | 'ruler' | 'avenger'              // 非常规
-    | 'beast'                                       // 兽
+export const ServantClasses = [
+    'saber', 'lancer', 'archer',
+    'rider', 'caster', 'assassin', 'berserker',
+    'shielder', 'ruler', 'avenger',
+    'beast'
+] as const
+
+export type ServantClass = typeof ServantClasses[number]
 
 export type ServantParameterName =
       'strength'

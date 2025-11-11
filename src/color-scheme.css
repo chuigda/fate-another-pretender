@@ -21,6 +21,7 @@
 
     --snippet-background-color: #afb8c133;
     --snippet-text-color: #57606a;
+    --snippet-highlight-color: #1f6feb;
     --border-color: #d0d7de;
 }
 
@@ -37,7 +38,7 @@
     --selected-text-color: #ffffff;
     --selected-link-color: #ffffff;
     --title-color: #c9d1d9;
-    --link-color: #58a6ff;
+    --link-color: #1f6feb;
 
     --snippet-background-color: #6e768166;
     --snippet-text-color: #8b949e;
