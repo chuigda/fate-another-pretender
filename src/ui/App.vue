@@ -7,6 +7,7 @@ import { DefaultServantInstance } from '../logic/servant_instance'
 import BasicInfoPanel from './BasicInfoPanel.vue'
 import ParametersPanel from './ParametersPanel.vue'
 import ClassSkillPanel from './ClassSkillPanel.vue'
+import PersonalSkillPanel from './PersonalSkillPanel.vue'
 import Row from '../component/Row.vue'
 import ToggleButton from '../component/ToggleButton.vue'
 import Dialog from '../component/Dialog.vue'
@@ -46,6 +47,9 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
 
         <hr />
         <ClassSkillPanel :servant-instance="servantInstance" :show-details="showDetails" />
+
+        <hr />
+        <PersonalSkillPanel :servant-instance="servantInstance" :show-details="showDetails" />
 
         <Dialog v-if="confirmDialogContent">
             <h2>{{ confirmDialogContent.title }}</h2>

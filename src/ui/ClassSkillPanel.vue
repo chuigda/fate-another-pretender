@@ -14,7 +14,13 @@ import type { ClassSkillName, IServantClassData } from '../logic/servant'
 import { AskForConfirmationKey } from './App.vue'
 import Dialog from '../component/Dialog.vue'
 
-const { servantInstance, showDetails } = defineProps<{ servantInstance: ServantInstance, showDetails: boolean }>()
+const {
+    servantInstance,
+    showDetails
+} = defineProps<{
+    servantInstance: ServantInstance,
+    showDetails: boolean
+}>()
 
 const askForConfirmation = inject(AskForConfirmationKey) as AskForConfirmation
 
@@ -99,7 +105,11 @@ const deleteClassSkill = async (classSkillName: ClassSkillName) => {
 }
 
 const deleteUniqueClassSkill = async (index: number) => {
-    const uniqueClassSkill = servantInstance.uniqueClassSkills[index]!!
+    const uniqueClassSkill = servantInstance.uniqueClassSkills[index]
+    if (uniqueClassSkill === undefined) {
+        return
+    }
+
     const confirmed = await askForConfirmation(
         '删除自定义职阶技能',
         `确定要删除自定义职阶技能「${uniqueClassSkill.label}」吗？`

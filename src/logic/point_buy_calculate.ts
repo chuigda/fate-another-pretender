@@ -1,29 +1,31 @@
 import {
     ClassSkillDescription,
-    ModifierDescription,
     ParameterDescription,
-    RankDescription,
     ServantClassDescription,
     ServantUpkeepDescription,
-    StandardPersonalSkillDescription
+    StandardPersonalSkillDescription,
+    modifierDescription,
+    rankDescription
 } from './servant_description'
-import {
+import type {
     ClassSkillName,
     StandardPersonalSkillName,
     ServantParameterName,
-    ServantClassData,
-    Rank_A,
     Rank,
-    Modifier_Minus,
-    Rank_EX,
-    Rank_B,
     Modifier,
-    Rank_C,
-    Modifier_None,
     ServantUpkeep,
     ServantClass
 } from './servant'
-import { ServantInstance } from './servant_instance'
+import {
+    ServantClassData,
+    Modifier_Minus,
+    Rank_EX,
+    Rank_A,
+    Rank_B,
+    Rank_C,
+    Modifier_None
+} from './servant'
+import type { ServantInstance } from './servant_instance'
 import {
     AberrantParameterCost,
     AdditionalNoblePhantasmExtraCost,
@@ -49,9 +51,13 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
     const secondClassData = servant.secondClass ? ServantClassData[servant.secondClass] : undefined
 
     const doubleSummonRank: Rank | 99999 = servant.standardPersonalSkills['double-summon']?.rank ?? 99999
+    const doubleSummonRankTakesEffect =
+        secondClassData !== undefined &&
+        classData.kind === 'cavalry' &&
+        secondClassData.kind === 'cavalry'
 
     const classSignatureSkills = new Set([...classData.classSkills])
-    if (secondClassData && doubleSummonRank <= Rank_B) {
+    if (doubleSummonRankTakesEffect && secondClassData && doubleSummonRank <= Rank_B) {
         for (const skill of secondClassData.classSkills) {
             classSignatureSkills.add(skill)
         }
@@ -64,20 +70,20 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
         const parameter = servant.parameters[parameterName]
         const parameterDescription = ParameterDescription[parameterName]
 
-        let cost
+        let cost = 0
         if (parameter.rank === Rank_EX) {
             [cost, exRankCount] = calculateExRankCost(exRankCount, servant.class)
         } else if (classData.parameterBase) {
             let baseRank = classData.parameterBase[parameterName]
-            if (secondClassData && doubleSummonRank <= Rank_A) {
+            if (doubleSummonRankTakesEffect && doubleSummonRank <= Rank_A) {
                 const secondClassBaseRank = secondClassData.parameterBase![parameterName]
                 baseRank = Math.min(baseRank, secondClassBaseRank) as Rank
             }
-            cost = ParameterCost[baseRank][parameter.rank]
+            cost = ParameterCost[baseRank]!![parameter.rank]!!
         } else if (classData.kind === 'aberrant') {
-            cost = AberrantParameterCost[parameter.rank]
+            cost = AberrantParameterCost[parameter.rank]!!
         } else if (classData.kind === 'beast') {
-            cost = BeastParameterCost[parameter.rank]
+            cost = BeastParameterCost[parameter.rank]!!
         } else {
             throw new Error(`${classDescription.label}职阶 (${servant.class}) 未定义基础参数，也没有可用的参数购点表`)
         }
@@ -85,7 +91,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
         if (parameter.modifier === Modifier_Minus) {
             cost /= 2
         } else if (parameter.modifier !== null && parameter.modifier !== undefined) {
-            cost += ModifierCost[parameter.modifier][parameter.rank]
+            cost += ModifierCost[parameter.modifier]!![parameter.rank]!!
         }
 
         totalCost += cost
@@ -113,7 +119,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
             cost /= 2
         } else if (classSkill.modifier !== Modifier_None) {
             const coefficient = classSkillCostData.isCurse ? -1 : 1
-            cost += coefficient * ModifierCost[classSkill.modifier][classSkill.rank]
+            cost += coefficient * ModifierCost[classSkill.modifier]!![classSkill.rank]!!
         }
 
         totalCost += cost
@@ -159,7 +165,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
         } else if (personalSkill.modifier !== Modifier_None) {
             const isCurse = personalSkillCostData.length === 6 && personalSkillCostData[5] === true
             const coefficient = isCurse ? -1 : 1
-            cost += coefficient * ModifierCost[personalSkill.modifier][personalSkill.rank]
+            cost += coefficient * ModifierCost[personalSkill.modifier]!![personalSkill.rank]!!
         }
 
         totalCost += cost
@@ -183,24 +189,27 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
         details.push(`- 放弃宝具: ${NoblePhantasmAbandonmentRebate}`)
     } else {
         let npCostClass = servant.class
-        if (servant.class !== 'rider' && doubleSummonRank <= Rank_C && servant.secondClass === 'rider') {
+        if (doubleSummonRankTakesEffect &&
+            servant.class !== 'rider' &&
+            doubleSummonRank <= Rank_C &&
+            servant.secondClass === 'rider') {
             npCostClass = 'rider'
         }
         const npCostTable = npCostClass === 'rider' ? NoblePhantasmCostRider : NoblePhantasmCost
 
         for (const np of servant.noblePhantasms) {
-            let cost
+            let cost = 0
 
             if (np.rank === Rank_EX) {
                 [cost, exRankCount] = calculateExRankCost(exRankCount, servant.class)
             } else {
-                cost = npCostTable[np.rank]
+                cost = npCostTable[np.rank]!!
             }
 
             if (np.modifier === Modifier_Minus) {
                 cost /= 2
             } else if (np.modifier !== Modifier_None) {
-                cost += ModifierCost[np.modifier][np.rank]
+                cost += ModifierCost[np.modifier]!![np.rank]!!
             }
 
             totalCost += cost
@@ -239,7 +248,7 @@ function calculateUpkeepRebate(upkeep: ServantUpkeep, rank: Rank, /*out*/ detail
         return 0
     }
 
-    const upkeepCostOrRebate = ServantUpkeepPenaltyOrRebate[upkeep][Math.max(rank, 0)]
+    const upkeepCostOrRebate = ServantUpkeepPenaltyOrRebate[upkeep][Math.max(rank, 0)]!!
     if (upkeepCostOrRebate !== 0) {
         details.push(`  - 由于维系费用等级为“${ServantUpkeepDescription[upkeep].label}”: ${upkeepCostOrRebate}`)
     }

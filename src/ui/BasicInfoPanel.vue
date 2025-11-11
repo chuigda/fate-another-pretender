@@ -38,7 +38,8 @@ const {
             <div>
                 <ClassSelect v-model="servantInstance.class" />
                 <MultilineText v-show="showDetails" class="tooltip"
-                    :value="ServantClassDescription[servantInstance.class].description" />
+                               :value="ServantClassDescription[servantInstance.class].description"
+                />
             </div>
 
             <b>第二职阶</b>
@@ -68,7 +69,7 @@ const {
             </div>
 
             <b>背景故事</b>
-            <textarea v-model="servantInstance.description" rows="8" placeholder="作为英灵的故事和传说。从前有座山，山上有座庙……" />
+            <textarea v-model="servantInstance.description" rows="4" placeholder="作为英灵的故事和传说。从前有座山，山上有座庙……" />
         </div>
     </div>
 </template>
