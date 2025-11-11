@@ -60,7 +60,6 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
             classSignatureSkills.add(skill)
         }
     }
-    console.info(classSignatureSkills)
 
     let exRankCount = 0
 
