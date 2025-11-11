@@ -217,56 +217,58 @@ const copyMarkdown = () => {
 
 <template>
     <div class="content">
-        <div class="content-inner">
-            <h3>基本信息</h3>
-            <div class="grid">
-                <div><b>真名:</b> {{ servantInstance.name || '无名英灵' }}</div>
-                <div><b>阵营:</b> {{ alignmentDescription }}</div>
-                <div><b>职阶:</b> {{ classDescription }}</div>
-                <div><b>维系成本:</b> {{ ServantUpkeepDescription[servantInstance.upkeep].label }}</div>
-            </div>
-            <div class="sub-panel alter-color" v-if="servantInstance.description.length > 0">
-                {{ servantInstance.description }}
-            </div>
-
-            <hr />
-
-            <h3>面板</h3>
-            <div class="grid3">
-                <div><b>筋力:</b> {{ describeRankModifier(servantInstance.parameters.strength) }}</div>
-                <div><b>耐久:</b> {{ describeRankModifier(servantInstance.parameters.endurance) }}</div>
-                <div><b>敏捷:</b> {{ describeRankModifier(servantInstance.parameters.agility) }}</div>
-                <div><b>魔力:</b> {{ describeRankModifier(servantInstance.parameters.magicalEnergy) }}</div>
-                <div><b>幸运:</b> {{ describeRankModifier(servantInstance.parameters.luck) }}</div>
-                <div>
-                    <b>宝具:</b>
-                    {{ npLevelDisplay }}
+        <div class="content-med">
+            <div class="content-inner">
+                <h3>基本信息</h3>
+                <div class="grid">
+                    <div><b>真名:</b> {{ servantInstance.name || '无名英灵' }}</div>
+                    <div><b>阵营:</b> {{ alignmentDescription }}</div>
+                    <div><b>职阶:</b> {{ classDescription }}</div>
+                    <div><b>维系成本:</b> {{ ServantUpkeepDescription[servantInstance.upkeep].label }}</div>
                 </div>
+                <div class="sub-panel alter-color" v-if="servantInstance.description.length > 0">
+                    {{ servantInstance.description }}
+                </div>
+
+                <hr />
+
+                <h3>面板</h3>
+                <div class="grid3">
+                    <div><b>筋力:</b> {{ describeRankModifier(servantInstance.parameters.strength) }}</div>
+                    <div><b>耐久:</b> {{ describeRankModifier(servantInstance.parameters.endurance) }}</div>
+                    <div><b>敏捷:</b> {{ describeRankModifier(servantInstance.parameters.agility) }}</div>
+                    <div><b>魔力:</b> {{ describeRankModifier(servantInstance.parameters.magicalEnergy) }}</div>
+                    <div><b>幸运:</b> {{ describeRankModifier(servantInstance.parameters.luck) }}</div>
+                    <div>
+                        <b>宝具:</b>
+                        {{ npLevelDisplay }}
+                    </div>
+                </div>
+                <hr />
+
+                <h3>职阶技能</h3>
+                <div v-for="classSkill in classSkillDisplay">
+                    <b>{{ classSkill.label }}({{ describeRankModifier(classSkill) }}): </b>
+                    {{ classSkill.description }}
+                </div>
+                <hr />
+
+                <h3>保有技能</h3>
+                <div v-for="personalSkill in personalSkillDisplay">
+                    <b>{{ personalSkill.label }}({{ describeRankModifier(personalSkill) }}): </b>
+                    {{ personalSkill.description }}
+                </div>
+
+                <hr />
+
+                <h3>宝具</h3>
+                <div v-for="np in npDisplay">
+                    <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
+                    {{ np.description }}
+                </div>
+
+                <button class="copy-button" @click="copyMarkdown">📋︎</button>
             </div>
-            <hr />
-
-            <h3>职阶技能</h3>
-            <div v-for="classSkill in classSkillDisplay">
-                <b>{{ classSkill.label }}({{ describeRankModifier(classSkill) }}): </b>
-                {{ classSkill.description }}
-            </div>
-            <hr />
-
-            <h3>保有技能</h3>
-            <div v-for="personalSkill in personalSkillDisplay">
-                <b>{{ personalSkill.label }}({{ describeRankModifier(personalSkill) }}): </b>
-                {{ personalSkill.description }}
-            </div>
-
-            <hr />
-
-            <h3>宝具</h3>
-            <div v-for="np in npDisplay">
-                <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
-                {{ np.description }}
-            </div>
-
-            <button class="copy-button" @click="copyMarkdown">📋︎</button>
         </div>
     </div>
 </template>
@@ -281,6 +283,7 @@ const copyMarkdown = () => {
 
     border: 1px solid var(--border-color);
     padding: 1em;
+    margin: 1em;
     width: 600px;
 
     display: flex;
