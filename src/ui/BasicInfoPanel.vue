@@ -5,6 +5,7 @@ import { ServantClassDescription, ServantUpkeepDescription } from '../logic/serv
 import ClassSelect from '../component/ClassSelect.vue'
 import MultilineText from '../component/MultilineText.vue'
 import ToggleButtonGroup from '../component/ToggleButtonGroup.vue'
+import ToggleButton from '../component/ToggleButton.vue'
 import Row from '../component/Row.vue'
 
 const {
@@ -14,6 +15,23 @@ const {
     servantInstance: ServantInstance,
     showDetails: boolean
 }>()
+
+const toggleCustomClassLabel = () => {
+    if (servantInstance.customClassLabel === undefined) {
+        servantInstance.customClassLabel = ''
+    } else {
+        delete servantInstance.customClassLabel
+    }
+}
+
+const toggleCustomSecondClassLabel = () => {
+    if (servantInstance.customSecondClassLabel === undefined) {
+        servantInstance.customSecondClassLabel = ''
+    } else {
+        delete servantInstance.customSecondClassLabel
+    }
+}
+
 </script>
 
 <template>
@@ -36,7 +54,18 @@ const {
 
             <b>职阶</b>
             <div>
-                <ClassSelect v-model="servantInstance.class" />
+                <Row>
+                    <ClassSelect v-model="servantInstance.class" />
+                    <ToggleButton :model-value="servantInstance.customClassLabel !== undefined"
+                                  @click="toggleCustomClassLabel">
+                        自定义
+                    </ToggleButton>
+                    <input v-if="servantInstance.customClassLabel !== undefined"
+                           type="text"
+                           v-model="servantInstance.customClassLabel"
+                           placeholder="自定义职阶名称"
+                    />
+                </Row>
                 <MultilineText v-show="showDetails" class="tooltip"
                                :value="ServantClassDescription[servantInstance.class].description"
                 />
@@ -44,7 +73,18 @@ const {
 
             <b>第二职阶</b>
             <div>
-                <ClassSelect v-model="servantInstance.secondClass" :optional="true" />
+                <Row>
+                    <ClassSelect v-model="servantInstance.secondClass" :optional="true" />
+                    <ToggleButton :model-value="servantInstance.customSecondClassLabel !== undefined"
+                                  @click="toggleCustomSecondClassLabel">
+                        自定义
+                    </ToggleButton>
+                    <input v-if="servantInstance.customSecondClassLabel !== undefined"
+                           type="text"
+                           v-model="servantInstance.customSecondClassLabel"
+                           placeholder="自定义第二职阶名称"
+                    />
+                </Row>
                 <div v-if="showDetails && servantInstance.secondClass !== undefined">
                     <MultilineText class="tooltip"
                                    :value="ServantClassDescription[servantInstance.secondClass].description" />

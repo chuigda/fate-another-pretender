@@ -24,7 +24,9 @@ export interface ServantInstance {
     description: string,
 
     class: ServantClass,
+    customClassLabel?: string,
     secondClass?: ServantClass,
+    customSecondClassLabel?: string,
     upkeep: ServantUpkeep,
 
     parameters: Record<ServantParameterName, ServantParameter>,

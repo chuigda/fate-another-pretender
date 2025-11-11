@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { computed, type ComputedRef } from 'vue'
-import { type Rank, type Modifier, type ClassSkillName, Rank_EX } from '../logic/servant'
+import type { ComputedRef } from 'vue'
+import { computed } from 'vue'
+import type { Rank, Modifier, ClassSkillName } from '../logic/servant'
 import type { ServantInstance } from '../logic/servant_instance'
-import { ClassSkillDescription, describeRankModifier, NoblePhantasmTypeDescription, ServantClassDescription, ServantUpkeepDescription, StandardPersonalSkillDescription } from '../logic/servant_description'
-import MultilineText from '../component/MultilineText.vue';
-import NoblePhantasm from './NoblePhantasm.vue';
+import { Rank_EX } from '../logic/servant'
+import {
+    ClassSkillDescription,
+    describeRankModifier,
+    NoblePhantasmTypeDescription,
+    ServantClassDescription,
+    ServantUpkeepDescription,
+    StandardPersonalSkillDescription
+} from '../logic/servant_description'
 
 const { servantInstance } = defineProps<{ servantInstance: ServantInstance }>()
 
@@ -30,10 +37,13 @@ const alignmentDescription = computed(() => {
 })
 
 const classDescription = computed(() => {
+    const firstClassLabel = servantInstance.customClassLabel ?? ServantClassDescription[servantInstance.class].labelShort
+
     if (servantInstance.secondClass) {
-        return `${ServantClassDescription[servantInstance.class].labelShort} / ${ServantClassDescription[servantInstance.secondClass].labelShort}`
+        const secondClassLabel = servantInstance.customSecondClassLabel ?? ServantClassDescription[servantInstance.secondClass].labelShort
+        return `${firstClassLabel} / ${secondClassLabel}`
     } else {
-        return ServantClassDescription[servantInstance.class].labelShort
+        return firstClassLabel
     }
 })
 
@@ -42,6 +52,14 @@ interface DisplaySkill {
     rank: Rank,
     modifier: Modifier,
     description: string
+}
+
+const sortFunction = (a: DisplaySkill, b: DisplaySkill): number => {
+    if (a.rank !== b.rank) {
+        return a.rank - b.rank
+    } else {
+        return b.modifier - a.modifier
+    }
 }
 
 const classSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
@@ -81,7 +99,7 @@ const classSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
         })
     }
 
-    return ret
+    return ret.sort(sortFunction)
 })
 
 const personalSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
@@ -121,7 +139,7 @@ const personalSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
         })
     }
 
-    return ret
+    return ret.sort(sortFunction)
 })
 
 interface DisplayNP {
@@ -179,7 +197,7 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
 
             <h3>宝具</h3>
             <div v-for="np in npDisplay">
-                <b>{{ np.label }}({{ np.type }}, {{ describeRankModifier(np) }}): </b>
+                <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
                 {{ np.description }}
             </div>
         </div>

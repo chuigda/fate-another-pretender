@@ -226,11 +226,6 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
     return [totalCost, details]
 }
 
-interface RankModifier {
-    rank: Rank,
-    modifier: Modifier
-}
-
 function calculateExRankCost(exRankCount: number, servantClass: ServantClass): [number, number] {
     if (exRankCount < 3 && ServantClassData[servantClass].kind === 'beast') {
         return [EXLevelCostBeastSpecialOffer, exRankCount + 1]

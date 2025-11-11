@@ -28,6 +28,18 @@ provide(AskForConfirmationKey, askForConfirmation)
 const showDetails = ref(true)
 const servantInstance = ref(deepCopy(DefaultServantInstance))
 
+const newServantInstance = async () => {
+    const confirmed = await askForConfirmation(
+        '新建档案',
+        '确定要新建 Servant 档案吗？这将覆盖当前的 Servant。'
+    )
+    if (!confirmed) {
+        return
+    }
+
+    servantInstance.value = deepCopy(DefaultServantInstance)
+}
+
 const saveToJSON = () => {
     const dataStr = JSON.stringify(servantInstance.value, null, 4)
     const blob = new Blob([dataStr], { type: 'application/json' })
@@ -44,7 +56,7 @@ const saveToJSON = () => {
 const loadFromJSON = async () => {
     const confirmed = await askForConfirmation(
         '加载 Servant',
-        '确定要从文件加载 Servant 吗？这将覆盖当前的 Servant Instance。'
+        '确定要从文件加载 Servant 吗？这将覆盖当前的 Servant。'
     )
     if (!confirmed) {
         return
@@ -89,6 +101,7 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
         <h2>Fate/Another Pretender: Servant Character Card Builder</h2>
 
         <Row>
+            <button @click="newServantInstance">新建档案</button>
             <button @click="loadFromJSON">读取文件</button>
             <button @click="saveToJSON">保存文件</button>
             <ToggleButton v-model="presentMode">展示模式</ToggleButton>
