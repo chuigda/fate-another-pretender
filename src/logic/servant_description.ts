@@ -69,16 +69,22 @@ export function describeRankModifier(rm: RankModifier): string {
     return `${describeRank(rm.rank)}${describeModifier(rm.modifier)}`
 }
 
-export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
+export interface IServantClassDescription extends IDescriptionBase {
+    labelShort: string,
+}
+
+export const ServantClassDescription: Record<ServantClass, IServantClassDescription> = {
     // 三骑士
     saber: {
         label: '剑之骑士 (Saber)',
+        labelShort: 'Saber',
         description:
         `Saber 被认为是各方面最均衡的职阶，各项属性都遥遥领先，这也是该职阶的主要要求之一，另一个要求则是因剑而闻名。\n` +
         `通常来说，Saber 被认为是整体实力最强的职阶。几乎可以肯定的是，Saber 能一直战斗到圣杯战争的最后阶段。然而，他们的弱点在于过于直接，除了正面攻击对手之外，几乎无法运用任何其他战术。`
     },
     lancer: {
         label: '枪之骑士 (Lancer)',
+        labelShort: 'Lancer',
         description:
         `Lancer 的面板没有其他骑士职阶那么华丽，甚至还不如其他非骑士职阶，但他们在本职工作上非常可靠。\n` +
         `成为 Lancer 意味着拥有令人难以置信的敏捷和速度，且善于利用速度优势和打了就跑的战术。\n` +
@@ -86,6 +92,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     },
     archer: {
         label: '弓之骑士 (Archer)',
+        labelShort: 'Archer',
         description:
         `精通远程武器是 Archer 的标志，当然，远程武器也不一定非要是弓。\n` +
         `Archer 们注定要远离御主独立战斗。他们桀骜不驯的天性使得他们不可避免地会反抗自己的御主，只有在令咒的作用下才会真正听从命令。\n` +
@@ -95,6 +102,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     // 四骑兵
     rider: {
         label: '骑兵 (Rider)',
+        labelShort: 'Rider',
         description:
         `Rider 是擅长骑乘的英灵，他们是四骑兵职阶的代表。\n` +
         `Rider 职阶的主要要求是精通使用各种坐骑，因此 Rider 们具有极高的机动性也就不足为奇了。\n` +
@@ -102,6 +110,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     },
     caster: {
         label: '魔术师 (Caster)',
+        labelShort: 'Caster',
         description:
         `被召唤为 Caster 意味着能够使用某种形式的魔术。\n` +
         `通常被认为是所有七个标准职阶中最弱的，甚至连 Assassin 都能对他们构成威胁，但这仅限于物理层面。Caster 真正的力量在于其他地方。\n` +
@@ -109,6 +118,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     },
     assassin: {
         label: '暗杀者 (Assassin)',
+        labelShort: 'Assassin',
         description:
         `Assassin 是最弱的职阶之一，但这是因为他们从来就不是为了公平战斗或与其他从者正面交锋而存在的。\n` +
         `Assassin 通常会秘密行动、使用诡计和遁术，首要目标是敌方御主。\n` +
@@ -116,6 +126,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     },
     berserker: {
         label: '狂战士 (Berserker)',
+        labelShort: 'Berserker',
         description:
         `只有那些在生前曾陷入狂暴的人才能加入 Berserker 的行列。\n` +
         `Berserker 主要由较弱的从者组成，狂化技能可以极大地增强他们，使得他们能与真正的英灵平起平坐。但如果你将一个本已强大的从者再加以狂化，那就是另一回事了。\n` +
@@ -125,12 +136,14 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     // 非常规
     shielder: {
         label: '盾兵 (Shielder)',
+        labelShort: 'Shielder',
         description:
         `Shielder 是专注于保护他人的职阶，要求是具有盾牌和其他类型的防御性武装。\n` +
         `Shielder 的不寻常之处在于他们专注于与其他从者团队合作。除非被召唤的英灵拥有适合单打独斗的特质，否则建议寻找盟友来发挥 Shielder 的优势。`
     },
     ruler: {
         label: '裁定者 (Ruler)',
+        labelShort: 'Ruler',
         description:
         `Ruler 通常是为了应对有人公然违反圣杯战争规则、危及仪式而召唤的。\n` +
         `他们也旨在维护英灵的法则，防止死者统治生者。\n` +
@@ -138,6 +151,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     },
     avenger: {
         label: '复仇者 (Avenger)',
+        labelShort: 'Avenger',
         description:
         `Avenger 是一个以强烈的仇恨和对复仇的执着而闻名的职阶。由于大众的看法，他们真实的自我通常会被严重扭曲。\n` +
         `每个 Avenger 都是独一无二的，因此没有一个放之四海而皆准的策略。所有 Avenger 唯一的共同点就是他们对复仇的追求。`,
@@ -146,6 +160,7 @@ export const ServantClassDescription: Record<ServantClass, IDescriptionBase> = {
     // 兽
     beast: {
         label: '兽 (Beast)',
+        labelShort: 'Beast',
         description:
         `从人理之树的树干中生长出来并试图吞噬它的灾厄之兽。一种罪恶的存在，以一种奇怪、扭曲的方式爱着人类，即使在给人类带来确定的毁灭时也是如此。\n` +
         `这是一种凌驾于从者之上的恶，就像从者凌驾于普通人之上一样。`

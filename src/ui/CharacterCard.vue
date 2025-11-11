@@ -31,9 +31,9 @@ const alignmentDescription = computed(() => {
 
 const classDescription = computed(() => {
     if (servantInstance.secondClass) {
-        return `${ServantClassDescription[servantInstance.class].label} / ${ServantClassDescription[servantInstance.secondClass].label}`
+        return `${ServantClassDescription[servantInstance.class].labelShort} / ${ServantClassDescription[servantInstance.secondClass].labelShort}`
     } else {
-        return ServantClassDescription[servantInstance.class].label
+        return ServantClassDescription[servantInstance.class].labelShort
     }
 })
 
