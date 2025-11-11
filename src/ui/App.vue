@@ -8,10 +8,11 @@ import BasicInfoPanel from './BasicInfoPanel.vue'
 import ParametersPanel from './ParametersPanel.vue'
 import ClassSkillPanel from './ClassSkillPanel.vue'
 import PersonalSkillPanel from './PersonalSkillPanel.vue'
+import NoblePhantasm from './NoblePhantasm.vue'
+import PointBuyCalculator from './PointBuyCalculator.vue'
+import Dialog from '../component/Dialog.vue'
 import Row from '../component/Row.vue'
 import ToggleButton from '../component/ToggleButton.vue'
-import Dialog from '../component/Dialog.vue'
-import NoblePhantasm from './NoblePhantasm.vue'
 
 const confirmDialogContent: Ref<{ title: string, message: string } | undefined> = ref(undefined)
 const confirmResolve: Ref<((value: boolean) => void) | undefined> = ref(undefined)
@@ -54,6 +55,9 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
 
         <hr />
         <NoblePhantasm :servant-instance="servantInstance" :show-details="showDetails" />
+
+        <hr />
+        <PointBuyCalculator :servant-instance="servantInstance" />
 
         <Dialog v-if="confirmDialogContent">
             <h2>{{ confirmDialogContent.title }}</h2>

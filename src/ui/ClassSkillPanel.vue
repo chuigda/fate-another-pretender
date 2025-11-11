@@ -123,7 +123,7 @@ const deleteUniqueClassSkill = async (index: number) => {
 const applyClassBase = async () => {
     await askAndApplyClassData(
         '应用职阶基准',
-        '确定要将属性值设置为当前职阶的基准值吗？这将覆盖当前的属性值。',
+        '确定要采用当前职阶的标准职阶技能组吗？这将覆盖当前的职阶技能。',
         ServantClassData[servantInstance.class]
     )
 }
@@ -135,7 +135,7 @@ const applySecondClassBase = async () => {
 
     await askAndApplyClassData(
         '应用第二职阶基准',
-        '确定要将属性值设置为第二职阶的基准值吗？这将覆盖当前的属性值。',
+        '确定要采用第二职阶的标准职阶技能组吗？这将覆盖当前的职阶技能。',
         ServantClassData[servantInstance.secondClass]
     )
 }

@@ -90,7 +90,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 
         if (parameter.modifier === Modifier_Minus) {
             cost /= 2
-        } else if (parameter.modifier !== null && parameter.modifier !== undefined) {
+        } else if (parameter.modifier !== Modifier_None) {
             cost += ModifierCost[parameter.modifier]!![parameter.rank]!!
         }
 
@@ -139,7 +139,8 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
 
     for (const classSkillName of classSignatureSkills) {
         const classSkillCostData = ClassSkillCost[classSkillName]
-        if (classSkillCostData.rebateIfGaveupBy[servant.class]) {
+        if (classSkillCostData.rebateIfGaveupBy[servant.class] &&
+            servant.classSkills[classSkillName] === undefined) {
             const rebate = classSkillCostData.rebateIfGaveupBy[servant.class]!!
             totalCost += rebate
             const classSkillDescription = ClassSkillDescription[classSkillName]
@@ -250,7 +251,7 @@ function calculateUpkeepRebate(upkeep: ServantUpkeep, rank: Rank, /*out*/ detail
 
     const upkeepCostOrRebate = ServantUpkeepPenaltyOrRebate[upkeep][Math.max(rank, 0)]!!
     if (upkeepCostOrRebate !== 0) {
-        details.push(`  - 由于维系费用等级为“${ServantUpkeepDescription[upkeep].label}”: ${upkeepCostOrRebate}`)
+        details.push(`  - 维系费用等级为“${ServantUpkeepDescription[upkeep].label}”: ${upkeepCostOrRebate}`)
     }
     return upkeepCostOrRebate
 }
