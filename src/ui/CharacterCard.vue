@@ -186,8 +186,11 @@ const copyMarkdown = () => {
           `幸运${describeRankModifier(servantInstance.parameters.luck)} ` +
           `宝具${npLevelDisplay.value}\n`
     md += `\n`
-    md += `${servantInstance.description || '暂无背景故事。'}\n`
-    md += `\n`
+
+    if (servantInstance.description.length !== 0) {
+        md += `${servantInstance.description}\n`
+        md += `\n`
+    }
 
     md += `## 职阶技能\n`
     for (const classSkill of classSkillDisplay.value) {
@@ -222,7 +225,9 @@ const copyMarkdown = () => {
                 <div><b>职阶:</b> {{ classDescription }}</div>
                 <div><b>维系成本:</b> {{ ServantUpkeepDescription[servantInstance.upkeep].label }}</div>
             </div>
-            <div class="sub-panel alter-color">{{ servantInstance.description || '暂无背景故事。' }}</div>
+            <div class="sub-panel alter-color" v-if="servantInstance.description.length > 0">
+                {{ servantInstance.description }}
+            </div>
 
             <hr />
 
