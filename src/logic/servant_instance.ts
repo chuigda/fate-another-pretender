@@ -69,9 +69,7 @@ export interface NoblePhantasm {
     rank: Rank,
     modifier: Modifier,
     type: NoblePhantasmType,
-    customType: string,
-
-    customDisplay?: CustomDisplay
+    customType?: string
 }
 
 export interface CustomDisplay {
@@ -107,8 +105,7 @@ export const DefaultServantInstance: ServantInstance = {
             description: 'Saber 没有光炮那还叫 Saber 吗 —— Chuigda·Whitegive',
             rank: Rank_A,
             modifier: Modifier_None,
-            type: 'anti-fortress',
-            customType: ''
+            type: 'anti-fortress'
         }
     ]
 }

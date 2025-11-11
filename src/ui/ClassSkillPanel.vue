@@ -28,7 +28,7 @@ const toggleCustomDescription = async (classSkill: ServantClassSkill) => {
     if (classSkill.description === undefined) {
         classSkill.description = ''
     } else {
-        const confirmed = await askForConfirmation(
+        const confirmed = classSkill.description === '' || await askForConfirmation(
             '移除自定义描述',
             '确定要移除自定义描述并恢复为标准描述吗？'
         )

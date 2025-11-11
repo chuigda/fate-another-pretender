@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { ServantInstance, ServantStandardPersonalSkill } from '../logic/servant_instance'
 import { computed, inject, ref } from 'vue'
 import { Modifier_None, Rank_B, } from '../logic/servant'
-import type { ServantInstance, ServantStandardPersonalSkill } from '../logic/servant_instance'
 import { StandardPersonalSkillDescription } from '../logic/servant_description'
 
 import Row from '../component/Row.vue'
@@ -28,7 +28,7 @@ const toggleCustomDescription = async (standardPersonalSkill: ServantStandardPer
     if (standardPersonalSkill.description === undefined) {
         standardPersonalSkill.description = ''
     } else {
-        const confirmed = await askForConfirmation(
+        const confirmed = standardPersonalSkill.description === '' || await askForConfirmation(
             '移除自定义描述',
             '确定要移除自定义描述并恢复为标准描述吗？'
         )

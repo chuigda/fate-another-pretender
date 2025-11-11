@@ -59,7 +59,7 @@ const {
             <div>
                 <Row>
                     <ToggleButtonGroup :values="['free', 'low', 'medium', 'high', 'lethal']"
-                                       :display="['无', '低', '中', '高', '致命']"
+                                       :display="ServantUpkeepDescription"
                                        v-model="servantInstance.upkeep"
                     />
                 </Row>
