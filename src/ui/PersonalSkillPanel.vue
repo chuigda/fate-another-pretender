@@ -24,21 +24,6 @@ const {
 
 const askForConfirmation = inject(AskForConfirmationKey) as AskForConfirmation
 
-const toggleCustomDescription = async (standardPersonalSkill: ServantStandardPersonalSkill) => {
-    if (standardPersonalSkill.description === undefined) {
-        standardPersonalSkill.description = ''
-    } else {
-        const confirmed = standardPersonalSkill.description === '' || await askForConfirmation(
-            '移除自定义描述',
-            '确定要移除自定义描述并恢复为标准描述吗？'
-        )
-
-        if (confirmed) {
-            delete standardPersonalSkill.description
-        }
-    }
-}
-
 const toggleCustomDisplay = async (standardPersonalSkill: ServantStandardPersonalSkill) => {
     if (standardPersonalSkill.customDisplay === undefined) {
         standardPersonalSkill.customDisplay = {
@@ -54,6 +39,21 @@ const toggleCustomDisplay = async (standardPersonalSkill: ServantStandardPersona
 
         if (confirmed) {
             delete standardPersonalSkill.customDisplay
+        }
+    }
+}
+
+const toggleCustomDescription = async (standardPersonalSkill: ServantStandardPersonalSkill) => {
+    if (standardPersonalSkill.description === undefined) {
+        standardPersonalSkill.description = ''
+    } else {
+        const confirmed = standardPersonalSkill.description === '' || await askForConfirmation(
+            '移除自定义描述',
+            '确定要移除自定义描述并恢复为标准描述吗？'
+        )
+
+        if (confirmed) {
+            delete standardPersonalSkill.description
         }
     }
 }
@@ -121,13 +121,13 @@ const deleteUniquePersonalSkill = async (index: number) => {
             <Row>
                 <b>{{ StandardPersonalSkillDescription[personalSkillName].label }}</b>
                 <RankModifier :value="personalSkill!!" />
-                <ToggleButton :model-value="personalSkill!!.description !== undefined"
-                              @update:model-value="toggleCustomDescription(personalSkill!!)">
-                    自定描述
-                </ToggleButton>
                 <ToggleButton :model-value="personalSkill!!.customDisplay !== undefined"
                               @update:model-value="toggleCustomDisplay(personalSkill!!)">
                     自定显示
+                </ToggleButton>
+                <ToggleButton :model-value="personalSkill!!.description !== undefined"
+                              @update:model-value="toggleCustomDescription(personalSkill!!)">
+                    自定描述
                 </ToggleButton>
 
                 <button class="right" @click="deletePersonalSkill(personalSkillName)">删除</button>

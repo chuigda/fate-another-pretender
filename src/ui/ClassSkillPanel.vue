@@ -24,21 +24,6 @@ const {
 
 const askForConfirmation = inject(AskForConfirmationKey) as AskForConfirmation
 
-const toggleCustomDescription = async (classSkill: ServantClassSkill) => {
-    if (classSkill.description === undefined) {
-        classSkill.description = ''
-    } else {
-        const confirmed = classSkill.description === '' || await askForConfirmation(
-            '移除自定义描述',
-            '确定要移除自定义描述并恢复为标准描述吗？'
-        )
-
-        if (confirmed) {
-            delete classSkill.description
-        }
-    }
-}
-
 const toggleCustomDisplay = async (classSkill: ServantClassSkill) => {
     if (classSkill.customDisplay === undefined) {
         classSkill.customDisplay = {
@@ -54,6 +39,21 @@ const toggleCustomDisplay = async (classSkill: ServantClassSkill) => {
 
         if (confirmed) {
             delete classSkill.customDisplay
+        }
+    }
+}
+
+const toggleCustomDescription = async (classSkill: ServantClassSkill) => {
+    if (classSkill.description === undefined) {
+        classSkill.description = ''
+    } else {
+        const confirmed = classSkill.description === '' || await askForConfirmation(
+            '移除自定义描述',
+            '确定要移除自定义描述并恢复为标准描述吗？'
+        )
+
+        if (confirmed) {
+            delete classSkill.description
         }
     }
 }
@@ -171,13 +171,13 @@ const askAndApplyClassData = async (
             <Row>
                 <b>{{ ClassSkillDescription[classSkillName].label }}</b>
                 <RankModifier :value="classSkill!!" />
-                <ToggleButton :model-value="classSkill!!.description !== undefined"
-                              @update:model-value="toggleCustomDescription(classSkill!!)">
-                    自定描述
-                </ToggleButton>
                 <ToggleButton :model-value="classSkill!!.customDisplay !== undefined"
                               @update:model-value="toggleCustomDisplay(classSkill!!)">
                     自定显示
+                </ToggleButton>
+                <ToggleButton :model-value="classSkill!!.description !== undefined"
+                              @update:model-value="toggleCustomDescription(classSkill!!)">
+                    自定描述
                 </ToggleButton>
 
                 <button class="right" @click="deleteClassSkill(classSkillName)">删除</button>

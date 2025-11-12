@@ -226,9 +226,6 @@ const copyMarkdown = () => {
                     <div><b>职阶:</b> {{ classDescription }}</div>
                     <div><b>维系成本:</b> {{ ServantUpkeepDescription[servantInstance.upkeep].label }}</div>
                 </div>
-                <div class="sub-panel alter-color" v-if="servantInstance.description.length > 0">
-                    {{ servantInstance.description }}
-                </div>
 
                 <hr />
 
@@ -244,7 +241,14 @@ const copyMarkdown = () => {
                         {{ npLevelDisplay }}
                     </div>
                 </div>
+
                 <hr />
+
+                <template v-if="servantInstance.description.length > 0">
+                    <h3>背景故事</h3>
+                    <div>{{ servantInstance.description }}</div>
+                    <hr />
+                </template>
 
                 <h3>职阶技能</h3>
                 <div v-for="classSkill in classSkillDisplay">
