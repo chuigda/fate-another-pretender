@@ -47,14 +47,14 @@ const classDescription = computed(() => {
     }
 })
 
-interface DisplaySkill {
+interface IDisplay {
     label: string,
     rank: Rank,
     modifier: Modifier,
     description: string
 }
 
-const sortFunction = (a: DisplaySkill, b: DisplaySkill): number => {
+const sortFunction = (a: IDisplay, b: IDisplay): number => {
     if (a.rank !== b.rank) {
         return a.rank - b.rank
     } else {
@@ -62,7 +62,7 @@ const sortFunction = (a: DisplaySkill, b: DisplaySkill): number => {
     }
 }
 
-const classSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
+const classSkillDisplay: ComputedRef<IDisplay[]> = computed(() => {
     const ret = []
     for (const classSkillName of Object.keys(servantInstance.classSkills) as ClassSkillName[]) {
         const classSkill = servantInstance.classSkills[classSkillName]!!
@@ -102,7 +102,7 @@ const classSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
     return ret.sort(sortFunction)
 })
 
-const personalSkillDisplay: ComputedRef<DisplaySkill[]> = computed(() => {
+const personalSkillDisplay: ComputedRef<IDisplay[]> = computed(() => {
     const ret = []
     for (const personalSkillName of Object.keys(servantInstance.standardPersonalSkills) as (keyof typeof servantInstance.standardPersonalSkills)[]) {
         const personalSkill = servantInstance.standardPersonalSkills[personalSkillName]!!
@@ -161,7 +161,8 @@ const npDisplay: ComputedRef<DisplayNP[]> = computed(() => {
             description: np.description
         })
     }
-    return ret
+
+    return ret.sort(sortFunction)
 })
 
 const npLevelDisplay = computed(() => {
