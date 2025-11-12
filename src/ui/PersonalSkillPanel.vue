@@ -89,7 +89,7 @@ const addUniquePersonalSkill = () => {
 const deletePersonalSkill = async (skillName: StandardPersonalSkillName) => {
     const confirmed = await askForConfirmation(
         '删除保有技能',
-        `确定要删除保有技能「${skillName}」吗？`
+        `确定要删除保有技能「${StandardPersonalSkillDescription[skillName].label}」吗？`
     )
 
     if (confirmed) {
