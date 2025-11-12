@@ -99,7 +99,10 @@ export const DefaultServantInstance: ServantInstance = {
         'riding': { rank: Rank_B, modifier: Modifier_None }
     },
     uniqueClassSkills: [],
-    standardPersonalSkills: {},
+    standardPersonalSkills: {
+        'eye-of-the-mind-true': { rank: Rank_B, modifier: Modifier_None },
+        'charisma': { rank: Rank_B, modifier: Modifier_None }
+    },
     uniquePersonalSkills: [],
     noblePhantasms: [
         {
