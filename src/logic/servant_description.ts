@@ -28,7 +28,7 @@ export const ServantUpkeepDescription: Record<ServantUpkeep, IDescriptionBase> =
         `对于没有办法维持其从者的普通人御主来说，这是一个更好的选择，但这只是缓解了他们的魔力危机，不足以完全解决这一点。`
     },
     medium: {
-        label: '中等',
+        label: '中',
         description:
         `维系成本中规中矩的从者。\n` +
         `普通的魔术师能够轻松地维持从者的显现，不过他们在召唤从者时可能会昏倒。\n` +
@@ -325,7 +325,6 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
     },
     'territory-creation': {
         label: '阵地作成',
-        // description: `Prerogative to establish a territory - special terrain that is advantageous to oneself as a magus, for the purposes of collecting magical energy and preparing Magecraft.`,
         description: `建造阵地的能力。阵地即有利于魔术师自身收集魔力、准备魔术的特殊地域。`,
         ranks: [
             // A 级
@@ -441,15 +440,15 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
         description: `被动地随着时间积累魔力，直到复仇成功的能力。它只能提供能量，不能使从者脱离御主。`,
         ranks: [
             // A 级
-            `Slowly accumulate magical energy while the war is going on, but it won't be enough to stay manifested without a Master.`,
+            `随着战争的进行缓慢地回复魔力，但仍然需要御主才能维持现界。`,
             // B 级
-            `Magical energy endless gushes forth in small amounts until revenge is taken instead.`,
+            `无尽的魔法能量以小量不断涌现，直到复仇成功为止。`,
             // C 级
-            `After taking damage, gain an equal amount of magical energy in a singular package.`,
+            `承受伤害时获得等量的魔力。`,
             // D 级
-            `Recovers a miniscule amount of energy during direct combat.`,
+            `在战斗中可持续恢复少量魔力。`,
             // E 级
-            `When using offensive magical abilities, recover a small portion of energy spent on it if its use was successful.`
+            `当使用攻击性的魔术能力时，如果成功，则返还小部分消耗的魔力。`
        ]
     },
     'self-field-defense': {
@@ -457,15 +456,15 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
         description: `盾兵的标志性技能，能够让使用者保护队友甚至整个友军阵营，达到超越人类极限的程度。`,
         ranks: [
             // A 级
-            `Increases the range, tripling it. Whenever allies are about to take damage, it is redirected to the user automatically. All damage done to either the user or their allies is now reduced by half.`,
+            `将范围提升三倍。友方受到的伤害会直接转移到技能持有者。所有对持有者或其友方造成的伤害均减半。`,
             // B 级
-            `Increases the range, doubling it. Whenever the user takes damage, it is also reflected back to the attacker.`,
+            `将范围提升两倍。使用者受到的伤害会反弹给攻击者。`,
             // C 级
-            `Reduces damage taken by every ally in the range of the user's reach by a third. The user himself is not included.`,
+            `范围内所有友方受到的伤害减少三分之一，但技能持有者本人不能受益于这个效果。`,
             // D 级
-            `Allows the user to completely block average attacks. Grant poise that makes the user immovable in combat if they so desire.`,
+            `完全地格挡普通攻击。并且只要技能持有者愿意，就能在战斗中不动如山。`,
             // E 级
-            `Awareness of the position of every ally who is close behind the Servant. Allows to quickly dash to any one of them to intercept most attacks on them.`
+            `能察觉到所有紧随在身后的友方的位置，并能快速冲向其中任何一人，以拦截对其的大部分攻击。`
        ]
     },
     'authority-of-beasts': {
@@ -505,34 +504,34 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
 export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName, ISkillDescription> = {
     'battle-continuation': {
         label: '战斗续行',
-        description: `A Skill which allows you to continue fighting even after receiving mortal wounds. Reduces the mortality rate from any received injuries.`,
+        description: `在战斗中受到致命伤害之后仍能继续战斗的能力，能降低所受任何伤害的致死率。`,
         ranks: [
             // A 级
-            `Makes it possible to fight even with deadly injuries and can remain alive so long as one does not receive a decisive fatal wound.`,
+            `即使受到了致命伤也能继续战斗，只要没有受到决定性的伤害就能保持存活。`,
             // B 级
-            `You are no longer hindered by any injuries and are able to continue fighting as if in perfect condition.`,
+            `无论受了多重的伤害也总是能继续战斗，并且战斗力总是处于完美状态。`,
             // C 级
-            `You just don't know when to give up; allows you to keep fighting without any stamina or magical energy, using pure willpower alone.`,
+            `永不放弃，即使没有精力和魔力也能依靠纯粹的意志力继续战斗。`,
             // D 级
-            `You no longer feel pain at all, but wounds can still weight you down when fighting.`,
+            `不再感受到疼痛，但伤口仍然会在战斗中造成影响。`,
             // E 级
-            `Feelings of pain are numbed for the duration of combat and you are given greater self-control in reactions to it.`
+            `在战斗中麻痹疼痛感，并且在对疼痛的反应上获得更强的控制力。`
        ]
     },
     'charisma': {
         label: '领袖气质',
-        description: `Power of one's personal charm as well as their talent for leading other people. Can be used to increase performance of allies by boosting their morale.`,
+        description: `个人魅力以及领导他人的才能，能通过提升士气来增强盟友的表现。`,
         ranks: [
             // A 级
-            `Level of charisma that charms most enemies, it is possible to convince some opponents to lay down their weapons or team up in certain situations.`,
+            `即使是敌人也会被这样的魅力所吸引，在某些情况下甚至能说服对手放下武器或联手合作。`,
             // B 级
-            `Sufficient enough to lead a nation; morale of military forces and any other allies following you is extremely high.`,
+            `能领导一个国家的能力；大幅提振军队和其他跟随者的士气。`,
             // C 级
-            `Allures people to listen to you and follow you as long as you weren't involved with them in a negative way before.`,
+            `能吸引人们听从并跟随，前提是之前没有与他们有过负面的交集。`,
             // D 级
-            `Forges bonds of true friendship between you and your already existing allies.`,
+            `能与现有的盟友建立真正的友谊。`,
             // E 级
-            `Allows you to lead a group of people, but gives no improvement to their morale.`
+            `能领导一小群人，但无法提升他们的士气。`
        ]
     },
     'mana-burst': {
