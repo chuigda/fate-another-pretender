@@ -8,8 +8,9 @@ const blocks = computed(() => value.split('\n'))
 
 <template>
     <div>
-        <div v-for="(block, index) in blocks" :key="index">
-            {{ block }}
-        </div>
+        <template v-for="(block, index) in blocks" :key="index">
+            <div v-if="block.length !== 0">{{ block }}</div>
+            <br v-else />
+        </template>
     </div>
 </template>

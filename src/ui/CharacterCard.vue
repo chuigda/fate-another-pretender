@@ -12,6 +12,7 @@ import {
     ServantUpkeepDescription,
     StandardPersonalSkillDescription
 } from '../logic/servant_description'
+import MultilineText from '../component/MultilineText.vue'
 
 const { servantInstance } = defineProps<{ servantInstance: ServantInstance }>()
 
@@ -247,7 +248,7 @@ const copyMarkdown = () => {
 
                 <template v-if="servantInstance.description.length > 0">
                     <h3>背景故事</h3>
-                    <div>{{ servantInstance.description }}</div>
+                    <MultilineText :value="servantInstance.description" />
                     <hr />
                 </template>
 
