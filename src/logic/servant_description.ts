@@ -536,7 +536,6 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'mana-burst': {
         label: '魔力放出',
-        // description: `Ability to infuse your weapons and armor with magical energy and instantly expel it. Increases their performance in combat at the cost of greater costs in magical energy.`,\
         description: `向武器和盔甲中注入魔力以并在瞬间释放的能力，能提升战斗中的爆发力，但魔力消耗也会相应增加。`,
         ranks: [
             // A 级
@@ -553,7 +552,6 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'instinct': {
         label: '直感',
-        // description: `The ability to instantly identify the best possible course of action in combat situations.`,
         description: `在战斗中瞬间找到出最佳行动方案的能力。`,
         ranks: [
             // A 级
@@ -602,34 +600,34 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'disengage': {
         label: '重整旗鼓',
-        description: `The ability to withdraw from the midst of combat and reset the battlefield and battle conditions. Used when you need to escape with your life or to not be held off by someone when pursuing a different target.`,
+        description: `能够在战斗中全身而退并重整态势的能力，需要保全性命或者改变追击目标时非常有用。`,
         ranks: [
             // A 级
-            `After escaping, forcibly releases some of the bad status ailments which could've been inflicted on the user of this Skill previously in that battle.`,
+            `在脱离战斗后，强制解除一些在战斗中获得的不良状态。`,
             // B 级
-            `Restores the condition of this Skill to the initial value and instantly heals all light wounds upon a successful escape.`,
+            `在成功脱离战斗后，恢复能力状态至初始值，并立即治愈所有轻伤。`,
             // C 级
-            `Returns battle conditions such as terrain to what they were at the beginning of the battle after escaping.`,
+            `在脱离战斗后，将地形等战斗状况恢复至战斗开始时的状态。`,
             // D 级
-            `Allows you to quickly withdraw from the battlefield in the midst of combat if your Agility is ranked higher than the enemy's; can be attempted once per day.`,
+            `如果敏捷高于敌人，能够在战斗中迅速脱离战场；每天可以尝试一次。`,
             // E 级
-            `Gives knowledge on how to notice possible escaping routes and find an exit from an unknown location.`
+            `能够察觉可能的逃跑路线，并找到从未知地点逃脱的方法。`
        ]
     },
     'bravery': {
         label: '勇猛',
-        description: `The ability to ignore mental interference. Is not compatible with Mad Enhancement, which will either lower Bravery's rank or outright remove it.`,
+        description: `无视精神干扰的能力。与狂化不兼容，后者会降低勇猛的等级，或是直接移除该技能。`,
         ranks: [
             // A 级
-            `Can ignore any magical interference affecting mental capabilities, such as illusions and enchantments both in and outside of combat.`,
+            `能够无视任何影响精神能力的魔术，例如战斗内外施加的幻术和魅惑。`,
             // B 级
-            `Allows one to disregard any mental inference including magical when locked in combat.`,
+            `能够在战斗中无视任何精神干扰，包括魔术。`,
             // C 级
-            `Interference of effects of some Skills like Charisma or Mystic Eyes will be likely ineffective.`,
+            `能够让某些技能（如领袖气质或魔眼）的干扰效果失效。`,
             // D 级
-            `Loss of weapons or limbs causes no panic or confusion, damage is increased when fighting unarmed.`,
+            `失去武器或四肢不会引起恐慌或混乱，且在赤手空拳战斗时伤害会增加。`,
             // E 级
-            `Cannot be coerced or confused by enemy actions or words when in combat.`
+            `在战斗中不会因敌人的行动或言语而影响判断。`
        ]
     },
     'clairvoyance': {
@@ -682,18 +680,18 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'magecraft': {
         label: '魔术',
-        description: `Ability to use modern Thaumaturgy, covering all spells from the current era. Is not a requirement for Casters, as they will be able to use at least some kind of magic regardless of their Skills.`,
+        description: `使用现代魔术的能力，涵盖了当代所有的咒法。对于 Caster 职阶来说，就算没有这个技能，他们也至少能使用某种魔术。`,
         ranks: [
             // A 级
-            `Considered a master magus in using modern mysteries on par with greatest mages of this era.`,
+            `能与当代最伟大的魔术师相提并论的程度。`,
             // B 级
-            `Capable of using modern magecraft, and applying a wide variety of spells using a deep understanding of Thaumaturgy.`,
+            `对现代魔术理论有着深刻的理解，能施展多种类型的魔术。`,
             // C 级
-            `Capable of using orthodox Thaumaturgy, is specialized in a single technique or type of Magecraft.`,
+            `能使用正统的魔术，专精于某一种魔术技巧或类型。`,
             // D 级
-            `Has a deep knowledge behind the theory of modern Thaumaturgy, but only a few of the known spells can be used offensively.`,
+            `对现代魔术理论有着深刻的理解，但真正会用的进攻型魔术不多。`,
             // E 级
-            `Has little understanding behind the magical theory, but knows a couple random useful spells.`
+            `对魔术理论的理解有限，只知道一些零散的实用咒法。`
        ]
     },
     'high-speed-incantation': {
@@ -714,34 +712,35 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'rune-magic': {
         label: '卢恩魔术',
-        description: `Allows one to manipulate and use Norse runes for the purposes of Magecraft and simple combat.`,
+        description: `使用和操纵北欧卢恩符文以施展魔术和进行简单战斗的能力。`,
         ranks: [
             // A 级
-            `Capacity to use 18 Norse runes for a variety of purposes, which gives access to many other skills by proxy and allows one to temporarily raise parameters.`,
+            `能使用十八个卢恩符文以实现多种目的，这些符文能间接地赋予使用者许多其他技能，并能暂时提升各项参数。`,
             // B 级
-            `Can use 18 Norse runes which correspond to effects of some other skills, albeit in a weaker state.`,
+            `能使用十八个卢恩符文，这些符文对应着某些其他技能的效果，尽管效果较弱。`,
             // C 级
-            `Use of a dozen Norse runes with a wide variety of magical effects, unattainable by modern Magecraft.`,
+            `能使用十二个卢恩符文，能实现现代魔术无法企及的多种魔法效果。`,
             // D 级
-            `Knowledge of 5 to 6 runes and an ability to use and combine their effects.`,
+            `能使用五六个卢恩符文，并组合它们的效果。`,
             // E 级
-            `Can use one Norse rune or two at best, which can grant minor magical effects.`
+            `能使用一两个卢恩符文，赋予些许魔法效果。`
        ]
     },
     'throwing': {
         label: '投掷',
-        description: `Expertise in using throwsing weapons of all kinds. Automatically gives you additional appropriate weaponary of your choice to be used for this purpose`,
+        // description: `Expertise in using throwsing weapons of all kinds. Automatically gives you additional appropriate weaponary of your choice to be used for this purpose`,
+        description: `专精于使用各种投掷武器的能力。`,
         ranks: [
             // A 级
-            `Ability to pick up literally anything that can be thrown and use it as an explosive projectile which can harm Servants despite being mundane.`,
+            `能把随手捡来的任何东西变成能爆炸的投掷物，即使是普通物品也能对从者造成伤害。`,
             // B 级
-            `Thrown projectiles have the same destructive power as firearms, typically spelling certain death for human targets.`,
+            `投掷物的破坏力与火器相当，能给人类目标带来致命伤害。`,
             // C 级
-            `Thrown projectiles can cover great distances while keeping the same level of preciseness.`,
+            `能够将物体投掷的更远并保持极高的精度。`,
             // D 级
-            `Superhuman level of accuracy with all existing throwing weapons.`,
+            `使用所有现存的投掷武器时都具有超凡的精准度。`,
             // E 级
-            `Expertise in throwing projectiles of one type, such as daggers, throwing axes and so on.`
+            `专精于某一种类型的投掷武器，例如匕首、飞斧等。`
        ]
     },
     'marksmanship': {
