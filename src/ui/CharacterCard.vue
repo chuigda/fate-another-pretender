@@ -298,7 +298,7 @@ const copyMarkdown = () => {
 }
 
 .grid {
-    width: 400px;
+    width: 450px;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -306,7 +306,7 @@ const copyMarkdown = () => {
 }
 
 .grid3 {
-    width: 400px;
+    width: 450px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
