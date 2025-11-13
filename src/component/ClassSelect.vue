@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ServantClasses, type ServantClass } from '../logic/servant'
-import { ServantClassDescription } from '../logic/servant_description';
+import { ServantClasses, type ServantClass } from '../logic/servant/servant'
+import { ServantClassDescription } from '..//logic/servant/servant_description';
 
 const { optional } = defineProps<{ optional?: boolean }>()
 const servantClass = defineModel<ServantClass>()

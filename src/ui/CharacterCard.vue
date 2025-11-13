@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { ComputedRef } from 'vue'
 import { computed } from 'vue'
-import type { Rank, Modifier, ClassSkillName } from '../logic/servant'
-import type { ServantInstance } from '../logic/servant_instance'
-import { Rank_EX } from '../logic/servant'
+import type { Rank, Modifier, ClassSkillName } from '../logic/servant/servant'
+import type { ServantInstance } from '../logic/servant/servant_instance'
+import { Rank_EX } from '../logic/servant/servant'
 import {
     ClassSkillDescription,
     describeRankModifier,
@@ -11,7 +11,7 @@ import {
     ServantClassDescription,
     ServantUpkeepDescription,
     StandardPersonalSkillDescription
-} from '../logic/servant_description'
+} from '..//logic/servant/servant_description'
 import MultilineText from '../component/MultilineText.vue'
 
 const { servantInstance } = defineProps<{ servantInstance: ServantInstance }>()

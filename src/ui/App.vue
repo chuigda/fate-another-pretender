@@ -2,7 +2,7 @@
 import type { Ref } from 'vue'
 import { provide, ref } from 'vue'
 import { deepCopy } from '../util'
-import { DefaultServantInstance } from '../logic/servant_instance'
+import { DefaultServantInstance } from '../logic/servant/servant_instance'
 
 import BasicInfoPanel from './BasicInfoPanel.vue'
 import ParametersPanel from './ParametersPanel.vue'

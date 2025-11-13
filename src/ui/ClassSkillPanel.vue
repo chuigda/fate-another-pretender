@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, inject, ref } from 'vue'
-import { Modifier_None, Rank_B, ServantClassData, } from '../logic/servant'
-import type { ServantClassSkill, ServantInstance } from '../logic/servant_instance'
-import { ClassSkillDescription } from '../logic/servant_description'
+import { Modifier_None, Rank_B, ServantClassData, } from '../logic/servant/servant'
+import type { ServantClassSkill, ServantInstance } from '../logic/servant/servant_instance'
+import { ClassSkillDescription } from '..//logic/servant/servant_description'
 
 import Row from '../component/Row.vue'
 import RankModifier from '../component/RankModifier.vue'
@@ -10,7 +10,7 @@ import ToggleButton from '../component/ToggleButton.vue'
 import RankTooltip from './RankTooltip.vue'
 
 import type { AskForConfirmation } from './App.vue'
-import type { ClassSkillName, IServantClassData } from '../logic/servant'
+import type { ClassSkillName, IServantClassData } from '../logic/servant/servant'
 import { AskForConfirmationKey } from './App.vue'
 import Dialog from '../component/Dialog.vue'
 

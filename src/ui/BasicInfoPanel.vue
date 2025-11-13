@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ServantInstance } from '../logic/servant_instance'
-import { ServantClassDescription, ServantUpkeepDescription } from '../logic/servant_description'
+import type { ServantInstance } from '../logic/servant/servant_instance'
+import { ServantClassDescription, ServantUpkeepDescription } from '..//logic/servant/servant_description'
 
 import ClassSelect from '../component/ClassSelect.vue'
 import MultilineText from '../component/MultilineText.vue'

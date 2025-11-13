@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { ComputedRef } from 'vue'
 import { computed, ref } from 'vue'
-import type { ServantInstance } from '../logic/servant_instance'
-import { servantPointBuy } from '../logic/point_buy_calculate'
+import type { ServantInstance } from '../logic/servant/servant_instance'
+import { servantPointBuy } from '..//logic/servant/point_buy_calculate'
 
 const { servantInstance } = defineProps<{
     servantInstance: ServantInstance

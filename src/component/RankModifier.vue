@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch } from 'vue';
-import type { Rank, Modifier } from '../logic/servant'
+import type { Rank, Modifier } from '../logic/servant/servant'
 import {
     Modifier_Minus,
     Modifier_None,
@@ -13,7 +13,7 @@ import {
     Rank_D,
     Rank_E,
     Rank_EX
-} from '../logic/servant'
+} from '../logic/servant/servant'
 import ToggleButtonGroup from './ToggleButtonGroup.vue'
 import Row from './Row.vue'
 
