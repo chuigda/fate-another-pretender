@@ -108,6 +108,11 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
             <ToggleButton class="right" v-model="showDetails">显示细节</ToggleButton>
         </Row>
 
+        <Row v-if="showDetails">
+            <a href="https://imgchest.com/p/ej7m32dna4d" target="_blank">规则书</a>
+            <a href="https://github.com/chuigda/fate-another-pretender" target="_blank">GitHub Repository</a>
+        </Row>
+
         <template v-if="!presentMode">
             <hr />
             <BasicInfoPanel :servant-instance="servantInstance" :show-details="showDetails" />

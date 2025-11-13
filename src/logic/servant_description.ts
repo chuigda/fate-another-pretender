@@ -264,7 +264,7 @@ export const ClassSkillDescription: Record<ClassSkillName, ISkillDescription> = 
         description: `得到对魔术抗性的能力。`,
         ranks: [
             // A 级
-            `A 级以下的魔术全部无效化，即使是大魔术也不例外。能短暂地抵抗一划令咒。`,
+            `A 级以下的魔术全部无效化，即使是大魔术和仪礼咒法也不例外。能短暂地抵抗一划令咒。`,
             // B 级
             `咏唱在三节以下的魔术全部无效化，即使是大魔术和仪礼咒法也难以造成伤害。`,
             // C 级
@@ -536,66 +536,68 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'mana-burst': {
         label: '魔力放出',
-        description: `Ability to infuse your weapons and armor with magical energy and instantly expel it. Increases their performance in combat at the cost of greater costs in magical energy.`,
+        // description: `Ability to infuse your weapons and armor with magical energy and instantly expel it. Increases their performance in combat at the cost of greater costs in magical energy.`,\
+        description: `向武器和盔甲中注入魔力以并在瞬间释放的能力，能提升战斗中的爆发力，但魔力消耗也会相应增加。`,
         ranks: [
             // A 级
-            `Even a stick can become a weapon of great power. A normal weapon that is not on the level of a divine Mystery can be destroyed in one blow. Can also raise one's defense several times over.`,
+            `能将随手捡来的木棍变成强力武器的程度。能一击摧毁没有神性级神秘的普通武器。还能将防御力提升数倍。`,
             // B 级
-            `Allows one to create a jet burst of magical energy from their weapon, which can be used as a midrange attack.`,
+            `能从武器中如喷射般地释放出能力，可用作一种中程攻击手段。`,
             // C 级
-            `Infuses the entire body of the Servant with magical energy to temporarily improve their performance in combat.`,
+            `能将全身注入魔力，以暂时提升战斗中的表现。`,
             // D 级
-            `You can use small concentrated bursts of energy at close range for both defensive and offensive purposes.`,
+            `能在近距离内使用小范围的集中魔力，既可用于防御也可用于攻击。`,
             // E 级
-            `Weapons and armor can be infused with magical energy to improve their effectiveness.`
+            `能向武器和盔甲中注入魔力以提升其效能。`
        ]
     },
     'instinct': {
         label: '直感',
-        description: `The ability to instantly identify the best possible course of action in combat situations.`,
+        // description: `The ability to instantly identify the best possible course of action in combat situations.`,
+        description: `在战斗中瞬间找到出最佳行动方案的能力。`,
         ranks: [
             // A 级
-            `Such a high level of instinctual precognition, it is essentially in the realm of subconsciously predicting the course of the entire battle.`,
+            `直觉预知能力极高，几乎能在潜意识中预判整个战斗的进程。`,
             // B 级
-            `It is possible to halve the penalties inflicted by visual and auditory interference by simply guessing where objects are located and will be moved to.`,
+            `能够通过猜测物体的位置及其移动轨迹，将视觉和听觉干扰造成的惩罚减半。`,
             // C 级
-            `Allows you to predict the trajectory of ranged attacks and general directions of melee strikes.`,
+            `能够预判远程攻击的轨迹和近战攻击的大致方向。`,
             // D 级
-            `Gives you instinctive general knowledge on whether or not your attacks will be successful without having to make any of them in the first place.`,
+            `赋予一种本能的常识，能在发动攻击之前就预判其是否会成功。`,
             // E 级
-            `Gives you a vague but reliable danger sense, though how you act upon it is up to you.`
+            `赋予一种模糊但可靠的危险感知能力，但如何运用就全凭自己本事了。`
        ]
     },
     'eye-of-the-mind-true': {
         label: '心眼·真',
-        description: `A simple ability learned through effort and hard work. Heightens discipline and capacity for observation. Increases the potential of making a comeback when fighting a superior enemy.`,
+        description: `通过努力和刻苦学习获得的简单能力，提升观察力和专注力，在面对强敌时有更大的反击潜力。`,
         ranks: [
             // A 级
-            `Capable of considering of all possibilities in a miniscule amount of time close to being instant to escape from a predicament.`,
+            `能够在极短的时间内考虑所有可能性，几乎能瞬间脱离困境。`,
             // B 级
-            `You are capable of calm analysis of the abilities of the opponent as well as the battle conditions even when in danger.`,
+            `即使在危险中，也能冷静分析对手的能力和战斗状况。`,
             // C 级
-            `Gives you the ability to discern all potential risks present at the current point in time.`,
+            `赋予辨别当前所有潜在风险的能力。`,
             // D 级
-            `A firm grasp on the battle conditions that lets you take variables like terrain and bystanders into account when planning your next move.`,
+            `牢牢掌握战斗状况，能将地形和旁观者等因素考虑在内，并用于制定下一步行动计划。`,
             // E 级
-            `Allows one to vaguely guess the true strength of an opponent, even if they are trying to conceal it.`
+            `即使对手尝试隐藏，也能模糊地猜测出其实际的实力。`
        ]
     },
     'eye-of-the-mind-fake': {
         label: '心眼·伪',
-        description: `Unerned counterpart to the true version of this Skill, it likely comes from a blessing given by a superior existence or attributed by the legend.`,
+        description: `依靠天赋而不是努力而获得的心眼，通常是神祇的祝福或是传说赋予的能力。`,
         ranks: [
             // A 级
-            `Allows you to obtain complete measure of your opponent's combat style after only a few exchanges and counter it, rendering all of their normal attacks ineffective if they're not derived from other skills.`,
+            `能够在短时间内完全掌握对手的战斗风格并加以反制，使得对手的普通攻击在没有其他技能辅助的情况下全部失效。`,
             // B 级
-            `The user can prompt a Luck check while in combat, upon passing which all paths that lead to one's guaranteed loss or demise will be instantly removed from consideration.`,
+            `在战斗中能进行幸运检定，若检定成功，所有导致必败或必死的路径都会被瞬间排除在外。`,
             // C 级
-            `When faced with a visual obstruction or opponent's attempt to conceal themselves,you have achance to disregard this impairment and proceed as if you were still clearsighted.`,
+            `在视线受阻或者对手尝试隐藏自己的情况下，有可能无视这些障碍，并继续像视线清晰时一样行动。`,
             // D 级
-            `Grants pre-emptive knowledge of the results of all potential parameter checks to be prompted by you when considering your next move. Allows you to knowwhether you are being watched.`,
+            `在考虑下一步行动时，能预先知道所有可能的参数检定结果。能知道自己是否正被监视。`,
             // E 级
-            `This sense can differentiate between multiple different parties doing so, and to vaguely discern their intent.`
+            `能够区分多个不同目标，并模糊地辨别它们的意图。`
        ]
     },
     'disengage': {
@@ -632,50 +634,50 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'clairvoyance': {
         label: '千里眼',
-        description: 'Visual ability that impacts perception and affects your accuracy when using ranged weaponry. It vastly increases how suitable you are for scouting.',
+        description: `提升感知力和使用远程武器的精确度。也会大幅度提升侦察能力。`,
         ranks: [
             // A 级
-            `Short range prediction of the future or even mind reading becomes possible in certain situations.`,
+            `在某些情况下，能进行小范围的未来预测，甚至还能读取对方内心的想法。`,
             // B 级
-            `Allows one to see targets which are concealed through a Luck check.`,
+            `能通过幸运检定看到隐藏的目标。`,
             // C 级
-            `Capable of keeping track of fast-moving objects within a range of four kilometers on the fly.`,
+            `能在四公里范围内跟踪高速移动的目标。`,
             // D 级
-            `Can sense movements of targets outside of one's line of sight at relatively close range.`,
+            `能在相对较近的范围内感知视线外目标的动向。`,
             // E 级
-            `Range of sight is greatly increased, allows you to see for several kilometers when standing still and concentrating.`
+            `大幅度提升视野范围，站立不动并集中注意力时，能看到数公里之外的目标。`
        ]
     },
     'divinity': {
         label: '神性',
-        description: `One's relation to gods as a Skill. Increases damage and reduces defensive Skills in proportion to Divinity's rank against all enemies whose own Divinity is lower or non-existent by considerable anounts.`,
+        description: `体现与神明关系的技能。能够对神性低于自己的敌人造成更高的伤害，并削弱其防御类技能效果。`,
         ranks: [
             // A 级
-            `An entity closest to an actual god by the virtue of being a descendant of one or a deity in their own right.`,
+            `作为神祇的后裔或自身即为神祇的存在，接近真正的神。`,
             // B 级
-            `A demigod or someone upon whom titles of divinity were projected during their lifetime.`,
+            `半神或在生前被赋予神性称号的人。`,
             // C 级
-            `Level of divinity equivalent to that of a Saint or someone close to a god.`,
+            `圣人或与神明关系密切之人。`,
             // D 级
-            `Rank of divinity granted by the virtue of being related to someone descended from gods.`,
+            `因与神祇后裔有血缘关系而获得的神性。`,
             // E 级
-            `One who is familiar with gods and interacted with them in the past in some way or a remnant of a deity on their own.`
+            `与神明有过某种接触或互动，或者自身是神祇的某种力量残余。`
        ]
     },
     'golden-rule': {
         label: '黄金律',
-        description: `A Skill that refers to the measurement of one's fortune and the ability to acquire wealth.`,
+        description: `体现财富和获取财富能力的技能。`,
         ranks: [
             // A 级
-            `Money flows into your hands seemingly by itself, without you spending any actual effort.`,
+            `财富源源不断地流入手中，不费吹灰之力。`,
             // B 级
-            `Possessions which allows for prestigious and frivolous lifestyle for one's entire life.`,
+            `拥有足以支撑奢华生活的财富。`,
             // C 级
-            `Possesses a treasure of some sort; can be considered rich at this point.`,
+            `拥有某种宝藏；已经是一般意义上富裕的水平了。`,
             // D 级
-            `You can manage your own finances efficiently to always gain some profit.`,
+            `能够高效地管理个人财务，总是能获得一定的利润。`,
             // E 级
-            `Has enough funds to live a moderate life without needing or spending much.`
+            `吃穿不愁的财富水平。`
        ]
     },
     'magecraft': {
@@ -696,18 +698,18 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'high-speed-incantation': {
         label: '高速神言',
-        description: `The Skill used to shorten periods of time spent casting spells and accelerate their rituals.`,
+        description: `能缩短施展魔术所需的时间，并加速仪礼咒法。`,
         ranks: [
             // A 级
             `能以一工程（Single Action）的时间启动大魔术。`,
             // B 级
-            `Spells and rituals which take a lot of time to prepare can be cast on the spot in seconds.`,
+            `需要大量时间准备的魔术和仪礼咒法能在几秒钟内完成。`,
             // C 级
-            `Greater concentration when casting spells; allows one to use magic on the run or while doing something else in parallel.`,
+            `施展魔术时能更好地集中注意力；能在奔跑或进行其他活动时使用魔术。`,
             // D 级
-            `Weak and spells which can already be used quickly can be cast instantly.`,
+            `较弱的魔术和那些本来就能快速施展的魔术能瞬间完成。`,
             // E 级
-            `Increases the overall performance when casting spells, making the chance to make a mistake when using magic near-nonexistant.`
+            `提升施展魔术时的整体表现，使用魔术时几乎不会出错。`
        ]
     },
     'rune-magic': {
