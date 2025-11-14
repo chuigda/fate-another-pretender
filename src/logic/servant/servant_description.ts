@@ -1,4 +1,4 @@
-import type { RankModifier } from '../component/RankModifier.vue'
+import type { IDescriptionBase } from '../common_description'
 import type {
     ClassSkillName,
     Modifier,
@@ -9,11 +9,6 @@ import type {
     ServantUpkeep,
     StandardPersonalSkillName
 } from './servant'
-
-export interface IDescriptionBase {
-    label: string
-    description: string
-}
 
 export const ServantUpkeepDescription: Record<ServantUpkeep, IDescriptionBase> = {
     free: {
@@ -65,7 +60,7 @@ export interface IRankModifier {
     modifier: Modifier
 }
 
-export function describeRankModifier(rm: RankModifier): string {
+export function describeRankModifier(rm: IRankModifier): string {
     return `${describeRank(rm.rank)}${describeModifier(rm.modifier)}`
 }
 
