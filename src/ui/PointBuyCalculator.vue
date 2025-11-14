@@ -2,13 +2,14 @@
 import type { ComputedRef } from 'vue'
 import { computed, ref } from 'vue'
 import type { ServantInstance } from '../logic/servant/servant_instance'
-import { servantPointBuy } from '..//logic/servant/point_buy_calculate'
+import type { ServantPointBuyResult } from '../logic/servant/point_buy_calculate'
+import { servantPointBuy } from '../logic/servant/point_buy_calculate'
 
 const { servantInstance } = defineProps<{
     servantInstance: ServantInstance
 }>()
 
-const pointBuyResult: ComputedRef<string | [number, string[]]> = computed(() => {
+const pointBuyResult: ComputedRef<string | ServantPointBuyResult> = computed(() => {
     try {
         return servantPointBuy(servantInstance)
     } catch (e) {
@@ -32,8 +33,8 @@ const expanded = ref(false)
                 114
             </div>
             <div v-else>
-                <textarea readonly :value="pointBuyResult[1].join('\n')" />
-                合计: {{ pointBuyResult[0] }} 点
+                <textarea readonly :value="pointBuyResult.details.join('\n')" />
+                合计: {{ pointBuyResult.cost }} 点
             </div>
         </div>
     </div>

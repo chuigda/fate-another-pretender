@@ -40,7 +40,12 @@ import {
     StandardPersonalSkillCost
 } from './servant_point_buy'
 
-export function servantPointBuy(servant: ServantInstance): [number, string[]] {
+export interface ServantPointBuyResult {
+    cost: number
+    details: string[]
+}
+
+export function servantPointBuy(servant: ServantInstance): ServantPointBuyResult {
     let totalCost = 0
     const details: string[] = []
 
@@ -223,7 +228,7 @@ export function servantPointBuy(servant: ServantInstance): [number, string[]] {
         details.push(`- 多于 1 个宝具的额外开销: ${additionalCost}`)
     }
 
-    return [totalCost, details]
+    return { cost: totalCost, details }
 }
 
 function calculateExRankCost(exRankCount: number, servantClass: ServantClass): [number, number] {

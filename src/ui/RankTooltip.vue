@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { Rank_EX, type Rank } from '../logic/servant/servant'
-import { describeRank, type IParameterDescription } from '..//logic/servant/servant_description'
+import { describeRank, type IParameterDescription } from '../logic/servant/servant_description'
 
 const { descriptionSet, rank, showBase } = defineProps<{
     descriptionSet: IParameterDescription,

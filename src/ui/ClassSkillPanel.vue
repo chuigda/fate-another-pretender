@@ -2,7 +2,7 @@
 import { computed, inject, ref } from 'vue'
 import { Modifier_None, Rank_B, ServantClassData, } from '../logic/servant/servant'
 import type { ServantClassSkill, ServantInstance } from '../logic/servant/servant_instance'
-import { ClassSkillDescription } from '..//logic/servant/servant_description'
+import { ClassSkillDescription } from '../logic/servant/servant_description'
 
 import Row from '../component/Row.vue'
 import RankModifier from '../component/RankModifier.vue'

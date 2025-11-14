@@ -11,7 +11,7 @@ import {
     ServantClassDescription,
     ServantUpkeepDescription,
     StandardPersonalSkillDescription
-} from '..//logic/servant/servant_description'
+} from '../logic/servant/servant_description'
 import MultilineText from '../component/MultilineText.vue'
 
 const { servantInstance } = defineProps<{ servantInstance: ServantInstance }>()

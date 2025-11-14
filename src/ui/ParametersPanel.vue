@@ -2,7 +2,7 @@
 import type { IServantClassData } from '../logic/servant/servant'
 import type { ServantInstance } from '../logic/servant/servant_instance'
 import { Modifier_None, ServantClassData, ServantParameterNames } from '../logic/servant/servant'
-import { ParameterDescription } from '..//logic/servant/servant_description'
+import { ParameterDescription } from '../logic/servant/servant_description'
 
 import RankTooltip from './RankTooltip.vue'
 import RankModifier from '../component/RankModifier.vue'
