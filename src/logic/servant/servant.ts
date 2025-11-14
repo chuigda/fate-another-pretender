@@ -60,17 +60,17 @@ export const Modifier_Plus = 1 as const
 export const Modifier_Plus2 = 2 as const
 export const Modifier_Plus3 = 3 as const
 
-export interface IServantClassData {
-    kind: ServantClassKind,
-    classSkills: ClassSkillName[],
-    parameterBase?: Record<ServantParameterName, Rank>
-}
-
 const A: Rank = Rank_A
 const B: Rank = Rank_B
 const C: Rank = Rank_C
 const D: Rank = Rank_D
 const E: Rank = Rank_E
+
+export interface IServantClassData {
+    kind: ServantClassKind,
+    classSkills: ClassSkillName[],
+    parameterBase?: Record<ServantParameterName, Rank>
+}
 
 export const ServantClassData: Record<ServantClass, IServantClassData> = {
     saber: {
