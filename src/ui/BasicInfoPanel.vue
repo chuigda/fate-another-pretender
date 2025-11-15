@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import { watch } from 'vue'
+
 import type { ServantInstance } from '../logic/servant/servant_instance'
 import { ServantClassDescription, ServantUpkeepDescription } from '../logic/servant/servant_description'
 
-import ClassSelect from '../component/ClassSelect.vue'
 import MultilineText from '../component/MultilineText.vue'
 import ToggleButtonGroup from '../component/ToggleButtonGroup.vue'
 import ToggleButton from '../component/ToggleButton.vue'
 import Row from '../component/Row.vue'
-import { watch } from 'vue'
+import ClassSelect from './ClassSelect.vue'
 
 const {
     servantInstance,
