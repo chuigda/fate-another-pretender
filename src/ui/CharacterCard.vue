@@ -3,7 +3,7 @@ import type { ComputedRef } from 'vue'
 import { computed } from 'vue'
 
 import type { Rank, Modifier } from '../logic/common'
-import type { ClassSkillName } from '../logic/servant/servant'
+import type { AlignmentAxis1, AlignmentAxis2, ClassSkillName } from '../logic/servant/servant'
 import type { ServantInstance } from '../logic/servant/servant_instance'
 import { Rank_EX } from '../logic/common'
 import { describeRankModifier } from '../logic/common_description'
@@ -14,25 +14,25 @@ import {
     ServantUpkeepDescription,
     StandardPersonalSkillDescription
 } from '../logic/servant/servant_description'
+
 import MultilineText from '../component/MultilineText.vue'
 
 const { servantInstance } = defineProps<{ servantInstance: ServantInstance }>()
 
-const AlignmentDescriptionX = {
+const AlignmentDescriptionX: Record<AlignmentAxis1, string> = {
     'lawful': '秩序',
     'neutral': '中立',
     'chaotic': '混沌'
 }
-const AlignmentDescriptionY = {
+const AlignmentDescriptionY: Record<AlignmentAxis2, string> = {
     'good': '善',
     'neutral': '中立',
-    'evil': '恶'
+    'evil': '恶',
+    'insane': '狂'
 }
 
 const alignmentDescription = computed(() => {
-    if (servantInstance.class === 'berserker' || servantInstance.class === 'avenger') {
-        return `${AlignmentDescriptionX[servantInstance.alignment[0]]} · 狂`
-    } else if (servantInstance.alignment[0] === 'neutral' && servantInstance.alignment[1] === 'neutral') {
+    if (servantInstance.alignment[0] === 'neutral' && servantInstance.alignment[1] === 'neutral') {
         return '中立'
     } else {
         return `${AlignmentDescriptionX[servantInstance.alignment[0]]} · ${AlignmentDescriptionY[servantInstance.alignment[1]]}`
