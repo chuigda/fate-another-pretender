@@ -275,9 +275,8 @@ const copyMarkdown = () => {
                         <b>{{ personalSkill.label }}({{ describeRankModifier(personalSkill) }}): </b>
                         {{ personalSkill.description }}
                     </div>
+                    <hr />
                 </template>
-
-                <hr />
 
                 <template v-if="npDisplay.length !== 0">
                     <h3>宝具</h3>
