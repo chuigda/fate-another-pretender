@@ -254,12 +254,12 @@ const askAndApplyClassData = async (
                 </b>
             </div>
         </div>
-        <Row>
+        <Row style="justify-content: center;">
             <button :disabled="selectedClassSkillAlreadyExists"
                     @click="doAddClassSkill">
                 添加
             </button>
-            <button class="right" @click="showAddClassSkillDialog = false">取消</button>
+            <button @click="showAddClassSkillDialog = false">取消</button>
         </Row>
     </Dialog>
 </template>

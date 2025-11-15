@@ -2,6 +2,9 @@
 import type { Ref } from 'vue'
 import { provide, ref } from 'vue'
 import { deepCopy } from '../util'
+
+import type { ServantClass } from '../logic/servant/servant'
+import { ServantClassData, ServantClasses } from '../logic/servant/servant'
 import { DefaultServantInstance } from '../logic/servant/servant_instance'
 
 import BasicInfoPanel from './BasicInfoPanel.vue'
@@ -14,6 +17,8 @@ import Dialog from '../component/Dialog.vue'
 import Row from '../component/Row.vue'
 import ToggleButton from '../component/ToggleButton.vue'
 import CharacterCard from './CharacterCard.vue'
+import { ClassSkillDescription, ServantClassDescription } from '../logic/servant/servant_description'
+import { ServantTemplates } from '../logic/servant/servant_template'
 
 const confirmDialogContent: Ref<{ title: string, message: string } | undefined> = ref(undefined)
 const confirmResolve: Ref<((value: boolean) => void) | undefined> = ref(undefined)
@@ -28,6 +33,8 @@ provide(AskForConfirmationKey, askForConfirmation)
 const showDetails = ref(true)
 const servantInstance = ref(deepCopy(DefaultServantInstance))
 
+const newServantClass = ref<ServantClass | undefined>(undefined)
+
 const newServantInstance = async () => {
     const confirmed = await askForConfirmation(
         '新建档案',
@@ -37,7 +44,20 @@ const newServantInstance = async () => {
         return
     }
 
-    servantInstance.value = deepCopy(DefaultServantInstance)
+    newServantClass.value = 'saber'
+}
+
+const createServantInstance = () => {
+    if (newServantClass.value === undefined) {
+        return
+    }
+
+    servantInstance.value = deepCopy(ServantTemplates[newServantClass.value])
+    newServantClass.value = undefined
+}
+
+const cancelCreateServantInstance = () => {
+    newServantClass.value = undefined
 }
 
 const saveToJSON = () => {
@@ -108,6 +128,27 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
             <ToggleButton class="right" v-model="showDetails">显示细节</ToggleButton>
         </Row>
 
+        <Dialog v-if="newServantClass !== undefined">
+            <h2>新建档案</h2>
+            <hr />
+            <select>
+                <option v-for="className in ServantClasses"
+                        :value="className"
+                        @click="newServantClass = className as ServantClass">
+                    {{ ServantClassDescription[className].label }}
+                </option>
+            </select>
+            <b class="tooltip hint">职阶技能: {{
+                ServantClassData[newServantClass].classSkills
+                    .map(skill => ClassSkillDescription[skill].label)
+                    .join('，')
+            }}</b>
+            <Row style="justify-content: center">
+                <button @click="createServantInstance">创建</button>
+                <button @click="cancelCreateServantInstance">取消</button>
+            </Row>
+        </Dialog>
+
         <Row v-if="showDetails">
             <a href="https://imgchest.com/p/ej7m32dna4d" target="_blank">规则书</a>
             <a href="https://github.com/chuigda/fate-another-pretender" target="_blank">GitHub Repository</a>
@@ -149,5 +190,12 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
 <style scoped>
 .right {
     margin-left: auto;
+}
+
+.hint {
+    display: block;
+    width: calc(20 * var(--base-font-size));
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
 </style>

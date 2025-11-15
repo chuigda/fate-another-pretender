@@ -192,12 +192,12 @@ const deleteUniquePersonalSkill = async (index: number) => {
                 {{ StandardPersonalSkillDescription[selectedPersonalSkill].description }}
             </div>
         </div>
-        <Row>
+        <Row style="justify-content: center;">
             <button :disabled="selectedPersonalSkillAlreadyExists"
                     @click="doAddPersonalSkill">
                 添加
             </button>
-            <button class="right" @click="showAddPersonalSkillDialog = false">取消</button>
+            <button @click="showAddPersonalSkillDialog = false">取消</button>
         </Row>
     </Dialog>
 </template>
