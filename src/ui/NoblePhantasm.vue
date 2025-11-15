@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import type { ServantInstance } from '../logic/servant/servant_instance'
+import { Modifier_None, Rank_C } from '../logic/common'
 import { NoblePhantasmTypeDescription } from '../logic/servant/servant_description'
+import { AdditionalNoblePhantasmExtraCost, NoblePhantasmAbandonmentRebate } from '../logic/servant/servant_point_buy'
 
-import type { AskForConfirmation } from './App.vue'
-import { AskForConfirmationKey } from './App.vue'
 import RankModifier from '../component/RankModifier.vue'
 import Row from '../component/Row.vue'
 import ToggleButtonGroup from '../component/ToggleButtonGroup.vue'
 import ToggleButton from '../component/ToggleButton.vue'
-import { AdditionalNoblePhantasmExtraCost, NoblePhantasmAbandonmentRebate } from '../logic/servant/servant_point_buy'
-import { Modifier_None, Rank_C } from '../logic/servant/servant'
+
+import type { AskForConfirmation } from './App.vue'
+import { AskForConfirmationKey } from './App.vue'
 
 const {
     servantInstance,

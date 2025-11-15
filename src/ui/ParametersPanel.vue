@@ -1,15 +1,18 @@
 <script setup lang="ts">
+import { inject } from 'vue'
+
 import type { IServantClassData } from '../logic/servant/servant'
 import type { ServantInstance } from '../logic/servant/servant_instance'
-import { Modifier_None, ServantClassData, ServantParameterNames } from '../logic/servant/servant'
+import { Modifier_None } from '../logic/common'
+import { ServantClassData, ServantParameterNames } from '../logic/servant/servant'
 import { ParameterDescription } from '../logic/servant/servant_description'
 
 import RankTooltip from './RankTooltip.vue'
 import RankModifier from '../component/RankModifier.vue'
 import Row from '../component/Row.vue'
-import { inject } from 'vue'
 
-import { AskForConfirmationKey, type AskForConfirmation } from './App.vue'
+import type { AskForConfirmation } from './App.vue'
+import { AskForConfirmationKey } from './App.vue'
 
 const {
     servantInstance,

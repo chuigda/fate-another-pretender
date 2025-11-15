@@ -1,3 +1,6 @@
+import type { Rank } from '../common'
+import { Rank_A, Rank_B, Rank_C, Rank_D, Rank_E } from '../common'
+
 export type ServantUpkeep = 'free' | 'low' | 'medium' | 'high' | 'lethal'
 
 export type ServantClassKind =
@@ -44,21 +47,6 @@ export const ClassSkills = [
 ] as const
 
 export type ClassSkillName = typeof ClassSkills[number]
-
-export type Rank = typeof Rank_EX | typeof Rank_A | typeof Rank_B | typeof Rank_C | typeof Rank_D | typeof Rank_E
-export const Rank_EX = -1 as const
-export const Rank_A = 0 as const
-export const Rank_B = 1 as const
-export const Rank_C = 2 as const
-export const Rank_D = 3 as const
-export const Rank_E = 4 as const
-
-export type Modifier = typeof Modifier_Minus | typeof Modifier_None | typeof Modifier_Plus | typeof Modifier_Plus2 | typeof Modifier_Plus3
-export const Modifier_Minus = -1 as const
-export const Modifier_None = 0 as const
-export const Modifier_Plus = 1 as const
-export const Modifier_Plus2 = 2 as const
-export const Modifier_Plus3 = 3 as const
 
 const A: Rank = Rank_A
 const B: Rank = Rank_B
@@ -217,6 +205,6 @@ export type StandardPersonalSkillName =
 export type NoblePhantasmType = 'anti-unit' | 'anti-army' | 'anti-fortress' | 'anti-world'
 
 export type AlignmentAxis1 = 'lawful' | 'neutral' | 'chaotic'
-export type AlignmentAxis2 = 'good' | 'neutral' | 'evil'
+export type AlignmentAxis2 = 'good' | 'neutral' | 'evil' | 'insane'
 
 export type Alignment = [AlignmentAxis1, AlignmentAxis2]

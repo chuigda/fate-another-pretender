@@ -1,9 +1,7 @@
-import type { IDescriptionBase } from '../common_description'
+import type { IDescriptionBase, IParameterDescription } from '../common_description'
 import type {
     ClassSkillName,
-    Modifier,
     NoblePhantasmType,
-    Rank,
     ServantClass,
     ServantParameterName,
     ServantUpkeep,
@@ -41,27 +39,6 @@ export const ServantUpkeepDescription: Record<ServantUpkeep, IDescriptionBase> =
         `该从者的魔力消耗对御主极其危险，激烈的行动甚至可能导致御主死亡。\n` +
         `御主必须具有非凡的魔力，才能承受这种程度的开销。`
     }
-}
-
-export const RankDescription: [string, string, string, string, string, string] = ['EX', 'A', 'B', 'C', 'D', 'E']
-
-export const ModifierDescription: [string, string, string, string, string] = ['-', '', '+', '++', '+++']
-
-export function describeRank(rank: Rank): string {
-    return RankDescription[rank + 1]!!
-}
-
-export function describeModifier(modifier: Modifier): string {
-    return ModifierDescription[modifier + 1]!!
-}
-
-export interface IRankModifier {
-    rank: Rank,
-    modifier: Modifier
-}
-
-export function describeRankModifier(rm: IRankModifier): string {
-    return `${describeRank(rm.rank)}${describeModifier(rm.modifier)}`
 }
 
 export interface IServantClassDescription extends IDescriptionBase {
@@ -160,10 +137,6 @@ export const ServantClassDescription: Record<ServantClass, IServantClassDescript
         `从人理之树的树干中生长出来并试图吞噬它的灾厄之兽。一种罪恶的存在，以一种奇怪、扭曲的方式爱着人类，即使在给人类带来确定的毁灭时也是如此。\n` +
         `这是一种凌驾于从者之上的恶，就像从者凌驾于普通人之上一样。`
     }
-}
-
-export interface IParameterDescription extends IDescriptionBase {
-    ranks: [string, string, string, string, string]
 }
 
 export const ParameterDescription: Record<ServantParameterName, IParameterDescription> = {

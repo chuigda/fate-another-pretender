@@ -1,9 +1,8 @@
+import type { Rank, Modifier } from '../common'
 import type {
     Alignment,
     ClassSkillName,
-    Modifier,
     NoblePhantasmType,
-    Rank,
     ServantClass,
     ServantParameterName,
     ServantUpkeep,
@@ -15,8 +14,8 @@ import {
     Rank_B,
     Rank_C,
     Rank_D
-} from './servant'
-import type { IDescriptionBase } from './servant_description'
+} from '../common'
+import type { IDescriptionBase } from '../common_description'
 
 export interface ServantInstance {
     name: string,

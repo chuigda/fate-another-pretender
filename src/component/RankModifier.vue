@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { watch } from 'vue';
-import type { Rank, Modifier } from '../logic/servant/servant'
+import { watch } from 'vue'
+
+import type { IRankModifier } from '../logic/common_description'
 import {
     Modifier_Minus,
     Modifier_None,
@@ -13,16 +14,12 @@ import {
     Rank_D,
     Rank_E,
     Rank_EX
-} from '../logic/servant/servant'
+} from '../logic/common'
+
 import ToggleButtonGroup from './ToggleButtonGroup.vue'
 import Row from './Row.vue'
 
-export interface RankModifier {
-    rank: Rank,
-    modifier: Modifier
-}
-
-const { value } = defineProps<{ value: RankModifier }>()
+const { value } = defineProps<{ value: IRankModifier }>()
 const ranks = [Rank_EX, Rank_A, Rank_B, Rank_C, Rank_D, Rank_E]
 const modifiers = [Modifier_Minus, Modifier_Plus, Modifier_Plus2, Modifier_Plus3]
 

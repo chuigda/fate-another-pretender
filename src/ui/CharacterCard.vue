@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import type { ComputedRef } from 'vue'
 import { computed } from 'vue'
-import type { Rank, Modifier, ClassSkillName } from '../logic/servant/servant'
+
+import type { Rank, Modifier } from '../logic/common'
+import type { ClassSkillName } from '../logic/servant/servant'
 import type { ServantInstance } from '../logic/servant/servant_instance'
-import { Rank_EX } from '../logic/servant/servant'
+import { Rank_EX } from '../logic/common'
+import { describeRankModifier } from '../logic/common_description'
 import {
     ClassSkillDescription,
-    describeRankModifier,
     NoblePhantasmTypeDescription,
     ServantClassDescription,
     ServantUpkeepDescription,

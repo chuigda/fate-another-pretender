@@ -1,29 +1,22 @@
+import type { Rank } from '../common'
+import type {
+    ClassSkillName,
+    StandardPersonalSkillName,
+    ServantParameterName,
+    ServantUpkeep,
+    ServantClass
+} from './servant'
+import type { ServantInstance } from './servant_instance'
+import { describeRankModifier } from '../common_description'
 import {
     ClassSkillDescription,
     ParameterDescription,
     ServantClassDescription,
     ServantUpkeepDescription,
-    StandardPersonalSkillDescription,
-    describeRankModifier
+    StandardPersonalSkillDescription
 } from './servant_description'
-import type {
-    ClassSkillName,
-    StandardPersonalSkillName,
-    ServantParameterName,
-    Rank,
-    ServantUpkeep,
-    ServantClass
-} from './servant'
-import type { ServantInstance } from './servant_instance'
-import {
-    ServantClassData,
-    Modifier_Minus,
-    Rank_EX,
-    Rank_A,
-    Rank_B,
-    Rank_C,
-    Modifier_None
-} from './servant'
+import { ServantClassData } from './servant'
+import { Modifier_Minus, Modifier_None, Rank_EX, Rank_A, Rank_B, Rank_C } from '../common'
 import {
     AberrantParameterCost,
     AdditionalNoblePhantasmExtraCost,

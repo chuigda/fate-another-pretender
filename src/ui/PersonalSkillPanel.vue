@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { ServantInstance, ServantStandardPersonalSkill } from '../logic/servant/servant_instance'
 import { computed, inject, ref } from 'vue'
-import { Modifier_None, Rank_B, } from '../logic/servant/servant'
+
+import type { StandardPersonalSkillName } from '../logic/servant/servant'
+import { Modifier_None, Rank_B, } from '../logic/common'
 import { StandardPersonalSkillDescription } from '../logic/servant/servant_description'
 
 import Row from '../component/Row.vue'
@@ -10,7 +12,6 @@ import ToggleButton from '../component/ToggleButton.vue'
 import RankTooltip from './RankTooltip.vue'
 
 import type { AskForConfirmation } from './App.vue'
-import type { StandardPersonalSkillName } from '../logic/servant/servant'
 import { AskForConfirmationKey } from './App.vue'
 import Dialog from '../component/Dialog.vue'
 

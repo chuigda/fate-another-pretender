@@ -7,6 +7,7 @@ import MultilineText from '../component/MultilineText.vue'
 import ToggleButtonGroup from '../component/ToggleButtonGroup.vue'
 import ToggleButton from '../component/ToggleButton.vue'
 import Row from '../component/Row.vue'
+import { watch } from 'vue'
 
 const {
     servantInstance,
@@ -32,6 +33,20 @@ const toggleCustomSecondClassLabel = () => {
     }
 }
 
+watch(() => [servantInstance.class, servantInstance.secondClass], (value, oldValue) => {
+    const [prevClass, prevSecondClass] = oldValue
+    const [newClass, newSecondClass] = value
+
+    const previouslyBerserker = (prevClass === 'berserker' || prevSecondClass === 'berserker')
+    const currentlyBerserker = (newClass === 'berserker' || newSecondClass === 'berserker')
+
+    if (!previouslyBerserker && currentlyBerserker) {
+        servantInstance.alignment[1] = 'insane'
+    } else if (previouslyBerserker && !currentlyBerserker) {
+        servantInstance.alignment[1] = 'neutral'
+    }
+})
+
 </script>
 
 <template>
@@ -44,11 +59,17 @@ const toggleCustomSecondClassLabel = () => {
             <b class="button-title">阵营</b>
             <div>
                 <Row style="column-gap: 0;">
-                    <ToggleButtonGroup :values="['lawful', 'neutral', 'chaotic']" :display="['秩序', '中立', '混沌']"
-                        v-model="servantInstance.alignment[0]" />
+                    <ToggleButtonGroup :values="['lawful', 'neutral', 'chaotic']"
+                                       :display="['秩序', '中立', '混沌']"
+                                       v-model="servantInstance.alignment[0]"
+                    />
                     ·
-                    <ToggleButtonGroup :values="['good', 'neutral', 'evil']" :display="['善', '中立', '恶']"
-                        v-model="servantInstance.alignment[1]" />
+                    <ToggleButtonGroup v-if="servantInstance.alignment[1] !== 'insane'"
+                                       :values="['good', 'neutral', 'evil']"
+                                       :display="['善', '中立', '恶']"
+                                       v-model="servantInstance.alignment[1]"
+                    />
+                    <div v-else>狂</div>
                 </Row>
             </div>
 

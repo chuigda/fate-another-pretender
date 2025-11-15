@@ -41,6 +41,7 @@ export const StandardMasterSkills = [
     'survival',
     'vigilance'
 ] as const
+export type StandardMasterSkills = typeof StandardMasterSkills[number]
 
 export const AdvancedMasterSkills = [
     'tactics',
@@ -53,4 +54,5 @@ export const AdvancedMasterSkills = [
     'magi-diplomacy',
     'servant-negotiation',
     'tracking'
-]
+] as const
+export type AdvancedMasterSkills = typeof AdvancedMasterSkills[number]
