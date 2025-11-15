@@ -196,23 +196,29 @@ const copyMarkdown = () => {
         md += `\n`
     }
 
-    md += `## 职阶技能\n`
-    for (const classSkill of classSkillDisplay.value) {
-        md += `- ${classSkill.label}(${describeRankModifier(classSkill)}): ${classSkill.description}  \n`
+    if (classSkillDisplay.value.length !== 0) {
+        md += `## 职阶技能\n`
+        for (const classSkill of classSkillDisplay.value) {
+            md += `- ${classSkill.label}(${describeRankModifier(classSkill)}): ${classSkill.description}  \n`
+        }
+        md += `\n`
     }
-    md += `\n`
 
-    md += `## 保有技能\n`
-    for (const personalSkill of personalSkillDisplay.value) {
-        md += `- ${personalSkill.label}(${describeRankModifier(personalSkill)}): ${personalSkill.description}  \n`
+    if (personalSkillDisplay.value.length !== 0) {
+        md += `## 保有技能\n`
+        for (const personalSkill of personalSkillDisplay.value) {
+            md += `- ${personalSkill.label}(${describeRankModifier(personalSkill)}): ${personalSkill.description}  \n`
+        }
+        md += `\n`
     }
-    md += `\n`
 
-    md += `## 宝具\n`
-    for (const np of npDisplay.value) {
-        md += `- ${np.label}(${np.type}，${describeRankModifier(np)}): ${np.description}  \n`
+    if (npDisplay.value.length !== 0) {
+        md += `## 宝具\n`
+        for (const np of npDisplay.value) {
+            md += `- ${np.label}(${np.type}，${describeRankModifier(np)}): ${np.description}  \n`
+        }
+        md += `\n`
     }
-    md += `\n`
 
     navigator.clipboard.writeText(md)
 }
@@ -254,26 +260,32 @@ const copyMarkdown = () => {
                     <hr />
                 </template>
 
-                <h3>职阶技能</h3>
-                <div v-for="classSkill in classSkillDisplay">
-                    <b>{{ classSkill.label }}({{ describeRankModifier(classSkill) }}): </b>
-                    {{ classSkill.description }}
-                </div>
+                <template v-if="classSkillDisplay.length !== 0">
+                    <h3>职阶技能</h3>
+                    <div v-for="classSkill in classSkillDisplay">
+                        <b>{{ classSkill.label }}({{ describeRankModifier(classSkill) }}): </b>
+                        {{ classSkill.description }}
+                    </div>
+                    <hr />
+                </template>
+
+                <template v-if="personalSkillDisplay.length !== 0">
+                    <h3>保有技能</h3>
+                    <div v-for="personalSkill in personalSkillDisplay">
+                        <b>{{ personalSkill.label }}({{ describeRankModifier(personalSkill) }}): </b>
+                        {{ personalSkill.description }}
+                    </div>
+                </template>
+
                 <hr />
 
-                <h3>保有技能</h3>
-                <div v-for="personalSkill in personalSkillDisplay">
-                    <b>{{ personalSkill.label }}({{ describeRankModifier(personalSkill) }}): </b>
-                    {{ personalSkill.description }}
-                </div>
-
-                <hr />
-
-                <h3>宝具</h3>
-                <div v-for="np in npDisplay">
-                    <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
-                    {{ np.description }}
-                </div>
+                <template v-if="npDisplay.length !== 0">
+                    <h3>宝具</h3>
+                    <div v-for="np in npDisplay">
+                        <b>{{ np.label }}({{ np.type }}，{{ describeRankModifier(np) }}): </b>
+                        {{ np.description }}
+                    </div>
+                </template>
 
                 <button class="copy-button" @click="copyMarkdown">📋︎</button>
             </div>
