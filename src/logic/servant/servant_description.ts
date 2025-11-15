@@ -696,7 +696,6 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'throwing': {
         label: '投掷',
-        // description: `Expertise in using throwsing weapons of all kinds. Automatically gives you additional appropriate weaponary of your choice to be used for this purpose`,
         description: `专精于使用各种投掷武器的能力。`,
         ranks: [
             // A 级
@@ -713,50 +712,50 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'marksmanship': {
         label: '射击',
-        description: `Skill which represents all of the possible shooting techniques. Only useful if you are using firearms in the first place.`,
+        description: `代表所有射击技巧的技能。只在使用火器的情况下才能生效。`,
         ranks: [
             // A 级
-            `No longer need to see the target to hit it; can operate using only sound and educated guesses alone.`,
+            `即使看不见目标也能百步穿杨，甚至可以仅凭声音和经验进行射击。`,
             // B 级
-            `Capable of perfectly hitting a target with a firearm, even while on the move.`,
+            `即使在移动中也能完美地命中目标。`,
             // C 级
-            `Level of a master sniper who can hit their target from many kilometers away.`,
+            `能从数公里外精准地狙击目标。`,
             // D 级
-            `Includes all possible firearms throughout human history.`,
+            `能使用人类历史上所有已知的火器。`,
             // E 级
-            `Can handle any firearm of the age one was born in with an above average skill.`
+            `能以高于平均水平的技能使用自己生活年代的任何火器。`
        ]
     },
     'monstrous-strength': {
         label: '怪力',
-        description: `Skill which represents one's monstrous heritage. It allows Servants to tap into their monstrous side, temporarily increasing their Strength parameter, depending on the ranking of this Skill.`,
+        description: `象征怪物血统的技能，能让从者借助其怪物的一面，短暂地提升力量参数，提升幅度取决于该技能的等级。`,
         ranks: [
             // A 级
-            `Can temporarily turn into a true mythical monster, incorporating their powers and strength.`,
+            `能够暂时变成真正的神话怪物，并继承其力量和能力。`,
             // B 级
-            `It is possible to tap into a full strength of a monster while staying in a normal human form.`,
+            `能够在保持普通人类形态的同时，发挥出怪物的全部力量。`,
             // C 级
-            `Some bodyparts are permanently replaced with monstrous alternatives.`,
+            `能够使某些身体部位永久地变成怪物的形态。`,
             // D 级
-            `Can temporarily augment some bodyparts with properties of a monster, changing their appearance and increasing their physical capabilities.`,
+            `能够暂时地将某些身体部位变成怪物的形态，改变其外观并提升其身体能力。`,
             // E 级
-            `While one still appears as a normal human, their endurance and vitality more resembles that of a monster.`
+            `虽然外表仍然像普通人类，但耐力和生命力更像怪物。`
        ]
     },
     'protection-from-arrows': {
         label: '避矢的加护',
-        description: `Skill which represents your defense against projectiles and any other ranged attacks. Only takes the projectiles into account, so it doesn't help against special abilities.`,
+        description: `提供对投射物或者远程攻击的防御能力。只对投射物有效，无法防御某些特殊能力，如区域性效果、大范围 Reach。`,
         ranks: [
             // A 级
-            `Any ranged attack is nullified effortlessly regardless of whether it is anticipated or not.`,
+            `能轻松地化解任何远程攻击，不论是否有所预料。`,
             // B 级
             `只要用眼睛确认了攻击对象，无论怎样的远距离攻击都可以闪避或者拦截。`,
             // C 级
-            `Can deal with any projectiles that do not depend on Magecraft, as long as youcan track themwith your eyes.`,
+            `只要能用眼睛追踪投射物，就能应对任何非魔术的投射物。`,
             // D 级
-            `By using weaponry or improvised means you can block singular ranged attacks, including bullets.`,
+            `能够使用武器或者其他手段格挡单一的远程攻击，包括子弹。`,
             // E 级
-            `Can notice most arrows and similar projectiles before they reach you, giving you a chance to dodge them.`
+            `能在大多数箭矢和类似的投射物到达之前察觉到它们，从而有机会躲避它们。`
        ]
     },
     'self-modification': {
@@ -793,34 +792,34 @@ export const StandardPersonalSkillDescription: Record<StandardPersonalSkillName,
     },
     'military-tactics': {
         label: '军略',
-        description: `Tactical knowledge used not for small one-on-one conflicts, but for those where many people are involved, preferably entire armies. Gives bonus modifiers in dealing with Anti-Army Noble Phantasms.`,
+        description: `并非用于小规模一对一战斗的战术知识，而是用于大规模冲突、乃至整支军队的战术知识。在应对对军宝具时提供加成。`,
         ranks: [
             // A 级
-            `Genius of strategy and planning, capable of making plans that take into account even random events, bordering on precognition.`,
+            `战略和规划的天才，制定出的计划甚至连随机事件都能考虑在内，几乎接近预知未来的程度。`,
             // B 级
-            `Masterful insight in strategy and tactics; provides bonuses when using an Anti-Army Noble Phantasm or when fighting against it.`,
+            `对战略和战术有着精湛的洞察力；在使用对军宝具或应对对军宝具时提供加成。`,
             // C 级
-            `Capacity to wage wars of attrition and lead armies on either defensive and offensive.`,
+            `能够进行消耗战，并在进攻和防守中领导军队。`,
             // D 级
-            `Can mobilize armies and lead them in battle with an above average skill.`,
+            `能够动员军队并以高于平均水平的程度领导它们作战。`,
             // E 级
-            `Theoretical knowledge of strategy, but no experience of using it in practical application; level of an armchair general.`
+            `具备战略的理论知识，但缺乏实际应用经验；相当于纸上谈兵的将领水平。`
        ]
     },
     'knight-tactics': {
         label: '骑士的武略',
-        description: `Battle methodology which lets you grasp the flow of battle and induce your enemy to make a mistake, which you will exploit later on, even if they are superior to you in strength.`,
+        description: `即使对手在实力上超过自己，也能在战斗中把握战斗节奏、诱导对手犯错并加以利用的方法论。`,
         ranks: [
             // A 级
-            `Opponents subconsciously make mistakes in their plans just by being in your presence.`,
+            `只要对手在场，就会在潜意识中犯下策略上的的错误。`,
             // B 级
-            `Can cause an opponent to make a check failure in their next move through a simple conversation.`,
+            `只要进行简单的对话，就能让对手在下一次行动中检定失败。`,
             // C 级
-            `Imposes penalties on opponents more powerful than yourself during their parameter checkswhen in direct contact.`,
+            `在与实力强于自己的对手直接接触时，能对其参数检定施加惩罚。`,
             // D 级
-            `Weaker opponents can be coerced to fight according to the code of honor and rules as long as you adhere to it yourself.`,
+            `只要自己遵守骑士道和规则，就能强迫实力较弱的对手也遵守它们。`,
             // E 级
-            `Allows one to observe when their opponent has made a mistake to wager on a momentary chance of victory.`
+            `能够察觉对手犯错的时机，并抓住稍纵即逝的取胜机会。`
        ]
     },
     'mystic-eyes': {
@@ -939,7 +938,7 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'eye-for-art': {
         label: '艺术审美',
-        description: `对艺术作品、美术品的执着心，无论是何种形式的作品，总是能看穿其真正的加值。`,
+        description: `对艺术作品、美术品的执着心，无论是何种形式的作品，总是能看穿其真正的价值。`,
         ranks: [
             // A 级
             `The chance to figure out the name of a Noble Phantasm by seeing it is increased to very high values.`,
@@ -1019,7 +1018,7 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'innocent-monster': {
         label: '无辜的怪物',
-        description: `Skill of those whose legend was distorted by an unfair reputation and were regarded as monsters by the public after their death. Point gain works the same way as Mad Enchantment.`,
+        description: `那些传说因不公正的名誉而被扭曲，死后被公众视为怪物的人的技能。这是一个诅咒技能，选择它会返还点数。`,
         ranks: [
             // A 级
             `Forces the instincts and will of the monster of the legend into your body. You have to constantly struggle to keep control and remain your old self.`,
@@ -1052,18 +1051,18 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'mental-pollution': {
         label: '精神污染',
-        description: `Twisted mentality that purges the mind of the user of any foreign interference at a horrible cost. Cannot be taken together with Mad Enhancement, as this Skill will counteract any bonuses gained that way and derank it. Point gain works the same.`,
+        description: `扭曲的心态，以可怕的代价清除思想中的任何外来干扰。与狂化不兼容，后者会降低精神污染的等级。这是一个诅咒技能，选择它会返还点数。`,
         ranks: [
             // A 级
-            `由于精神错乱，能够以高机率屏蔽精神干涉系的魔术。但是，不具备同等级精神污染的人物无法与其沟通。`,
+            `由于精神错乱，能够以高机率屏蔽精神干涉系的魔术。不具备同等级精神污染的人物将无法沟通。`,
             // B 级
-            `Any mental interference that wasn't negated instantly will be slowly cancelled over time. It is now impossible to come to a mutual understanding with anyone unless they have Mental Pollution too.`,
+            `未能被即时抵御的精神干涉也会随着时间的推移缓慢消除。不具备精神污染的人物将无法沟通。`,
             // C 级
-            `Chance to resist mental interference is medium. If the Master has Evil alignment or acts cruelly towards you, this Skill temporarily ranks up without you gaining any points (can't go higher than from C to B).`,
+            `中等程度的抵御精神干涉的能力。如果御主具有邪恶属性并对从者残酷行事，这一技能的等级会短暂提升（不能提升到 B 级以上）`,
             // D 级
-            `Twists your view of reality, causing random hallucinations. Any mental interference that wasn't negated instantly will be reduced.`,
+            `所看到的现实变得扭曲，幻觉随机出现。未能即时抵御的精神干涉也会被削弱。`,
             // E 级
-            `Understanding ordinary people becomes difficult unless they are unusual or quirky. Gives a small but solid chance to resist any mental interference.`
+            `言语行为对普通人来说变得难以理解，有一定几率抵御精神干涉。`
        ]
     },
     'combination': {
@@ -1084,18 +1083,18 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'imperial-privilege': {
         label: '皇帝的特权',
-        description: `Skill of monarchs of the highest order. If one insists to be able to perform an act that is supposed to be impossible for them, this Skill will temporarily grant them the ability to succeed at it.`,
+        description: `身为君主所具有的能力，如果坚信自己能做到某件事，那么就会获得一项与之相关的技能，从而使得不可能变为可能。`,
         ranks: [
             // A 级
-            `The pool is expanded to 7 Skills. Even inherent abilities like Magic Resistance or Divinity can be emulated, with Double Summon and Combination being only exceptions.`,
+            `备选项增加到七项，甚至可以模仿魔力抵抗、神性等保有技能，唯独“双重召唤”和“结合”除外。`,
             // B 级
-            `Expands the pool to 5 Skills and allows ranks B and below. The pool can now include Class Skills of the seven standard Classes.`,
+            `备选项增加到五项，等级限制提升到 B 级，并且可以选择七大职阶的职阶技能。`,
             // C 级
-            `Gives you a pool of 3 Personal Skills of rank C or below of your choice which can be accessed one at a time. Cannot include inherent abilities such as Divinity or Mystic Eyes or other in a similar vein.`,
+            `选择 C 级或以下的三项保有技能作为备选项，每次可以使用其中一项。魔眼、神性等特殊能力无法用这种方式取得。`,
             // D 级
-            `When in combat, allows you to obtain a random Skill of any rank below C. The Skill will disappear upon the end of engagement.`,
+            `在战斗中能随机取得一项 C 级或以下的技能，该技能会在战斗结束后消失。`,
             // E 级
-            `Allows you to freely and masterfully use mundane skills you have no expertise in, as long as they have no relation to combat.`
+            `能够自由地熟练使用任何与战斗无关的普通技能。`
        ]
     },
     'double-summon': {
