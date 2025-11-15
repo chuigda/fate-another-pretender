@@ -954,18 +954,18 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'torture-techniques': {
         label: '拷问技术',
-        description: `Expertise at inflicting pain and using specifically devised tools for that end.`,
+        description: `专门用于施加痛苦的专业知识，以及使用特定工具的能力。`,
         ranks: [
             // A 级
-            `When targeting enemies with a specific trait (gender, Class or anything similar of your choice), the user obtains two plus modifiers to strength.`,
+            `以具有特定特征的敌人（性别、职阶或者其他特性）为目标时，力量获得 ++ 补正。`,
             // B 级
-            `Increased sadism allows the user to recover their own health upon a critical hit.`,
+            `强烈的施虐倾向，能够在造成暴击时回复自身的生命值。`,
             // C 级
-            `The enemy passively continues taking damage from every wound they've got by a torture tool. Gives a plus modifier to strength when fighting wounded opponents.`,
+            `敌人在受到刑具造成的每次伤害后，都会持续受到伤害。在与受伤的对手战斗时力量还会获得加成。`,
             // D 级
-            `Every landed attack causes shock to the victim, which adds mental interference and affects their decision making.`,
+            `每次命中都会对冲击受害者，造成精神干扰并影响其决策能力。`,
             // E 级
-            `Allows to use torture tools with the same effectiveness as a normal weapon.`
+            `能将刑具发挥出和普通武器一样的效力。`
        ]
     },
     'subversive-activities': {
@@ -1021,15 +1021,14 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
         description: `那些传说因不公正的名誉而被扭曲，死后被公众视为怪物的人的技能。这是一个诅咒技能，选择它会返还点数。`,
         ranks: [
             // A 级
-            `Forces the instincts and will of the monster of the legend into your body. You have to constantly struggle to keep control and remain your old self.`,
+            `传说中怪物的本能和意志强行渗透到身体中，必须不断地挣扎以保持原本的自我。`,
             // B 级
-            `Personality traits of the monster from the associated legend bleed over into you. This disparity leads to mental trauma at worst and self-loathing at best.`,
+            `受到传说中怪物的特性渗透，导致严重的精神创伤，还会带来自我厌恶感。`,
             // C 级
-            `The features granted by the legend are permanently exaggerated and monsterified. Using your other Personal Skills becomes more difficult.`,
+            `传说赋予的特征被永久性地夸大和怪物化。使用其他保有技能变得更加困难。`,
             // D 级
-            `Affects your looks to make you appear to be the subject of that evil legend.`,
+            `影响外观，看起来就像是某个邪恶传说中的大反派。`,
             // E 级
-            // `Associates you with an evil legend of your choice. Has no definitive negative effects other than causing people to react like "Oh, are you that guy from ...?".`
             `将从者与邪恶的传说联系起来。没有什么决定性的副作用，但会让人产生“哦，你是那个传说中的……？”之类的反应。`
        ]
     },
@@ -1099,18 +1098,18 @@ through sound. Its victims can resist it not only through Magic Resistance, but 
     },
     'double-summon': {
         label: '双重召唤',
-        description: `Rare Skill that signifies a Servant's allegiance to two Classes at once. Only works for Cavalry Classes, both for the original one and the additional one.`,
+        description: `一种罕见的技能，从者同时属于两个职阶。两个职阶必须都是四骑兵职阶才能生效。`,
         ranks: [
             // A 级
-            `Full attunement to the second Cavalry Class of your choice. Allows you to freely switch between your normal costs for any Parameter and those of the other Class at will.`,
+            `能够完全适应第二职阶的能力，为参数购点时可以自由地选择两职阶之一作为基准。`,
             // B 级
-            `Allows you to acquire Class Skills of your second chosen Cavalry Class with their discounts.`,
+            `能够在取得第二职阶的职阶技能时享受相应的购点折扣。`,
             // C 级
-            `Allows you to use Rider's Noble Phantasm discount if it was chosen by you as a second Cavalry Class.`,
+            `如果第二职阶是 Rider，那么可以享受 Rider 职阶的宝具购点折扣。`,
             // D 级
-            `Gives you the moveset and basic abilities of your second chosen Cavalry Class, such as Caster's ability to use magecraft and magical attacks, for example.`,
+            `赋予第二职阶的基本能力，例如 Caster 使用魔术的能力。`,
             // E 级
-            `You technically count as a second Cavalry Class of your choice when interacting with abilities that may target a specific Class in their effects.`
+            `技术上来说从属于第二职阶，在与针对特定职阶的能力互动时会被视为该职阶。`
        ]
     },
     'bloodsucking': {
