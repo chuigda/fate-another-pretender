@@ -33,16 +33,13 @@ const toggleCustomSecondClassLabel = () => {
     }
 }
 
-watch(() => [servantInstance.class, servantInstance.secondClass], (value, oldValue) => {
-    const [prevClass, prevSecondClass] = oldValue
-    const [newClass, newSecondClass] = value
+watch(() => servantInstance.classSkills, (classSkills, prevClassSkills) => {
+    const previousInsane = prevClassSkills['mad-enchantment'] !== undefined
+    const currentlyInsane = classSkills['mad-enchantment'] !== undefined
 
-    const previouslyBerserker = (prevClass === 'berserker' || prevSecondClass === 'berserker')
-    const currentlyBerserker = (newClass === 'berserker' || newSecondClass === 'berserker')
-
-    if (!previouslyBerserker && currentlyBerserker) {
+    if (!previousInsane && currentlyInsane) {
         servantInstance.alignment[1] = 'insane'
-    } else if (previouslyBerserker && !currentlyBerserker) {
+    } else if (previousInsane && !currentlyInsane) {
         servantInstance.alignment[1] = 'neutral'
     }
 })
