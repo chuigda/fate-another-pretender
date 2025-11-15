@@ -35,7 +35,7 @@ const expanded = ref(false)
             </div>
             <div v-else>
                 <textarea readonly :value="pointBuyResult.details.join('\n')" />
-                合计: {{ pointBuyResult.cost }} 点
+                合计: {{ pointBuyResult.sp }} 点
             </div>
         </div>
     </div>
