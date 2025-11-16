@@ -175,7 +175,7 @@ const deleteUniquePersonalSkill = async (index: number) => {
     </div>
 
     <Dialog v-show="showAddPersonalSkillDialog">
-        <h2>添加标准职阶技能</h2>
+        <h3>添加标准职阶技能</h3>
         <hr />
         <select v-model="selectedPersonalSkill">
             <option v-for="(personalSkillDesc, personalSkillName) in StandardPersonalSkillDescription"

@@ -231,7 +231,7 @@ const askAndApplyClassData = async (
     </div>
 
     <Dialog v-show="showAddClassSkillDialog">
-        <h2>添加标准职阶技能</h2>
+        <h3>添加标准职阶技能</h3>
         <hr />
         <select v-model="selectedClassSkill">
             <option v-for="(classSkillDesc, classSkillName) in ClassSkillDescription"

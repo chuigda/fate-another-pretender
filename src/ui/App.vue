@@ -129,7 +129,7 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
         </Row>
 
         <Dialog v-if="newServantClass !== undefined">
-            <h2>新建档案</h2>
+            <h3>新建档案</h3>
             <hr />
             <select>
                 <option v-for="className in ServantClasses"
@@ -175,7 +175,7 @@ export type AskForConfirmation = (title: string, message: string) => Promise<boo
 
     <PointBuyCalculator :servant-instance="servantInstance" />
     <Dialog v-if="confirmDialogContent">
-        <h2>{{ confirmDialogContent.title }}</h2>
+        <h3>{{ confirmDialogContent.title }}</h3>
         <hr />
         <div>{{ confirmDialogContent.message }}</div>
         <div style="display: flex; justify-content: center; margin-top: 1em">
