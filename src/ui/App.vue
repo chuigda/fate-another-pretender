@@ -5,7 +5,6 @@ import { deepCopy } from '../util'
 
 import type { ServantClass } from '../logic/servant/servant'
 import { ServantClassData, ServantClasses } from '../logic/servant/servant'
-import { DefaultServantInstance } from '../logic/servant/servant_instance'
 
 import BasicInfoPanel from './BasicInfoPanel.vue'
 import ParametersPanel from './ParametersPanel.vue'
@@ -31,7 +30,7 @@ const askForConfirmation = (title: string, message: string): Promise<boolean> =>
 provide(AskForConfirmationKey, askForConfirmation)
 
 const showDetails = ref(true)
-const servantInstance = ref(deepCopy(DefaultServantInstance))
+const servantInstance = ref(deepCopy(ServantTemplates.saber))
 
 const newServantClass = ref<ServantClass | undefined>(undefined)
 
