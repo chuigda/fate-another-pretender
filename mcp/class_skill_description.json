@@ -1,0 +1,167 @@
+{
+  "magic-resistance": {
+    "label": "对魔力",
+    "description": "得到对魔术抗性的能力。",
+    "ranks": [
+      "A 级以下的魔术全部无效化，即使是大魔术和仪礼咒法也不例外。能短暂地抵抗一划令咒。",
+      "咏唱在三节以下的魔术全部无效化，即使是大魔术和仪礼咒法也难以造成伤害。",
+      "咏唱在二节以下的魔术全部无效化。无法抵抗大魔术和仪礼咒法。",
+      "一工程魔术全部无效化，相当于护身符级别的对魔力。",
+      "无法无效化魔术，只能减少所受的魔术伤害。"
+    ]
+  },
+  "independent-action": {
+    "label": "单独行动",
+    "description": "允许从者独立行动并减少对御主魔力供应的消耗，甚至允许从者在没有御主的情况下生存的能力。",
+    "ranks": [
+      "没有御主也能维持存在一周左右；使用消耗更大的能力时仍然需要御主的支持。",
+      "没有御主也能维持存在两天；可以在不使用御主魔力的情况下行动。",
+      "没有御主也能维持存在一天。",
+      "没有御主也能维持存在至多 12 小时。",
+      "没有御主时无法延长维持存在的时间，但可以在远离御主的地方单独行动。"
+    ]
+  },
+  "riding": {
+    "label": "骑乘",
+    "description": "代表从者驾驭各种交通工具和坐骑能力的技能。",
+    "ranks": [
+      "任何载具和生物都可以骑乘，但幻想种和神性生物除外；精通所有坐骑的驾驭。",
+      "精通某一种坐骑，并能用魔法增强坐骑，使得在骑乘时坐骑与从者共享所有参数。",
+      "允许选择一种能够骑乘的坐骑类型作为免费坐骑。能骑着坐骑飞行并执行不可能的动作。",
+      "精通驾驭生前所熟悉的坐骑，大多数其他载具和动物也能以高于平均水平的技能驾驭。",
+      "没有特别的骑乘技能，但骑乘载具或坐骑时，速度会与从者的速度成比例增加，且不会对坐骑造成伤害。"
+    ]
+  },
+  "item-construction": {
+    "label": "道具作成",
+    "description": "创建用于战斗或日常活动的魔术道具的能力。通常来说需要时间来收集所需材料。",
+    "ranks": [
+      "能制造出可以与某些低阶宝具相媲美的物品，不过这需要更长的时间。",
+      "能制造出大部分常见的魔术道具，甚至是一些现代无法获得的稀有物品，但后者需要更多的时间和精力。",
+      "专精于制造某一种类型的魔术道具。制造速度快，且只需利用手头的资源。",
+      "能制造出与现代魔术相当的少量魔术道具。制造时间和所需资源可能因物品而异。",
+      "能用魔力召唤出常见的普通物品。"
+    ]
+  },
+  "territory-creation": {
+    "label": "阵地作成",
+    "description": "建造阵地的能力。阵地即有利于魔术师自身收集魔力、准备魔术的特殊地域。",
+    "ranks": [
+      "能建造“神殿”，比“工房”更高级 —— 魔法防御工事能够大幅度妨碍其他从者的行动。",
+      "能建造“工房”，在工房中施展的魔术至少提升一个等级。",
+      "能将一大片区域指定为自己的阵地，并能察觉阵地内发生的任何事情。",
+      "能建造中等大小的阵地并从中收集魔力。",
+      "能控制一小片区域以供休息和恢复，在区域内体力能更快地恢复。"
+    ]
+  },
+  "presence-concealment": {
+    "label": "气息遮断",
+    "description": "隐藏自己作为从者存在的能力，非常适用于间谍活动、侦查及暗杀任务。",
+    "ranks": [
+      "能够完全消失，几乎不可能被发觉。准备发动攻击时会受到影响，但直到攻击前的最后一刻都无法被察觉。",
+      "能够消失并变得难以察觉，即使在准备发动攻击时也是如此。",
+      "隐藏自身作为从者的存在。需要时间来生效，且在准备攻击时会被察觉。",
+      "等级低到不像暗杀者。能在静止或缓慢移动时避免被察觉。",
+      "能够躲避大多数魔法侦测手段，但会被从者立刻察觉。"
+    ]
+  },
+  "mad-enchantment": {
+    "label": "狂化",
+    "description": "以牺牲理智为代价提升各项参数的能力。正向补正所需的点数将被反转并变为返还点数，负向补正则会减半所需点数。EX 级的狂化技能仍然需要正常消耗点数。",
+    "ranks": [
+      "所有参数大幅提升，但理智完全丧失。",
+      "所有参数提升，但进入战斗时会失去大部分理智和判断力。",
+      "除幸运和魔力外，所有参数提升，但无法正常思考和说话。",
+      "力量和耐力参数提升。语言能力简单，难以进行长时间的复杂思考。",
+      "没有明显的参数提升，但保留正常思考的能力。战斗中会增加嗜血倾向。"
+    ]
+  },
+  "gods-resolution": {
+    "label": "神明裁决",
+    "description": "Ruler 的特权 —— 拥有若干令咒，并有权将其用于战争中的任何其他从者。",
+    "ranks": [
+      "每有一个除自身以外的从者便获得两划令咒。不能对同一个从者使用超过两划令咒。",
+      "每有一个除自身以外的从者便获得一划令咒。不能对同一个从者使用超过一划令咒。",
+      "三划令咒，可以用于战争中的任何其他从者，但不能对同一个从者使用超过一划令咒。",
+      "两划令咒，可以用于战争中的任何其他从者，但不能对同一个从者使用超过一划令咒。",
+      "一划令咒，可以用于战争中的任何其他从者，但不能对自己使用。"
+    ]
+  },
+  "true-name-discernment": {
+    "label": "真名看破",
+    "description": "揭示其他从者的相关信息的能力，例如他们的参数、技能、真名、背景故事和宝具。",
+    "ranks": [
+      "从被召唤的那一刻起，所有参战从者的信息会被全部揭示。无论对方使用了何种隐匿能力，此技能均有效。",
+      "只要亲眼见到对方，从者的全部信息就会自动被揭示。隐匿能力的干扰可以通过幸运检定来规避。",
+      "只要触碰到对方，从者的全部信息就会被揭示。任何隐匿能力都足以干扰此能力。",
+      "只要见过对方一次，从者的真名和职阶就会被揭示。其他所有细节仍然按照通常的方式揭示。",
+      "能够访问与普通御主相当的信息页面，除此之外只能得知从者自行揭示的信息。"
+    ]
+  },
+  "avenger": {
+    "label": "复仇者",
+    "description": "Avenger 职阶的标志性技能。Avenger 能将人们的怨恨和愤怒汇聚于自身，以此获得力量并加以利用。",
+    "ranks": [
+      "负面情绪会立即转化为力量；所有参数永远获得一个 + 补正。",
+      "受到伤害时再生能力增强。",
+      "当对手在战斗中真心地仇恨你时，每有一个敌人，就使一个技能获得 + 补正。",
+      "如果被认定为另一个从者的死敌，在与其战斗时，所有参数获得一个 + 补正。",
+      "能够从仇恨和愤怒中汲取一些魔力。"
+    ]
+  },
+  "oblivion-correction": {
+    "label": "忘却补正",
+    "description": "无法或不愿忘记自己遭遇的不公。强化记忆力并增加暴击伤害。",
+    "ranks": [
+      "能使出记忆以外的致命一击，其伤害值翻三倍。",
+      "当记忆被魔法手段修改时，此能力将自动纠正记忆。",
+      "达到完全过目不忘的程度。",
+      "在别人忘记或者不敢想象的情况下发起攻击，伤害值大幅提升。",
+      "清晰地记得过去的所有不公，不过没有其他有用的加成。"
+    ]
+  },
+  "self-replenishment": {
+    "label": "自我回复",
+    "description": "被动地随着时间积累魔力，直到复仇成功的能力。它只能提供能量，不能使从者脱离御主。",
+    "ranks": [
+      "随着战争的进行缓慢地回复魔力，但仍然需要御主才能维持现界。",
+      "无尽的魔法能量以小量不断涌现，直到复仇成功为止。",
+      "承受伤害时获得等量的魔力。",
+      "在战斗中可持续恢复少量魔力。",
+      "当使用攻击性的魔术能力时，如果成功，则返还小部分消耗的魔力。"
+    ]
+  },
+  "self-field-defense": {
+    "label": "己阵防御",
+    "description": "盾兵的标志性技能，能够让使用者保护队友甚至整个友军阵营，达到超越人类极限的程度。",
+    "ranks": [
+      "将范围提升三倍。友方受到的伤害会直接转移到技能持有者。所有对持有者或其友方造成的伤害均减半。",
+      "将范围提升两倍。使用者受到的伤害会反弹给攻击者。",
+      "范围内所有友方受到的伤害减少三分之一，但技能持有者本人不能受益于这个效果。",
+      "完全地格挡普通攻击。并且只要技能持有者愿意，就能在战斗中不动如山。",
+      "能察觉到所有紧随在身后的友方的位置，并能快速冲向其中任何一人，以拦截对其的大部分攻击。"
+    ]
+  },
+  "authority-of-beasts": {
+    "label": "兽之权能",
+    "description": "The right of Beasts to bring ruin. Anti-Humanity Skill that focuses on countering and destroying anything human in origin.",
+    "ranks": [
+      "Affinity for fighting against all Heroic Spirits and Divine Spirits, tripling damage output against these targets.",
+      "Insight into everyting human in origin that fits one particular theme appropriate to the Beast in question. Anything nearby that fits its description can be unmade or enforced at will.",
+      "Can cause any and all normal humans nearby to instantly die whenever the Beast wishes.",
+      "Negation of the will of the Master and the human world equivalent to Independent Action of rank B. Taking action or using abilities will not spend any magical energy during it.",
+      "High resistance to anything humanity has created. Harm done y magical efforts is negated by half, as long as it is being done by a human."
+    ]
+  },
+  "independent-manifestation": {
+    "label": "独立显现",
+    "description": "Skill that permits unsupported manifestation into reality, separate from any Master or rules of the world. This doesn't refer to reliance on magical energy (you still need that), but an anchor to the world in the form of a Master.",
+    "ranks": [
+      "Designing, choosing or rolling a Master is now optional. One can stay manifested indefinitely, nor is the use of other abilities or Noble Phantasms hampered by not having a Master.",
+      "Awareness of potential summonings occuring at all points in time. Allows thuser to respond to any such call and summon themselves, as long as they were not already summoned.",
+      "The user is no longer bound to the Throne of Heroes, instead being normally (when not summoned) located within a custom tailored pocket dimension.",
+      "The user's presence is affirmed throughout the entirely of time and space, granting resistance to time paradoxes and instant death attacks. Prevents the existance of any duplicates.",
+      "Guarantees originality of existence. The user is always summoned as their true self instead of a copy from the Throne of Heroes. Alows one to retain memories across all sumonings."
+    ]
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "battle-continuation": {
+    "label": "战斗续行",
+    "description": "在战斗中受到致命伤害之后仍能继续战斗的能力，能降低所受任何伤害的致死率。",
+    "ranks": [
+      "即使受到了致命伤也能继续战斗，只要没有受到决定性的伤害就能保持存活。",
+      "无论受了多重的伤害也总是能继续战斗，并且战斗力总是处于完美状态。",
+      "永不放弃，即使没有精力和魔力也能依靠纯粹的意志力继续战斗。",
+      "不再感受到疼痛，但伤口仍然会在战斗中造成影响。",
+      "在战斗中麻痹疼痛感，并且在对疼痛的反应上获得更强的控制力。"
+    ]
+  },
+  "charisma": {
+    "label": "领袖气质",
+    "description": "个人魅力以及领导他人的才能，能通过提升士气来增强盟友的表现。",
+    "ranks": [
+      "即使是敌人也会被这样的魅力所吸引，在某些情况下甚至能说服对手放下武器或联手合作。",
+      "能领导一个国家的能力；大幅提振军队和其他跟随者的士气。",
+      "能吸引人们听从并跟随，前提是之前没有与他们有过负面的交集。",
+      "能与现有的盟友建立真正的友谊。",
+      "能领导一小群人，但无法提升他们的士气。"
+    ]
+  },
+  "mana-burst": {
+    "label": "魔力放出",
+    "description": "向武器和盔甲中注入魔力以并在瞬间释放的能力，能提升战斗中的爆发力，但魔力消耗也会相应增加。",
+    "ranks": [
+      "能将随手捡来的木棍变成强力武器的程度。能一击摧毁没有神性级神秘的普通武器。还能将防御力提升数倍。",
+      "能从武器中如喷射般地释放出能力，可用作一种中程攻击手段。",
+      "能将全身注入魔力，以暂时提升战斗中的表现。",
+      "能在近距离内使用小范围的集中魔力，既可用于防御也可用于攻击。",
+      "能向武器和盔甲中注入魔力以提升其效能。"
+    ]
+  },
+  "instinct": {
+    "label": "直感",
+    "description": "在战斗中瞬间找到出最佳行动方案的能力。",
+    "ranks": [
+      "直觉预知能力极高，几乎能在潜意识中预判整个战斗的进程。",
+      "能够通过猜测物体的位置及其移动轨迹，将视觉和听觉干扰造成的惩罚减半。",
+      "能够预判远程攻击的轨迹和近战攻击的大致方向。",
+      "赋予一种本能的常识，能在发动攻击之前就预判其是否会成功。",
+      "赋予一种模糊但可靠的危险感知能力，但如何运用就全凭自己本事了。"
+    ]
+  },
+  "eye-of-the-mind-true": {
+    "label": "心眼·真",
+    "description": "通过努力和刻苦学习获得的简单能力，提升观察力和专注力，在面对强敌时有更大的反击潜力。",
+    "ranks": [
+      "能够在极短的时间内考虑所有可能性，几乎能瞬间脱离困境。",
+      "即使在危险中，也能冷静分析对手的能力和战斗状况。",
+      "赋予辨别当前所有潜在风险的能力。",
+      "牢牢掌握战斗状况，能将地形和旁观者等因素考虑在内，并用于制定下一步行动计划。",
+      "即使对手尝试隐藏，也能模糊地猜测出其实际的实力。"
+    ]
+  },
+  "eye-of-the-mind-fake": {
+    "label": "心眼·伪",
+    "description": "依靠天赋而不是努力而获得的心眼，通常是神祇的祝福或是传说赋予的能力。",
+    "ranks": [
+      "能够在短时间内完全掌握对手的战斗风格并加以反制，使得对手的普通攻击在没有其他技能辅助的情况下全部失效。",
+      "在战斗中能进行幸运检定，若检定成功，所有导致必败或必死的路径都会被瞬间排除在外。",
+      "在视线受阻或者对手尝试隐藏自己的情况下，有可能无视这些障碍，并继续像视线清晰时一样行动。",
+      "在考虑下一步行动时，能预先知道所有可能的参数检定结果。能知道自己是否正被监视。",
+      "能够区分多个不同目标，并模糊地辨别它们的意图。"
+    ]
+  },
+  "disengage": {
+    "label": "重整旗鼓",
+    "description": "能够在战斗中全身而退并重整态势的能力，需要保全性命或者改变追击目标时非常有用。",
+    "ranks": [
+      "在脱离战斗后，强制解除一些在战斗中获得的不良状态。",
+      "在成功脱离战斗后，恢复能力状态至初始值，并立即治愈所有轻伤。",
+      "在脱离战斗后，将地形等战斗状况恢复至战斗开始时的状态。",
+      "如果敏捷高于敌人，能够在战斗中迅速脱离战场；每天可以尝试一次。",
+      "能够察觉可能的逃跑路线，并找到从未知地点逃脱的方法。"
+    ]
+  },
+  "bravery": {
+    "label": "勇猛",
+    "description": "无视精神干扰的能力。与狂化不兼容，后者会降低勇猛的等级，或是直接移除该技能。",
+    "ranks": [
+      "能够无视任何影响精神能力的魔术，例如战斗内外施加的幻术和魅惑。",
+      "能够在战斗中无视任何精神干扰，包括魔术。",
+      "能够让某些技能（如领袖气质或魔眼）的干扰效果失效。",
+      "失去武器或四肢不会引起恐慌或混乱，且在赤手空拳战斗时伤害会增加。",
+      "在战斗中不会因敌人的行动或言语而影响判断。"
+    ]
+  },
+  "clairvoyance": {
+    "label": "千里眼",
+    "description": "提升感知力和使用远程武器的精确度。也会大幅度提升侦察能力。",
+    "ranks": [
+      "在某些情况下，能进行小范围的未来预测，甚至还能读取对方内心的想法。",
+      "能通过幸运检定看到隐藏的目标。",
+      "能在四公里范围内跟踪高速移动的目标。",
+      "能在相对较近的范围内感知视线外目标的动向。",
+      "大幅度提升视野范围，站立不动并集中注意力时，能看到数公里之外的目标。"
+    ]
+  },
+  "divinity": {
+    "label": "神性",
+    "description": "体现与神明关系的技能。能够对神性低于自己的敌人造成更高的伤害，并削弱其防御类技能效果。",
+    "ranks": [
+      "作为神祇的后裔或自身即为神祇的存在，接近真正的神。",
+      "半神或在生前被赋予神性称号的人。",
+      "圣人或与神明关系密切之人。",
+      "因与神祇后裔有血缘关系而获得的神性。",
+      "与神明有过某种接触或互动，或者自身是神祇的某种力量残余。"
+    ]
+  },
+  "golden-rule": {
+    "label": "黄金律",
+    "description": "体现财富和获取财富能力的技能。",
+    "ranks": [
+      "财富源源不断地流入手中，不费吹灰之力。",
+      "拥有足以支撑奢华生活的财富。",
+      "拥有某种宝藏；已经是一般意义上富裕的水平了。",
+      "能够高效地管理个人财务，总是能获得一定的利润。",
+      "吃穿不愁的财富水平。"
+    ]
+  },
+  "magecraft": {
+    "label": "魔术",
+    "description": "使用现代魔术的能力，涵盖了当代所有的咒法。对于 Caster 职阶来说，就算没有这个技能，他们也至少能使用某种魔术。",
+    "ranks": [
+      "能与当代最伟大的魔术师相提并论的程度。",
+      "对现代魔术理论有着深刻的理解，能施展多种类型的魔术。",
+      "能使用正统的魔术，专精于某一种魔术技巧或类型。",
+      "对现代魔术理论有着深刻的理解，但真正会用的进攻型魔术不多。",
+      "对魔术理论的理解有限，只知道一些零散的实用咒法。"
+    ]
+  },
+  "high-speed-incantation": {
+    "label": "高速神言",
+    "description": "能缩短施展魔术所需的时间，并加速仪礼咒法。",
+    "ranks": [
+      "能以一工程（Single Action）的时间启动大魔术。",
+      "需要大量时间准备的魔术和仪礼咒法能在几秒钟内完成。",
+      "施展魔术时能更好地集中注意力；能在奔跑或进行其他活动时使用魔术。",
+      "较弱的魔术和那些本来就能快速施展的魔术能瞬间完成。",
+      "提升施展魔术时的整体表现，使用魔术时几乎不会出错。"
+    ]
+  },
+  "rune-magic": {
+    "label": "卢恩魔术",
+    "description": "使用和操纵北欧卢恩符文以施展魔术和进行简单战斗的能力。",
+    "ranks": [
+      "能使用十八个卢恩符文以实现多种目的，这些符文能间接地赋予使用者许多其他技能，并能暂时提升各项参数。",
+      "能使用十八个卢恩符文，这些符文对应着某些其他技能的效果，尽管效果较弱。",
+      "能使用十二个卢恩符文，能实现现代魔术无法企及的多种魔法效果。",
+      "能使用五六个卢恩符文，并组合它们的效果。",
+      "能使用一两个卢恩符文，赋予些许魔法效果。"
+    ]
+  },
+  "throwing": {
+    "label": "投掷",
+    "description": "专精于使用各种投掷武器的能力。",
+    "ranks": [
+      "能把随手捡来的任何东西变成能爆炸的投掷物，即使是普通物品也能对从者造成伤害。",
+      "投掷物的破坏力与火器相当，能给人类目标带来致命伤害。",
+      "能够将物体投掷的更远并保持极高的精度。",
+      "使用所有现存的投掷武器时都具有超凡的精准度。",
+      "专精于某一种类型的投掷武器，例如匕首、飞斧等。"
+    ]
+  },
+  "marksmanship": {
+    "label": "射击",
+    "description": "代表所有射击技巧的技能。只在使用火器的情况下才能生效。",
+    "ranks": [
+      "即使看不见目标也能百步穿杨，甚至可以仅凭声音和经验进行射击。",
+      "即使在移动中也能完美地命中目标。",
+      "能从数公里外精准地狙击目标。",
+      "能使用人类历史上所有已知的火器。",
+      "能以高于平均水平的技能使用自己生活年代的任何火器。"
+    ]
+  },
+  "monstrous-strength": {
+    "label": "怪力",
+    "description": "象征怪物血统的技能，能让从者借助其怪物的一面，短暂地提升力量参数，提升幅度取决于该技能的等级。",
+    "ranks": [
+      "能够暂时变成真正的神话怪物，并继承其力量和能力。",
+      "能够在保持普通人类形态的同时，发挥出怪物的全部力量。",
+      "能够使某些身体部位永久地变成怪物的形态。",
+      "能够暂时地将某些身体部位变成怪物的形态，改变其外观并提升其身体能力。",
+      "虽然外表仍然像普通人类，但耐力和生命力更像怪物。"
+    ]
+  },
+  "protection-from-arrows": {
+    "label": "避矢的加护",
+    "description": "提供对投射物或者远程攻击的防御能力。只对投射物有效，无法防御某些特殊能力，如区域性效果、大范围 Reach。",
+    "ranks": [
+      "能轻松地化解任何远程攻击，不论是否有所预料。",
+      "只要用眼睛确认了攻击对象，无论怎样的远距离攻击都可以闪避或者拦截。",
+      "只要能用眼睛追踪投射物，就能应对任何非魔术的投射物。",
+      "能够使用武器或者其他手段格挡单一的远程攻击，包括子弹。",
+      "能在大多数箭矢和类似的投射物到达之前察觉到它们，从而有机会躲避它们。"
+    ]
+  },
+  "self-modification": {
+    "label": "自我改造",
+    "description": "The aptitude to remold one's own body or merge one's own flesh with body parts of others. Can also improve intelligence of the user by consuming organs of other Servants.",
+    "ranks": [
+      "All processes of modification can be accomplished within mere minutes.",
+      "You can replace lost bodyparts by taking similar parts of others or constructing artificial replacements and merging your flesh with them.",
+      "You can enhance your body's physical performance and make up for its deficits by consuming the flesh of others or sewing it on yourself.",
+      "Modifications can be made for an alternative second form to which the Servant can quickly switch.",
+      "Slowly modifies the body towards a particular purpose within what is possible with available energy pool; the process may take hours."
+    ]
+  },
+  "shapeshift": {
+    "label": "变形",
+    "description": "A Skill that refers to borrowing bodies and appearances of other people, or making a fake transformation into a mythological creature.",
+    "ranks": [
+      "Can take on any form known to man, though limited in size somewhat; as you can't exactly turn into an actual mythological beast and can only imitate them, you won'tget their abilities.",
+      "Can change form to that of any other human; doesn't have to be a copy,so you can shift your appearance to any that is humanly possible.",
+      "Available forms now include more esoteric ones, such as mist or wind to evade at close range.",
+      "Can shift form into an animal no larger than a horse and no smaller than a snake.",
+      "Can change a limb or bodypart into that of an animal, gaining their strength."
+    ]
+  },
+  "military-tactics": {
+    "label": "军略",
+    "description": "并非用于小规模一对一战斗的战术知识，而是用于大规模冲突、乃至整支军队的战术知识。在应对对军宝具时提供加成。",
+    "ranks": [
+      "战略和规划的天才，制定出的计划甚至连随机事件都能考虑在内，几乎接近预知未来的程度。",
+      "对战略和战术有着精湛的洞察力；在使用对军宝具或应对对军宝具时提供加成。",
+      "能够进行消耗战，并在进攻和防守中领导军队。",
+      "能够动员军队并以高于平均水平的程度领导它们作战。",
+      "具备战略的理论知识，但缺乏实际应用经验；相当于纸上谈兵的将领水平。"
+    ]
+  },
+  "knight-tactics": {
+    "label": "骑士的武略",
+    "description": "即使对手在实力上超过自己，也能在战斗中把握战斗节奏、诱导对手犯错并加以利用的方法论。",
+    "ranks": [
+      "只要对手在场，就会在潜意识中犯下策略上的的错误。",
+      "只要进行简单的对话，就能让对手在下一次行动中检定失败。",
+      "在与实力强于自己的对手直接接触时，能对其参数检定施加惩罚。",
+      "只要自己遵守骑士道和规则，就能强迫实力较弱的对手也遵守它们。",
+      "能够察觉对手犯错的时机，并抓住稍纵即逝的取胜机会。"
+    ]
+  },
+  "mystic-eyes": {
+    "label": "魔眼",
+    "description": "Skill which represents the fact that the Servant possesses Mystic Eyes of some kind. Unlike all of the other options, you won't get the abilities of lower ranks when purchasing the higher ones.",
+    "ranks": [
+      "Mystic Eyes of the highest order which can unconditionally petrify anyone who fails a Magic ranking check. Those who succeed will suffer a downgrade in all parameters.",
+      "Mystic Eyes which force their user to fully commit to achieving a single combat task and make the desired result almost inevitable, providing great support in battle.",
+      "Mystic Eyes that charm anyone of the opposing sex, should they gaze into them. Induces love and affection after long exposure,but the effect can wear off over time.",
+      "Mystic Eyes which allow the user to process and adapt information perceived through them at an increased rate.",
+      "Mystic Eyes which will bind the target, crippling them in one place.The effect will be ignored with a sufficient ranking in either Endurance, Magic or Luck."
+    ]
+  },
+  "revelation": {
+    "label": "启示",
+    "description": "The skill to hear the voice of the Heavens and receive information on how to best proceed in any given task",
+    "ranks": [
+      "Can converse with the \"voice in your head\" about the details of previous advices and ask for new lesser revelations on how to succeed at any instant task whenever you wish, not limited in number.",
+      "Can also give you extensive knowledge on how to take optimum action to achieve victory from the present point in time onwards, but the execution is up to you; this particular ability can only be used once.",
+      "At a crucial point in time or if you are going to die by going on a chosen path, you will receive a vision which will warn you about the threat.",
+      "Receive a whisper which will give you a random highly beneficial advice once per day.",
+      "You believe to be in touch with the divine and feel as if you are being watched over; you can always feel how to choose the most suitable path when moving from one place to another."
+    ]
+  },
+  "voyage": {
+    "label": "航海",
+    "description": "Denotes one's steering techniques for a ship. Is incompatible with Riding, which will be lowered or even outright removed depending on Voyage's rank.",
+    "ranks": [
+      "Your ghostly ship possesses its own abilities, making it powerful to be on par with some of the Noble Phantasms.",
+      "Provides a weak phantom crew to assist you in manning the ship and fighting your enemies.",
+      "Combines the effects of \"Charisma\" and \"Military Tactics\" Skills of higher ranks when being on board of a ship.",
+      "Allows you to create a ghostly vessel recognized as a ship at will, which will be able to sail on sea, land and air.",
+      "Extensive knowledge on how to sail any existing ship of the past and modern era."
+    ]
+  },
+  "eternal-arms-mastership": {
+    "label": "无穷的武练",
+    "description": "Mastery of combat that cannot be dulled. Each rank taken increases overall damage and finesse of technique when fighting, no matter what kind of weapon is being used.",
+    "ranks": [
+      "Dexterity of combat arts performed to the extremes. Prevents degradation of fighting skills no matter the circumstances.",
+      "Every attack you make is always of its maximum damage value, and even if it is affected by negative status ailments, it still can't drop below its original minimum damage value.",
+      "Reduces the overall effect of any inflicted penalties if they also happen to affect your fighting techniques.",
+      "Finesse and technique are no longer dulled by the effects of Mad Enhancement, allows to retain peak fighting ability even in the depths of rage.",
+      "Allows you to use any weapon in peak condition, no matter what type of weapon it is,ignoring the battlefield conditions and terrain, or even if it is absurdly impractical."
+    ]
+  },
+  "protection-of-the-faith": {
+    "label": "信仰的加护",
+    "description": "Skill of martyrs and warriors who gave their lives for their faith. It is not granted by a higher divine power, but is born out of their own trained body and abnormal mind.",
+    "ranks": [
+      "Increases resistance to negative status ailments. Health regenerates much quicker. Causes speech quirks or odd use of language.",
+      "When one is about to have their parameters drop ranks by an enemy ability, it doesn't happen and the user only takes some additional damage instead. Makes the user very fatalistic and god fearing.",
+      "One is able to sacrifice small amounts of health during parameter checks to significantly improve their chances.Additionally makes the user religious if they weren't before.",
+      "Allows one to sacrifice some of their own health to forcefully remove negative status ailments in the middle of combat.",
+      "Lowers damage dealt to the user overall. This protection is ignored if the opponent has\nDivinity of any rank."
+    ]
+  },
+  "martial-arts": {
+    "label": "武术",
+    "description": "Conglomerate of Skills which represent your ability to fight with your bare hands and use moves and techniques from the eastern martial arts.",
+    "ranks": [
+      "Makes one a master among masters. At this point your martial poweress give great explosive destructive power to even basic attacks.",
+      "Allows yhou to cut the distance to your opponent nearly instantly. Can be used in short bursts, but is very taxing.",
+      "Incorporates use of your main weapon into the martial art techniques, allowing you to combine effects of this Skill in all of your attacks.",
+      "Fighting unarmed no longer gives you penalties to damage, speed and dexerity.",
+      "Gives you knowledge of various techniques from eastern martial arts, as well as experience and finesse required to properly execute them."
+    ]
+  },
+  "alluring-nightingale": {
+    "label": "魅惑的美声",
+    "description": "Call of a siren, this is a magically enhanced voice that affects the world\nthrough sound. Its victims can resist it not only through Magic Resistance, but also through their own will.",
+    "ranks": [
+      "The singing can now additionally mesmerize enemy Servants, having a high chance to temporarily confuse or charm them to do the user's bidding.",
+      "Singing to allies can give temporarily give positive modifiers to their random parameters, with the ones affected being decided by the nature of the song.",
+      "Allows one to cause damage to the enemy Servants by their magical voice.",
+      "Singing has all of the benefits of the higher ranks, but only when affecting normal humans instead of Servants.",
+      "Gives the user a beautiful singing voice. Has no noticable positive effects otherwise."
+    ]
+  },
+  "eye-for-art": {
+    "label": "艺术审美",
+    "description": "对艺术作品、美术品的执着心，无论是何种形式的作品，总是能看穿其真正的价值。",
+    "ranks": [
+      "The chance to figure out the name of a Noble Phantasm by seeing it is increased to very high values.",
+      "Allows one to recognize any kind of hidden art at a glance. Purpose of a spell or any magical related matter is understood before they're used.",
+      "The chance of recognizing a Noble Phantasm is now moderate. Its function will be revealed alongside its true name if the check is successful.",
+      "Improves combat performance when using music or any other kind of art. Affects all allied parties not just the user.",
+      "目睹在艺术界有着相关传说的宝具时，即使宝具没有发动，也有极低机率可以看破其真名。"
+    ]
+  },
+  "torture-techniques": {
+    "label": "拷问技术",
+    "description": "专门用于施加痛苦的专业知识，以及使用特定工具的能力。",
+    "ranks": [
+      "以具有特定特征的敌人（性别、职阶或者其他特性）为目标时，力量获得 ++ 补正。",
+      "强烈的施虐倾向，能够在造成暴击时回复自身的生命值。",
+      "敌人在受到刑具造成的每次伤害后，都会持续受到伤害。在与受伤的对手战斗时力量还会获得加成。",
+      "每次命中都会对冲击受害者，造成精神干扰并影响其决策能力。",
+      "能将刑具发挥出和普通武器一样的效力。"
+    ]
+  },
+  "subversive-activities": {
+    "label": "破坏工作",
+    "description": "Skill which deals with subterfuge and fighting dirty. This is unbecoming of a hero, and so the user suffers penalties. Statements about foe number refer to familiars and similar low ranking enemies.",
+    "ranks": [
+      "Temporarily reduces enemy parameters or number of foes by two thirds at the battle's start if the one who initiates the engagement is the user, or one third if it isn't. User's Luck drops by a rank until combat ends.",
+      "Temporarily reduces enemy parameters or number of foes by a third at the battle's start if the one who initates the engagement is the user. Gives a negative modifier to the user's Luck until combat ends.",
+      "Creation of anti-Servant traps is now possible right in the middle of combat without the opponent noticing.",
+      "Allows one to prepare traps capable of hindering Servants before the start of a battle.",
+      "Gives the user knowledge about mundane trap making, where to place them,how to notice ones belonging to the enemy and how to disarm them."
+    ]
+  },
+  "galvanism": {
+    "label": "流电学",
+    "description": "能与电流交互，将其转化为其他形式，或者向敌人释放电流。",
+    "ranks": [
+      "不再是简单地将没有实体的攻击释放掉，而是将其转化为魔力蓄积起来。",
+      "可在转瞬间将魔光、魔风和魔弹等没有实体的攻击变换成电力，往四周放电从而无效化。",
+      "身体能因应蓄积电量而强化，伤害的修复也会变得迅速。",
+      "可以连接任何能源并积蓄电力，然后将其释放用于攻击。",
+      "完全地免疫电击和闪电。"
+    ]
+  },
+  "natural-body": {
+    "label": "天性的肉体",
+    "description": "Inborn ability that signifies a perfect body that cannot be changed no matter what. Remodeling of the body via Shapeshifting or Self Modification will lower this Rank.",
+    "ranks": [
+      "The body is completely immutable. This grants total immunity to any negative status ailment that specifically affects the body.",
+      "Grants a temporary plus modifier to strength whenever the user needs to pass a check that involves it.",
+      "Perfection of the body that grants additional resistance to poisons, curses and petrification.",
+      "Strength is one rank higher whenever the body is unwounded. Increases overall health regeneration by small amounts.",
+      "无论摄入多少热量，体型也不会改变。然而对于从者来说，这一技能是多余的。"
+    ]
+  },
+  "innocent-monster": {
+    "label": "无辜的怪物",
+    "description": "那些传说因不公正的名誉而被扭曲，死后被公众视为怪物的人的技能。这是一个诅咒技能，选择它会返还点数。",
+    "ranks": [
+      "传说中怪物的本能和意志强行渗透到身体中，必须不断地挣扎以保持原本的自我。",
+      "受到传说中怪物的特性渗透，导致严重的精神创伤，还会带来自我厌恶感。",
+      "传说赋予的特征被永久性地夸大和怪物化。使用其他保有技能变得更加困难。",
+      "影响外观，看起来就像是某个邪恶传说中的大反派。",
+      "将从者与邪恶的传说联系起来。没有什么决定性的副作用，但会让人产生“哦，你是那个传说中的……？”之类的反应。"
+    ]
+  },
+  "knowledge-of-respect-and-harmony": {
+    "label": "宗和的心得",
+    "description": "Serene state of combat that obscures the attacks of the user, making the enemy unable to get a read on them.",
+    "ranks": [
+      "Usage of Noble Phantasm no longer reveals its true name. No witness will be able to realize its function and effects.",
+      "即使对同一个对手重复同样的招式多少次，命中精准度也不会下降的特殊技能。也就是说是拥有“变得不会被敌人看穿攻击”效果的能力。",
+      "Obfuscates the logic of the user's movement. The mind of the opponent will not realize the tactical purpose of the user's position on the field and what they're planning to do next.",
+      "Grants the user high evasion ability, allowing them the chance to dodge half of the normal attacks coming their way.",
+      "When the user is going to use any ability or Skill, the enemy will not be able to notice them doing so or what they're aiming at until it is already done."
+    ]
+  },
+  "mental-pollution": {
+    "label": "精神污染",
+    "description": "扭曲的心态，以可怕的代价清除思想中的任何外来干扰。与狂化不兼容，后者会降低精神污染的等级。这是一个诅咒技能，选择它会返还点数。",
+    "ranks": [
+      "由于精神错乱，能够以高机率屏蔽精神干涉系的魔术。不具备同等级精神污染的人物将无法沟通。",
+      "未能被即时抵御的精神干涉也会随着时间的推移缓慢消除。不具备精神污染的人物将无法沟通。",
+      "中等程度的抵御精神干涉的能力。如果御主具有邪恶属性并对从者残酷行事，这一技能的等级会短暂提升（不能提升到 B 级以上）",
+      "所看到的现实变得扭曲，幻觉随机出现。未能即时抵御的精神干涉也会被削弱。",
+      "言语行为对普通人来说变得难以理解，有一定几率抵御精神干涉。"
+    ]
+  },
+  "combination": {
+    "label": "结合",
+    "description": "A Skill that displays how much one's combat power increases when working together with a specific person. Splits your Servant container to create a partner for you.",
+    "ranks": [
+      "All your limits on distance from each other are lifted, you are allowed to act independently from your twin.",
+      "At this point, even if one of you were to die, the other will be able to continue fighting in the Grail War without any repercussions.",
+      "You and your twin are able to perfectly work in tandem, balancing each other's weaknesses and acting as one.",
+      "Instead of dying when your twin falls, you will be able to continue existing, but unable to do any fighting. Offers no further bonuses.",
+      "Separates your Servant container into two, creating a twin who will share your stats. You can't move too far away from each other, and if one of you dies, the other will die too."
+    ]
+  },
+  "imperial-privilege": {
+    "label": "皇帝的特权",
+    "description": "身为君主所具有的能力，如果坚信自己能做到某件事，那么就会获得一项与之相关的技能，从而使得不可能变为可能。",
+    "ranks": [
+      "备选项增加到七项，甚至可以模仿魔力抵抗、神性等保有技能，唯独“双重召唤”和“结合”除外。",
+      "备选项增加到五项，等级限制提升到 B 级，并且可以选择七大职阶的职阶技能。",
+      "选择 C 级或以下的三项保有技能作为备选项，每次可以使用其中一项。魔眼、神性等特殊能力无法用这种方式取得。",
+      "在战斗中能随机取得一项 C 级或以下的技能，该技能会在战斗结束后消失。",
+      "能够自由地熟练使用任何与战斗无关的普通技能。"
+    ]
+  },
+  "double-summon": {
+    "label": "双重召唤",
+    "description": "一种罕见的技能，从者同时属于两个职阶。两个职阶必须都是四骑兵职阶才能生效。",
+    "ranks": [
+      "能够完全适应第二职阶的能力，为参数购点时可以自由地选择两职阶之一作为基准。",
+      "能够在取得第二职阶的职阶技能时享受相应的购点折扣。",
+      "如果第二职阶是 Rider，那么可以享受 Rider 职阶的宝具购点折扣。",
+      "赋予第二职阶的基本能力，例如 Caster 使用魔术的能力。",
+      "技术上来说从属于第二职阶，在与针对特定职阶的能力互动时会被视为该职阶。"
+    ]
+  },
+  "bloodsucking": {
+    "label": "吸血",
+    "description": "Vampiric ability to drain blood from the target or steal life energy from the environment. It's not an inherent property of Dead Apostles and True Ancestors, but can come from a similar nature.",
+    "ranks": [
+      "Those whose blood had been sucked can have their minds be muddled with to turn them to the user's side and obey their orders.",
+      "At this level, every attack passively steals lifeforce from the enemy in proportion from the dealt damage and adds it to user.",
+      "Allows one to also recover lost magical energy and strength by sucking blood. A single ordinary person drained dry is sufficient to restore the user to perfect condition.",
+      "Sucking blood allows the user to restore some of their health, undoing the damage received in combat.",
+      "The user is able to inflict damage by the means of sucking blood as an effective form of attack in combat.The sucked blood does nothing for the user by itself, however."
+    ]
+  },
+  "counter-hero": {
+    "label": "反英雄",
+    "description": "Ability to overcome heroes of legend and any fictional existences. Can come from the fact that the user is involved with storytelling, or from them being literally specialized in fighting heroic figures.",
+    "ranks": [
+      "The user automatically grasps the essense of the opponent's legend even without knowing it, granting them awareness of their weak spots and how to play around their strong points.",
+      "Reduces all parameters of the opponent by two full ranks. Has a weaker effect on Anti-Heroes and other targets who cannot be called proper Heroic Spirits.",
+      "The more fictional is the legend of the opponent, the greater the affinity the user willhave against them. Wholly fictional Servants are especially vulnerable.",
+      "Permanently strips any fame bonus to parameters and any other effect it may have from the opponent.",
+      "The user can conduct themselves in a way which causes any proper Heroic Spirit to initially not view them as a threat."
+    ]
+  },
+  "information-erasure": {
+    "label": "情报消除",
+    "description": "Skill affiliated with those whose existence is uncertain due to low amount of traces they've left. Pertains towards affirming this fact by forcefully eliminating these traces from the present reality.",
+    "ranks": [
+      "All opponents now must make a Luck check at the start of every round to not forget the information presently displayed by the user in their fight.",
+      "Effect can now work even in broad daylight and can erase digital and other recordings of the user. Other physical evidence still remains in place after the fact.",
+      "Erases memories pertaining to the user from all witnesses, including the opponent, after the end of engagement.",
+      "Forgetting the user by chance witnesses is no longer decided by chance. Anyone who actually fought the user and saw them clearly will still remember them.",
+      "The user's true name, appearance and any other abilities they possess have a chance to be forgotten by anyone who did not get a clear view of them."
+    ]
+  },
+  "inherent-wisdom": {
+    "label": "神授的智慧",
+    "description": "Merged version of separate Skills which belong to those who had mastered many subjects and are primarily known as teaching figures to other heroes. Utilized to acquire more Skills and empower allies.",
+    "ranks": [
+      "Allows the user to teach others even Skills the user themselves does not possess, up to ranks B or A, as long as they are still coming from a broad category.",
+      "When teaching others, the user is no longer constrained to doing so to one student at a time. No longer limits targets to Servants, but results become significantly less effective.",
+      "Allows the user to permanently obtain a new Personal Skill from a broad category once per day, as long as it is not too specific or unique, and is not an inherent physical feature. Can't gain more than 9.",
+      "Can increase any other Skill by one rank (not higher than A) for themselves or any other target. Can be done once per day, and can't get reapplied to the Skill it already affected once.",
+      "Allows the user to teach any of their Skills to any other Servant, one at a time. Rank progressively increases from E to the one the user has per day of teaching. May depend on student quality."
+    ]
+  }
+}
