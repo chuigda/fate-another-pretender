@@ -1,0 +1,9 @@
+[project]
+name = "fate-another-pretender-mcp"
+version = "0.1.0"
+description = "MCP system for Fate Another Pretender ruleset"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.13.2",
+]
