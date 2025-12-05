@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, List
 from fastmcp import FastMCP
 from tkinter import simpledialog
 from random import randint
@@ -85,12 +85,24 @@ def imp_roll_dice(dice_expr: str) -> str:
 
 @mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
 def roll_dice(
-    dice_expr: Annotated[str, "骰子表达式, 例如 '2d6' 或 '1d20'；可以在表达式后面添加一个注释，用空格隔开，例如 '1d20 攻击检定'"]
+    dice_expr: Annotated[str, "骰子表达式, 例如 '2d6' 或 '1d20'；不支持复杂表达式；可以在表达式后面添加一个注释，用空格隔开，例如 '1d20 攻击检定'"]
 ) -> str:
     """
     执行一次掷骰，并返回结果。
     """
     return imp_roll_dice(dice_expr)
+
+
+@mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
+def roll_multi_dice(dice_exprs: Annotated[List[str], "多个骰子表达式的列表，每个表达式格式同 roll_dice 工具的输入"] ) -> str:
+    """
+    执行多次掷骰，并返回结果。
+    """
+    results = []
+    for expr in dice_exprs:
+        result = imp_roll_dice(expr)
+        results.append(result)
+    return "\n".join(results)
 
 
 @mcp.tool(annotations={"readOnlyHint": True, "openWorldHint": False})
